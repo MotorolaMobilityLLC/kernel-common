@@ -61,6 +61,9 @@ static DEFINE_SPINLOCK(freezer_delta_lock);
 /* rtc timer and device for setting alarm wakeups at suspend */
 static struct rtc_timer		rtctimer;
 static struct rtc_device	*rtcdev;
+#ifdef CONFIG_MMI_NON_GKI_DEBUG
+static int alarm_debug = 0;
+#endif
 static DEFINE_SPINLOCK(rtcdev_lock);
 
 /**
@@ -206,6 +209,14 @@ static enum hrtimer_restart alarmtimer_fired(struct hrtimer *timer)
 	alarmtimer_dequeue(base, alarm);
 	spin_unlock_irqrestore(&base->lock, flags);
 
+#ifdef CONFIG_MMI_NON_GKI_DEBUG
+	if(alarm_debug & 0x1){
+		pr_info("%s: type=%d, func=%ps, exp:%llu\n", __func__,
+			alarm->type, alarm->function, ktime_to_ms(alarm->node.expires));
+		alarm_debug &= 0xFE;
+	}
+#endif
+
 	if (alarm->function)
 		restart = alarm->function(alarm, base->get_ktime());
 
@@ -246,6 +257,9 @@ static int alarmtimer_suspend(struct device *dev)
 	struct rtc_device *rtc;
 	unsigned long flags;
 	struct rtc_time tm;
+#ifdef CONFIG_MMI_NON_GKI_DEBUG
+	struct alarm* min_timer = NULL;
+#endif
 
 	spin_lock_irqsave(&freezer_delta_lock, flags);
 	min = freezer_delta;
@@ -272,6 +286,9 @@ static int alarmtimer_suspend(struct device *dev)
 			continue;
 		delta = ktime_sub(next->expires, base->get_ktime());
 		if (!min || (delta < min)) {
+#ifdef CONFIG_MMI_NON_GKI_DEBUG
+			min_timer = container_of(next, struct alarm, node);
+#endif
 			expires = next->expires;
 			min = delta;
 			type = i;
@@ -279,6 +296,16 @@ static int alarmtimer_suspend(struct device *dev)
 	}
 	if (min == 0)
 		return 0;
+
+#ifdef CONFIG_MMI_NON_GKI_DEBUG
+	if (min_timer){
+		pr_info("%s: [%p]type=%d, func=%ps exp:%llu\n", __func__,
+			min_timer, min_timer->type, min_timer->function,
+			ktime_to_ms(min_timer->node.expires));
+		min_timer = NULL;
+	}
+	alarm_debug = 0x1;
+#endif
 
 	if (ktime_to_ns(min) < 2 * NSEC_PER_SEC) {
 		pm_wakeup_event(dev, 2 * MSEC_PER_SEC);
