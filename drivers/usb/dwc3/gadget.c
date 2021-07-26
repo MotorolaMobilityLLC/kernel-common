@@ -2626,6 +2626,22 @@ static int dwc3_gadget_pullup(struct usb_gadget *g, int is_on)
 	}
 
 	/*
+	 * MMI_STOPSHIP dwc3: this is only temporary fix, need QC release
+	 * to Android S common kernel, as it will take effect on boot image
+	 *
+	 * Avoid issuing a runtime resume if the device is already in the
+	 * suspended state during gadget disconnect. DWC3 gadget was already
+	 * halted/stopped during runtime suspend.
+	 */
+	if (!is_on) {
+		pm_runtime_barrier(dwc->dev);
+		if (pm_runtime_suspended(dwc->dev)) {
+			dev_err(dwc->dev, "Skip gadget_pullup as already suspended\n");
+			return 0;
+		}
+	}
+
+	/*
 	 * Check the return value for successful resume, or error.  For a
 	 * successful resume, the DWC3 runtime PM resume routine will handle
 	 * the run stop sequence, so avoid duplicate operations here.
@@ -4607,6 +4623,14 @@ int dwc3_gadget_suspend(struct dwc3 *dwc)
 	if (!dwc->gadget_driver)
 		return 0;
 
+	/*
+	 * MMI_STOPSHIP dwc3: Print the key members of the dwc3 structure
+	 * for Kernel panic debugging.
+	 */
+	dev_info(dwc->dev, "dwc3_gadget_suspend: dwc->regs=%p, dwc->gadget=%p\n",
+		dwc->regs, dwc->gadget);
+	dev_info(dwc->dev, "dwc3_gadget_suspend: dwc->eps[0]=%p, dwc->eps[1]=%p\n",
+		dwc->eps[0], dwc->eps[1]);
 	dwc3_gadget_run_stop(dwc, false, false);
 
 	spin_lock_irqsave(&dwc->lock, flags);
