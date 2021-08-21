@@ -925,6 +925,7 @@
   freq_scale
   fsync_bdev
   ftrace_dump
+  fwnode_create_software_node
   fwnode_find_reference
   fwnode_get_name
   fwnode_get_named_child_node
@@ -2473,6 +2474,8 @@
   task_may_not_preempt
   __task_pid_nr_ns
   __task_rq_lock
+  tcpm_unregister_port
+  tcpm_register_port
   thermal_cooling_device_register
   thermal_cooling_device_unregister
   thermal_of_cooling_device_register
