@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-2.0-only
+/// SPDX-License-Identifier: GPL-2.0-only
 /*
  * kernel/workqueue.c - generic async execution with shared worker pool
  *
@@ -5843,6 +5843,9 @@ static void wq_watchdog_timer_fn(struct timer_list *unused)
 			pr_cont(" stuck for %us!\n",
 				jiffies_to_msecs(now - pool_ts) / 1000);
 			trace_android_vh_wq_lockup_pool(pool->cpu, pool_ts);
+			/* MMI_STOPSHIP <show_kworker_state> : temporarily debug kworker busying. */
+			pr_emerg("<show_workqueue_state>: moto panic\n");
+			BUG_ON(1);
 		}
 	}
 
