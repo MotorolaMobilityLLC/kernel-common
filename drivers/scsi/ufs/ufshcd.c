@@ -7502,14 +7502,28 @@ static int ufs_get_device_desc(struct ufs_hba *hba)
 	if (dev_info->wspecversion >= UFS_DEV_HPB_SUPPORT_VERSION &&
 	    (b_ufs_feature_sup & UFS_DEV_HPB_SUPPORT)) {
 		bool hpb_en = false;
+		int ret =0;
 
 		ufshpb_get_dev_info(hba, desc_buf);
 
-		if (!ufshpb_is_legacy(hba))
+		if (!ufshpb_is_legacy(hba)) {
 			err = ufshcd_query_flag_retry(hba,
 						      UPIU_QUERY_OPCODE_READ_FLAG,
 						      QUERY_FLAG_IDN_HPB_EN, 0,
 						      &hpb_en);
+			if (dev_info->wmanufacturerid == UFS_VENDOR_TOSHIBA && hpb_en) {
+				ret = ufshcd_query_flag_retry(hba,
+							  UPIU_QUERY_OPCODE_CLEAR_FLAG,
+							  QUERY_FLAG_IDN_HPB_EN, 0,
+							  NULL);
+				if (ret) {
+					dev_err(hba->dev, "ufshcd clear hpben flag error %d\n", ret);
+				} else {
+					dev_warn(hba->dev, " clean HPBEn Flag (disable HPB) on kioxia UFS\n");
+					hpb_en = 0;
+				}
+			}
+		}
 
 		if (ufshpb_is_legacy(hba) || (!err && hpb_en))
 			dev_info->hpb_enabled = true;
