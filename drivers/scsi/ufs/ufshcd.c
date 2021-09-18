@@ -7560,6 +7560,11 @@ static int ufs_get_device_desc(struct ufs_hba *hba)
 
 		if (ufshpb_is_legacy(hba) || (!err && hpb_en))
 			dev_info->hpb_enabled = true;
+		if(ufshpb_is_legacy(hba) && dev_info->wmanufacturerid == UFS_VENDOR_TOSHIBA) {
+			dev_err(hba->dev, "Disable HPB feature on Kioxia old product (HPB1.0)\n");
+			dev_info->hpb_enabled = false;
+		}
+
 	}
 
 	err = ufshcd_read_string_desc(hba, model_index,
