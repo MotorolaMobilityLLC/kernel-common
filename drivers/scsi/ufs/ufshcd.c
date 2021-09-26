@@ -7511,7 +7511,7 @@ static int ufs_get_device_desc(struct ufs_hba *hba)
 						      UPIU_QUERY_OPCODE_READ_FLAG,
 						      QUERY_FLAG_IDN_HPB_EN, 0,
 						      &hpb_en);
-			if (dev_info->wmanufacturerid == UFS_VENDOR_TOSHIBA && hpb_en) {
+			if (hpb_en) {
 				ret = ufshcd_query_flag_retry(hba,
 							  UPIU_QUERY_OPCODE_CLEAR_FLAG,
 							  QUERY_FLAG_IDN_HPB_EN, 0,
@@ -7519,7 +7519,7 @@ static int ufs_get_device_desc(struct ufs_hba *hba)
 				if (ret) {
 					dev_err(hba->dev, "ufshcd clear hpben flag error %d\n", ret);
 				} else {
-					dev_warn(hba->dev, " clean HPBEn Flag (disable HPB) on kioxia UFS\n");
+					dev_warn(hba->dev, " clean HPBEn Flag (disable HPB) on kioxia/micron UFS\n");
 					hpb_en = 0;
 				}
 			}
