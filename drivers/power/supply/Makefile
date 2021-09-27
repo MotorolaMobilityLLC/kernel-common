@@ -1,6 +1,11 @@
 # SPDX-License-Identifier: GPL-2.0
 subdir-ccflags-$(CONFIG_POWER_SUPPLY_DEBUG) := -DDEBUG
 
+ifneq (,$(filter ironmn%,$(TARGET_PRODUCT)))
+	ccflags-y += -DCONFIG_TARGET_IRONMN
+endif
+
+
 power_supply-y				:= power_supply_core.o
 power_supply-$(CONFIG_SYSFS)		+= power_supply_sysfs.o
 power_supply-$(CONFIG_LEDS_TRIGGERS)	+= power_supply_leds.o
