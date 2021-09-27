@@ -22,8 +22,12 @@ static void power_supply_update_bat_leds(struct power_supply *psy)
 {
 	union power_supply_propval status;
 #ifdef CONFIG_TARGET_IRONMN
+	union power_supply_propval capacity;
+
 	unsigned long delay_on = 700;
 	unsigned long delay_off = 700;
+	unsigned long low_batt_delay_on = 3800;
+	unsigned long low_batt_delay_off = 200;
 #else
 	unsigned long delay_on = 0;
 	unsigned long delay_off = 0;
@@ -31,6 +35,11 @@ static void power_supply_update_bat_leds(struct power_supply *psy)
 
 	if (power_supply_get_property(psy, POWER_SUPPLY_PROP_STATUS, &status))
 		return;
+
+#ifdef CONFIG_TARGET_IRONMN
+	if (power_supply_get_property(psy, POWER_SUPPLY_PROP_CAPACITY, &capacity))
+		return;
+#endif
 
 	dev_dbg(&psy->dev, "%s %d\n", __func__, status.intval);
 
@@ -55,8 +64,14 @@ static void power_supply_update_bat_leds(struct power_supply *psy)
 		led_trigger_event(psy->charging_trig, LED_OFF);
 		led_trigger_event(psy->full_trig, LED_OFF);
 #ifdef CONFIG_TARGET_IRONMN
-		led_trigger_event(psy->charging_blink_full_solid_trig,
-			LED_FULL);
+		if (capacity.intval <= 15) /* Low battery (<=15%) blink pattern */
+		{
+			led_trigger_blink(psy->charging_blink_full_solid_trig,
+				&low_batt_delay_on, &low_batt_delay_off);
+		} else {
+			led_trigger_event(psy->charging_blink_full_solid_trig,
+				LED_FULL);
+		}
 #else
 		led_trigger_event(psy->charging_blink_full_solid_trig,
 			LED_OFF);
