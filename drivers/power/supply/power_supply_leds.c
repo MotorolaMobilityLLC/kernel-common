@@ -21,8 +21,13 @@
 static void power_supply_update_bat_leds(struct power_supply *psy)
 {
 	union power_supply_propval status;
+#ifdef CONFIG_TARGET_IRONMN
+	unsigned long delay_on = 700;
+	unsigned long delay_off = 700;
+#else
 	unsigned long delay_on = 0;
 	unsigned long delay_off = 0;
+#endif
 
 	if (power_supply_get_property(psy, POWER_SUPPLY_PROP_STATUS, &status))
 		return;
@@ -49,8 +54,13 @@ static void power_supply_update_bat_leds(struct power_supply *psy)
 		led_trigger_event(psy->charging_full_trig, LED_OFF);
 		led_trigger_event(psy->charging_trig, LED_OFF);
 		led_trigger_event(psy->full_trig, LED_OFF);
+#ifdef CONFIG_TARGET_IRONMN
+		led_trigger_event(psy->charging_blink_full_solid_trig,
+			LED_FULL);
+#else
 		led_trigger_event(psy->charging_blink_full_solid_trig,
 			LED_OFF);
+#endif
 		break;
 	}
 }
