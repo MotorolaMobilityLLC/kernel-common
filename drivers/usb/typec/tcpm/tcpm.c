@@ -6457,6 +6457,7 @@ static enum hrtimer_restart send_discover_timer_handler(struct hrtimer *timer)
 struct tcpm_port *tcpm_register_port(struct device *dev, struct tcpc_dev *tcpc)
 {
 	struct tcpm_port *port;
+	struct fwnode_handle *fwnode;
 	int err;
 
 	if (!dev || !tcpc ||
@@ -6518,7 +6519,13 @@ struct tcpm_port *tcpm_register_port(struct device *dev, struct tcpc_dev *tcpc)
 	port->partner_desc.identity = &port->partner_ident;
 	port->port_type = port->typec_caps.type;
 
-	port->role_sw = usb_role_switch_get(port->dev);
+	fwnode = device_get_named_child_node(port->dev, "connector");
+	if (!fwnode) {
+		tcpm_log(port, "%s: connector sub-node not found", dev_name(dev));
+		return ERR_PTR(-ENODEV);
+	}
+
+	port->role_sw = fwnode_usb_role_switch_get(fwnode);
 	if (IS_ERR(port->role_sw)) {
 		err = PTR_ERR(port->role_sw);
 		goto out_destroy_wq;
