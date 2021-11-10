@@ -34,6 +34,10 @@
 #include <trace/hooks/typec.h>
 #include <uapi/linux/sched/types.h>
 
+#include "../bus.h"
+
+#define MOTO_ALTMODE(fmt, ...) pr_debug("MMI_DETECT: TCPM[%s]: "fmt"\n", __func__, ##__VA_ARGS__)
+
 #define FOREACH_STATE(S)			\
 	S(INVALID_STATE),			\
 	S(TOGGLING),			\
@@ -547,6 +551,23 @@ static const char * const pd_rev[] = {
 
 #define tcpm_wait_for_discharge(port) \
 	(((port)->auto_vbus_discharge_enabled && !(port)->vbus_vsafe0v) ? PD_T_SAFE_0V : 0)
+
+static int tcpm_altmode_enter(struct typec_altmode *altmode, u32 *vdo);
+static int tcpm_altmode_exit(struct typec_altmode *altmode);
+static int tcpm_altmode_vdm(struct typec_altmode *altmode,
+			    u32 header, const u32 *data, int count);
+
+static const struct typec_altmode_ops tcpm_altmode_ops = {
+	.enter = tcpm_altmode_enter,
+	.exit = tcpm_altmode_exit,
+	.vdm = tcpm_altmode_vdm,
+};
+
+struct typec_port *tcpm_typec_port_get(struct tcpm_port *port)
+{
+	return port->typec_port;
+}
+EXPORT_SYMBOL_GPL(tcpm_typec_port_get);
 
 static enum tcpm_state tcpm_default_state(struct tcpm_port *port)
 {
@@ -1576,8 +1597,24 @@ static void tcpm_register_partner_altmodes(struct tcpm_port *port)
 			altmode = NULL;
 		}
 		port->partner_altmode[i] = altmode;
+		to_altmode(altmode)->partner->adev.ops = &tcpm_altmode_ops;
+		tcpm_log(port, "added altmode[%d]=svid%04Xm%02x for partner", i,
+			modep->altmode_desc[i].svid, modep->altmode_desc[i].mode);
 	}
 }
+
+int tcpm_set_port_altmode(struct tcpm_port *port, int idx, struct typec_altmode *alt)
+{
+	int ret = -ERANGE;
+
+	if (idx < ALTMODE_DISCOVERY_MAX) {
+		port->port_altmode[idx] = alt;
+		ret = 0;
+	}
+
+	return ret;
+}
+EXPORT_SYMBOL_GPL(tcpm_set_port_altmode);
 
 #define supports_modal(port)	PD_IDH_MODAL_SUPP((port)->partner_ident.id_header)
 
@@ -2249,12 +2286,6 @@ static int tcpm_altmode_vdm(struct typec_altmode *altmode,
 	return 0;
 }
 
-static const struct typec_altmode_ops tcpm_altmode_ops = {
-	.enter = tcpm_altmode_enter,
-	.exit = tcpm_altmode_exit,
-	.vdm = tcpm_altmode_vdm,
-};
-
 /*
  * PD (data, control) command handling functions
  */
@@ -2898,9 +2929,22 @@ static void tcpm_pd_rx_handler(struct kthread_work *work)
 {
 	struct pd_rx_event *event = container_of(work,
 						 struct pd_rx_event, work);
-	const struct pd_message *msg = &event->msg;
-	unsigned int cnt = pd_header_cnt_le(msg->header);
-	struct tcpm_port *port = event->port;
+	const struct pd_message *msg;
+	unsigned int cnt;
+	struct tcpm_port *port;
+
+	if (event == NULL) {
+		pr_err("%s: event is NULL!!!\n", __func__);
+		return;
+	}
+
+	msg = &event->msg;
+	cnt = pd_header_cnt_le(msg->header);
+	port = event->port;
+	if (port == NULL) {
+		pr_err("%s: port is NULL!!!\n", __func__);
+		return;
+	}
 
 	mutex_lock(&port->lock);
 
@@ -3597,6 +3641,7 @@ static int tcpm_src_attach(struct tcpm_port *port)
 							 : TYPEC_POLARITY_CC1;
 	int ret;
 
+	MOTO_ALTMODE("port attached %d", port->attached);
 	if (port->attached)
 		return 0;
 
@@ -3665,7 +3710,20 @@ static void tcpm_unregister_altmodes(struct tcpm_port *port)
 	int i;
 
 	for (i = 0; i < modep->altmodes; i++) {
+		const struct typec_altmode *alt;
+		/* Let's call typec_altmode_notify before we unregister.
+		 * That way we should be able to catch disconnect in the
+		 * .notify handler */
+		alt = typec_altmode_get_partner(port->partner_altmode[i]);
+		if (alt) {
+			typec_altmode_notify((void *)alt, TYPEC_STATE_SAFE, NULL);
+			MOTO_ALTMODE("notified altmode: svid%04Xm%02x", alt->svid, alt->mode);
+		}
+
 		typec_unregister_altmode(port->partner_altmode[i]);
+		MOTO_ALTMODE("unregister altmode: svid%04Xm%02x",
+			port->partner_altmode[i]->svid,
+			port->partner_altmode[i]->mode);
 		port->partner_altmode[i] = NULL;
 	}
 
@@ -3722,6 +3780,7 @@ static void tcpm_detach(struct tcpm_port *port)
 	if (tcpm_port_is_disconnected(port))
 		port->hard_reset_count = 0;
 
+	MOTO_ALTMODE("port attached %d", port->attached);
 	if (!port->attached)
 		return;
 
@@ -3742,6 +3801,7 @@ static int tcpm_snk_attach(struct tcpm_port *port)
 {
 	int ret;
 
+	MOTO_ALTMODE("port attached %d", port->attached);
 	if (port->attached)
 		return 0;
 
@@ -3776,6 +3836,7 @@ static int tcpm_acc_attach(struct tcpm_port *port)
 {
 	int ret;
 
+	MOTO_ALTMODE("port attached %d", port->attached);
 	if (port->attached)
 		return 0;
 
@@ -4948,6 +5009,10 @@ static void _tcpm_cc_change(struct tcpm_port *port, enum typec_cc_status cc1,
 		       port->polarity,
 		       tcpm_port_is_disconnected(port) ? "disconnected"
 						       : "connected");
+	if (tcpm_port_is_disconnected(port))
+		MOTO_ALTMODE("CC1: %u -> %u, CC2: %u -> %u [state %s, polarity %d, disconnected]",
+			old_cc1, cc1, old_cc2, cc2, tcpm_states[port->state],
+			port->polarity);
 
 	switch (port->state) {
 	case TOGGLING:
@@ -5982,6 +6047,7 @@ static void tcpm_init(struct tcpm_port *port)
 	 * otherwise. So do not try to be fancy and force a clean disconnect.
 	 */
 	tcpm_set_state(port, PORT_RESET, 0);
+	//MOTO_ALTMODE("!!! PORT_RESET suppressed !!!");
 }
 
 static int tcpm_port_type_set(struct typec_port *p, enum typec_port_type type)
