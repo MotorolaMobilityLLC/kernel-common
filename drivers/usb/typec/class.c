@@ -67,6 +67,12 @@ struct typec_port {
 	ANDROID_KABI_RESERVE(1);
 };
 
+unsigned int typec_get_portid(struct typec_port *port)
+{
+	return port->id;
+}
+EXPORT_SYMBOL_GPL(typec_get_portid);
+
 #define to_typec_port(_dev_) container_of(_dev_, struct typec_port, dev)
 #define to_typec_plug(_dev_) container_of(_dev_, struct typec_plug, dev)
 #define to_typec_cable(_dev_) container_of(_dev_, struct typec_cable, dev)
