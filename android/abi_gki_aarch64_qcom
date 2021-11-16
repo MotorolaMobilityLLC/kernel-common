@@ -2473,8 +2473,10 @@
   task_may_not_preempt
   __task_pid_nr_ns
   __task_rq_lock
-  tcpm_unregister_port
   tcpm_register_port
+  tcpm_set_port_altmode
+  tcpm_typec_port_get
+  tcpm_unregister_port
   thermal_cooling_device_register
   thermal_cooling_device_unregister
   thermal_of_cooling_device_register
@@ -2781,9 +2783,19 @@
   tty_flip_buffer_push
   __tty_insert_flip_char
   tty_insert_flip_string_fixed_flag
+  typec_altmode_enter
+  typec_altmode_exit
   typec_altmode_get_partner
+  typec_altmode_notify
+  __typec_altmode_register_driver
+  typec_altmode_unregister_driver
   typec_altmode_update_active
+  typec_altmode_vdm
+  typec_altmode2port
   typec_get_drvdata
+  typec_get_negotiated_svdm_version
+  typec_get_orientation
+  typec_get_portid
   typec_partner_register_altmode
   typec_port_register_altmode
   typec_register_partner
