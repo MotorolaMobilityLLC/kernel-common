@@ -1,7 +1,10 @@
 /* SPDX-License-Identifier: GPL-2.0 */
+//#ifndef _KERNEL_STATS_H
+//#define _KERNEL_STATS_H
 
 #ifdef CONFIG_SCHEDSTATS
 
+//#include "sched.h"
 /*
  * Expects runqueue lock to be held for atomicity of update
  */
@@ -273,3 +276,5 @@ sched_info_switch(struct rq *rq, struct task_struct *prev, struct task_struct *n
 # define sched_info_arrive(rq, next)	do { } while (0)
 # define sched_info_switch(rq, t, next)	do { } while (0)
 #endif /* CONFIG_SCHED_INFO */
+
+//#endif /* _KERNEL_STATS_H */
