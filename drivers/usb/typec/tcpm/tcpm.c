@@ -38,6 +38,143 @@
 
 #define MOTO_ALTMODE(fmt, ...) pr_debug("MMI_DETECT: TCPM[%s]: "fmt"\n", __func__, ##__VA_ARGS__)
 
+static const char *ack2string(unsigned hdr)
+{
+	unsigned    cmd_type = (hdr >> 6) & 0x3;
+	const char *ack_string[] = { "INIT", "ACK", "NACK", "BUSY", "NONE" };
+
+	if (cmd_type > sizeof(ack_string)/sizeof(ack_string[0]))
+		cmd_type = 4;
+	return ack_string[cmd_type];
+}
+
+static const char *svdm2string(unsigned hdr)
+{
+	unsigned    cmd = (hdr) & 0x1f;
+	const char *svdm_string[] = { "0",
+			"DISCOVER_IDENT",
+			"DISCOVER_SVID",
+			"DISCOVER_MODES",
+			"ENTER_MODE",
+			"EXIT_MODE",
+			"ATTENTION",
+			"7", "8", "9", "10", "11", "12", "13", "14", "15",
+			"STATUS_UPDATE",
+			"CONFIGURE"
+	};
+
+	if (cmd > sizeof(svdm_string)/sizeof(svdm_string[0]))
+		cmd = 0;
+	return svdm_string[cmd];
+}
+
+static const char *type2string(enum tcpm_transmit_type type)
+{
+	const char *tcpm_transmit_type[] = {
+	"TCPC_TX_SOP",
+	"TCPC_TX_SOP_PRIME",
+	"TCPC_TX_SOP_PRIME_PRIME",
+	"TCPC_TX_SOP_DEBUG_PRIME",
+	"TCPC_TX_SOP_DEBUG_PRIME_PRIME",
+	"TCPC_TX_HARD_RESET",
+	"TCPC_TX_CABLE_RESET",
+	"TCPC_TX_BIST_MODE_2"
+	};
+	if (type < sizeof(tcpm_transmit_type)/sizeof(tcpm_transmit_type[0]))
+		return tcpm_transmit_type[type];
+	else
+		return "Invalid";
+}
+
+const char *tcpm_msg2string(const struct pd_message *msg)
+{	char *ctrl_msg_type[] =
+        {
+        "PD_CTRL_0",
+        "PD_CTRL_GOOD_CRC",
+        "PD_CTRL_GOTO_MIN",
+        "PD_CTRL_ACCEPT",
+        "PD_CTRL_REJECT",
+        "PD_CTRL_PING",
+        "PD_CTRL_PS_RDY",
+        "PD_CTRL_GET_SOURCE_CAP",
+        "PD_CTRL_GET_SINK_CAP",
+        "PD_CTRL_DR_SWAP",
+        "PD_CTRL_PR_SWAP",
+        "PD_CTRL_VCONN_SWAP",
+        "PD_CTRL_WAIT",
+        "PD_CTRL_SOFT_RESET",
+        "PD_CTRL_14",
+        "PD_CTRL_15",
+        "PD_CTRL_NOT_SUPP",
+        "PD_CTRL_GET_SOURCE_CAP_EXT",
+        "PD_CTRL_GET_STATUS",
+        "PD_CTRL_FR_SWAP",
+        "PD_CTRL_GET_PPS_STATUS",
+        "PD_CTRL_GET_COUNTRY_CODES"
+        };
+
+	char *data_msg_type[] =
+	{
+	"PD_DATA_0",
+	"PD_DATA_SOURCE_CAP",
+	"PD_DATA_REQUEST",
+	"PD_DATA_BIST",
+	"PD_DATA_SINK_CAP",
+	"PD_DATA_BATT_STATUS",
+	"PD_DATA_ALERT",
+	"PD_DATA_GET_COUNTRY_INFO",
+	"PD_DATA_ENTER_USB",
+	"PD_CTRL_9",
+	"PD_CTRL_10",
+	"PD_CTRL_11",
+	"PD_CTRL_12",
+	"PD_CTRL_13",
+	"PD_CTRL_14",
+	"PD_DATA_VENDOR_DEF"
+	};
+
+	char *ext_msg_type[] =
+	{
+	"PD_EXT_0",
+	"PD_EXT_SOURCE_CAP_EXT",
+	"PD_EXT_STATUS",
+	"PD_EXT_GET_BATT_CAP",
+	"PD_EXT_GET_BATT_STATUS",
+	"PD_EXT_BATT_CAP",
+	"PD_EXT_GET_MANUFACTURER_INFO",
+	"PD_EXT_MANUFACTURER_INFO",
+	"PD_EXT_SECURITY_REQUEST",
+	"PD_EXT_SECURITY_RESPONSE",
+	"PD_EXT_FW_UPDATE_REQUEST",
+	"PD_EXT_FW_UPDATE_RESPONSE",
+	"PD_EXT_PPS_STATUS",
+	"PD_EXT_COUNTRY_INFO",
+	"PD_EXT_COUNTRY_CODES"
+	};
+
+        enum pd_ctrl_msg_type type = pd_header_type_le(msg->header);
+        bool ext_msg = le16_to_cpu(msg->header) & PD_HEADER_EXT_HDR;
+        int cnt = pd_header_cnt_le(msg->header);
+
+        if (ext_msg) {
+                if (type < sizeof(ext_msg_type)/sizeof(ext_msg_type[0]))
+                        return ext_msg_type[type];
+                else
+                        return "PD_EXT_Reserved";
+        } else if (!cnt) {
+                if (type < sizeof(ctrl_msg_type)/sizeof(ctrl_msg_type[0]))
+                        return ctrl_msg_type[type];
+                else
+                        return "PD_CTRL_Reserved";
+        } else {
+                if (type < sizeof(data_msg_type)/sizeof(data_msg_type[0]))
+                        return data_msg_type[type];
+                else
+                        return "PD_DATA_Invalid";
+        }
+}
+EXPORT_SYMBOL_GPL(tcpm_msg2string);
+
 #define FOREACH_STATE(S)			\
 	S(INVALID_STATE),			\
 	S(TOGGLING),			\
@@ -552,6 +689,24 @@ static const char * const pd_rev[] = {
 #define tcpm_wait_for_discharge(port) \
 	(((port)->auto_vbus_discharge_enabled && !(port)->vbus_vsafe0v) ? PD_T_SAFE_0V : 0)
 
+/* Translate SVDM cmd types into AMS enum for matching */
+static enum tcpm_ams svdm2ams(unsigned cmd)
+{
+	enum tcpm_ams svdm_ams[] =
+	{
+		[0] = STRUCTURED_VDMS, /* wildcard */
+		[CMD_DISCOVER_IDENT] = DISCOVER_IDENTITY,
+		[CMD_DISCOVER_SVID] = DISCOVER_SVIDS,
+		[CMD_DISCOVER_MODES] = DISCOVER_MODES,
+		[CMD_ENTER_MODE] = DFP_TO_UFP_ENTER_MODE,
+		[CMD_EXIT_MODE] = DFP_TO_UFP_EXIT_MODE,
+		[CMD_ATTENTION] = ATTENTION,
+	};
+	if (cmd > CMD_ATTENTION)
+		cmd = 0;
+	return svdm_ams[cmd];
+}
+
 static int tcpm_altmode_enter(struct typec_altmode *altmode, u32 *vdo);
 static int tcpm_altmode_exit(struct typec_altmode *altmode);
 static int tcpm_altmode_vdm(struct typec_altmode *altmode,
@@ -891,10 +1046,13 @@ static int tcpm_pd_transmit(struct tcpm_port *port,
 	unsigned long timeout;
 	int ret;
 
-	if (msg)
+	if (msg) {
 		tcpm_log(port, "PD TX, header: %#x", le16_to_cpu(msg->header));
-	else
+		tcpm_log(port, "==> MSG type: %s", tcpm_msg2string(msg));
+	} else {
 		tcpm_log(port, "PD TX, type: %#x", type);
+		tcpm_log(port, "==> TX type: %s", type2string(type));
+	}
 
 	reinit_completion(&port->tx_complete);
 	ret = port->tcpc->pd_transmit(port->tcpc, type, msg, port->negotiated_rev);
@@ -1589,6 +1747,14 @@ static void tcpm_register_partner_altmodes(struct tcpm_port *port)
 	int i;
 
 	for (i = 0; i < modep->altmodes; i++) {
+		/* Some UFPs offer more than one altmode */
+		if (!(port->port_altmode[i] &&
+		      port->port_altmode[i]->svid == modep->altmode_desc[i].svid)) {
+			tcpm_log(port, "Skipping non-matched altmode 0x%04x",
+				 modep->altmode_desc[i].svid);
+			continue;
+		}
+
 		altmode = typec_partner_register_altmode(port->partner,
 						&modep->altmode_desc[i]);
 		if (IS_ERR(altmode)) {
@@ -1636,6 +1802,7 @@ static int tcpm_pd_svdm(struct tcpm_port *port, struct typec_altmode *adev,
 
 	tcpm_log(port, "Rx VDM cmd 0x%x type %d cmd %d len %d",
 		 p[0], cmd_type, cmd, cnt);
+	// tcpm_log(port, " -- %s [%s]", ack2string(cmd_type), svdm2string(cmd));
 
 	modep = &port->mode_data;
 
@@ -1715,7 +1882,26 @@ static int tcpm_pd_svdm(struct tcpm_port *port, struct typec_altmode *adev,
 		if (IS_ERR_OR_NULL(port->partner))
 			break;
 
-		tcpm_ams_finish(port);
+		/*
+		 * PD Rev 3.1 Ver 1.2, section 8.3.2.1
+		 * An AMS Shall be considered to have ended when the Protocol Engine signals the
+		 * Policy Engine that transmission of the final Message in the AMS is a success.
+		 *
+		 * It does not just end on any random ACK.
+		 * A race is possibe where we send DISCOVER_IDENTITY (an interruptible AMS) to a
+		 * UFP host, which sends us a DR_SWAP (a non-interruptible AMS) and waits for
+		 * DR_SWAP_ACCEPT. When we send that, it might get ACK-ed first, so we need to
+		 * check what the ACK is for, before finishing AMS.
+		 */
+/*
+		tcpm_log(port, "ACK: port->ams = [%s], port->in_ams = %s, svdm2ams(%s) = [%s]",
+			tcpm_ams_str[port->ams],
+			port->in_ams ? "true" : "false",
+			svdm2string(cmd),
+			tcpm_ams_str[svdm2ams(cmd)]);
+*/
+		if (port->in_ams && port->ams == svdm2ams(cmd))
+			tcpm_ams_finish(port);
 
 		switch (cmd) {
 		case CMD_DISCOVER_IDENT:
@@ -1777,7 +1963,9 @@ static int tcpm_pd_svdm(struct tcpm_port *port, struct typec_altmode *adev,
 		}
 		break;
 	case CMDT_RSP_NAK:
-		tcpm_ams_finish(port);
+		/* Should only finish the AMS that was actually NACK-ed */
+		if (port->in_ams && port->ams == svdm2ams(cmd))
+			tcpm_ams_finish(port);
 		switch (cmd) {
 		case CMD_DISCOVER_IDENT:
 		case CMD_DISCOVER_SVID:
@@ -1911,6 +2099,7 @@ static void tcpm_handle_vdm_request(struct tcpm_port *port,
 			typec_altmode_attention(adev, p[1]);
 			break;
 		}
+		tcpm_log(port, "<-- %s [%s]", ack2string(p[0]), svdm2string(p[0]));
 	}
 
 	/*
@@ -2616,6 +2805,17 @@ static void tcpm_pd_ctrl_request(struct tcpm_port *port,
 	 */
 	if (tcpm_vdm_ams(port) && type != PD_CTRL_NOT_SUPP && type != PD_CTRL_GOOD_CRC) {
 		port->vdm_state = VDM_STATE_ERR_BUSY;
+
+		/*
+		 * DR_DWAP may interrupt DISCOVER_IDENTITY, but the flag was already cleared
+		 * if we are in DISCOVER_IDENTITY AMS, and we are about to clear the in_ams
+		 * flag too. Set send_discover flag up again, so that we don't accept
+		 * DR_SWAP before DISCOVER_IDENTITY is actually completed. Otherwise we will
+		 * trip the data role mismatch when response to DISCOVER_IDENTITY comes.
+		 */
+		if (port->in_ams && port->ams == DISCOVER_IDENTITY)
+			port->send_discover = true;
+
 		tcpm_ams_finish(port);
 		mod_vdm_delayed_work(port, 0);
 	}
@@ -2811,7 +3011,13 @@ static void tcpm_pd_ctrl_request(struct tcpm_port *port,
 					   PD_MSG_CTRL_NOT_SUPP,
 					   NONE_AMS);
 		} else {
-			if (port->send_discover) {
+			/*
+			 * Do not accept DR_SWAP until we got DISCOVER_IDENTITY
+			 * AMS finished. Otherwise we trip a data role mismatch
+			 * when the responce comes after we have swapped.
+			 */
+			if (port->send_discover ||
+			   (port->in_ams && port->ams == DISCOVER_IDENTITY)) {
 				tcpm_queue_message(port, PD_MSG_CTRL_WAIT);
 				break;
 			}
@@ -2933,18 +3139,9 @@ static void tcpm_pd_rx_handler(struct kthread_work *work)
 	unsigned int cnt;
 	struct tcpm_port *port;
 
-	if (event == NULL) {
-		pr_err("%s: event is NULL!!!\n", __func__);
-		return;
-	}
-
 	msg = &event->msg;
 	cnt = pd_header_cnt_le(msg->header);
 	port = event->port;
-	if (port == NULL) {
-		pr_err("%s: port is NULL!!!\n", __func__);
-		return;
-	}
 
 	mutex_lock(&port->lock);
 
@@ -2954,6 +3151,8 @@ static void tcpm_pd_rx_handler(struct kthread_work *work)
 	if (port->attached) {
 		enum pd_ctrl_msg_type type = pd_header_type_le(msg->header);
 		unsigned int msgid = pd_header_msgid_le(msg->header);
+
+		tcpm_log(port, "<== MSG type: %s", tcpm_msg2string(msg));
 
 		/*
 		 * USB PD standard, 6.6.1.2:
@@ -2970,7 +3169,9 @@ static void tcpm_pd_rx_handler(struct kthread_work *work)
 
 		/*
 		 * If both ends believe to be DFP/host, we have a data role
-		 * mismatch.
+		 * mismatch, except for a GoodCRC message. But consuming
+		 * GoodCRC is a PHY layer job, so we assume that drivers only
+		 * call this for actual payloads.
 		 */
 		if (!!(le16_to_cpu(msg->header) & PD_HEADER_DATA_ROLE) ==
 		    (port->data_role == TYPEC_HOST)) {
@@ -5620,7 +5821,29 @@ static void tcpm_send_discover_work(struct kthread_work *work)
 	if (!port->send_discover)
 		goto unlock;
 
-	if (port->data_role == TYPEC_DEVICE && port->negotiated_rev < PD_REV30) {
+	/*
+	 * Sending DISCOVER_IDENTITY in the device role is bound to invite trouble.
+	 * The PD_CTRL_DR_SWAP must be coming, and any CTRL/EXT message will "finish"
+	 * any AMS. If we get DR_SWAP between sending AMS and receiving a response,
+	 * that will immediately "finish" the AMS, we will proceed to accept new role,
+	 * but UFP may still send another message (e.g, response to the "finished" AMS)
+	 * with the same data role, before it gets our PD_CTRL_ACCEPT. That would trip
+	 * our check for data role mismatch, and we go into error revovery loop.
+	 * The logic to handle such "interleaved" messaging needs to be in place before
+	 * we can afford to allow send_discover here. Currently tcpm only tries to
+	 * handle this just for DISCOVER_IDENTITY (by resplying PD_CTRL_WAIT), but
+	 * the same thing will happen with any SVDM further down the chain.
+	 *
+	 * For now just hold DISCOVER_IDENTITY until the next state change, which is
+	 * bound to be DR_SWAP_CHANGE_DR, which will set send_discover for REV30 too.
+	 *
+	 * TODO: fix the handling of DR_SWAP_ACCEPT, so that we don't assume new role
+	 * until we got an ACK for DR_SWAP_ACCEPT. That should avoid "role mismatch"
+	 * errors, though it would still leave the fragile AMS handling logic open
+	 * to confusion by "interleaved" messages. Other CTRL messages may still come
+	 * and wreck it, e.g. PD_CTRL_GET_SOURCE_CAP_EXT that comes from some UFPs.
+	 */
+	if (port->data_role == TYPEC_DEVICE /* && port->negotiated_rev < PD_REV30 */) {
 		port->send_discover = false;
 		goto unlock;
 	}
