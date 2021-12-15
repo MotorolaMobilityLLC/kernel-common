@@ -373,6 +373,13 @@ struct subprocess_info *call_usermodehelper_setup(const char *path, char **argv,
 #else
 	sub_info->path = path;
 #endif
+
+/*MMI_STOP_SHIP tmp fix factory kill issue, later build arch ready open define*/
+//#if defined(CONFIG_MMI_FACTORY_BUILD) || defined(CONFIG_MMI_NON_GKI_DEBUG)
+	if ((path != NULL) && !strcmp(path, "/system/bin/reboot"))
+		sub_info->path = path;
+//#endif
+
 	sub_info->argv = argv;
 	sub_info->envp = envp;
 
