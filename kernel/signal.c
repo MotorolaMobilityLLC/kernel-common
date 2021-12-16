@@ -1082,6 +1082,15 @@ static int __send_signal(int sig, struct kernel_siginfo *info, struct task_struc
 	assert_spin_locked(&t->sighand->siglock);
 
 	result = TRACE_SIGNAL_IGNORED;
+
+#ifdef CONFIG_DYNAMIC_DEBUG
+	/* Add below log to print the signal sending information while the signal sending to system_server and zygote(64) . */
+	if((sig == SIGKILL) && (!strcmp(t->comm, "system_server") || !strcmp(t->comm, "main"))) {
+		printk("Process %d:%s kill sig:%d %d:%s\n", current->pid, current->comm, sig, t->pid, t->comm);
+		dump_stack();
+	}
+#endif
+
 	if (!prepare_signal(sig, t, force))
 		goto ret;
 
