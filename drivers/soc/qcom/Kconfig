@@ -4,6 +4,20 @@
 #
 menu "Qualcomm SoC drivers"
 
+config MMI_FACTORY_BUILD
+	depends on ARCH_QCOM
+	default n
+	bool "Motorola Factory Build"
+	help
+	  kernel config item in common kernel of Moto factory build.
+
+config MMI_NON_GKI_DEBUG
+	depends on ARCH_QCOM
+	default n
+	bool "Motorola consolidate feature generic config"
+	help
+	  kernel config item in common kernel of Moto consolidate build.
+
 config QCOM_AOSS_QMP
 	tristate "Qualcomm AOSS Driver"
 	depends on ARCH_QCOM || COMPILE_TEST
