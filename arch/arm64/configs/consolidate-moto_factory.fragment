@@ -1,0 +1,10 @@
+#
+# This config is only used by moto factory build and
+# not affact GKI build or userdebug customer build.
+#
+# Moto factory build is userdebug type, but it always
+# use perf kernel config.
+#
+
+CONFIG_MMI_FACTORY_BUILD=y
+
