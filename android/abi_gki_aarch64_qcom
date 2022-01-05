@@ -2478,6 +2478,7 @@
   tcpm_set_port_altmode
   tcpm_typec_port_get
   tcpm_unregister_port
+  tcpm_msg2string
   thermal_cooling_device_register
   thermal_cooling_device_unregister
   thermal_of_cooling_device_register
