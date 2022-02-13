@@ -910,7 +910,8 @@ static void tcpm_ams_finish(struct tcpm_port *port)
 {
 	tcpm_log(port, "AMS %s finished", tcpm_ams_str[port->ams]);
 
-	if (port->pd_capable && port->pwr_role == TYPEC_SOURCE) {
+	if (port->pd_capable && (port->pwr_role == TYPEC_SOURCE
+			     ||  port->ams == POWER_ROLE_SWAP)) {
 		if (port->negotiated_rev >= PD_REV30)
 			tcpm_set_cc(port, SINK_TX_OK);
 		else
