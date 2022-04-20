@@ -64,10 +64,6 @@ static bool vgic_present;
 static DEFINE_PER_CPU(unsigned char, kvm_arm_hardware_enabled);
 DEFINE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
 
-/* KVM "vendor" hypercalls which may be forwarded to userspace on request. */
-#define KVM_EXIT_HYPERCALL_VALID_MASK	(BIT(ARM_SMCCC_KVM_FUNC_MEM_SHARE) |	\
-					 BIT(ARM_SMCCC_KVM_FUNC_MEM_UNSHARE))
-
 int kvm_arch_vcpu_should_kick(struct kvm_vcpu *vcpu)
 {
 	return kvm_vcpu_exiting_guest_mode(vcpu) == IN_GUEST_MODE;
@@ -117,16 +113,6 @@ int kvm_vm_ioctl_enable_cap(struct kvm *kvm,
 			set_bit(KVM_ARCH_FLAG_MTE_ENABLED, &kvm->arch.flags);
 		}
 		mutex_unlock(&kvm->lock);
-		break;
-	case KVM_CAP_EXIT_HYPERCALL:
-		if (cap->args[0] & ~KVM_EXIT_HYPERCALL_VALID_MASK)
-			return -EINVAL;
-
-		if (cap->args[1] || cap->args[2] || cap->args[3])
-			return -EINVAL;
-
-		WRITE_ONCE(kvm->arch.hypercall_exit_enabled, cap->args[0]);
-		r = 0;
 		break;
 	default:
 		r = -EINVAL;
@@ -317,9 +303,6 @@ static int kvm_check_extension(struct kvm *kvm, long ext)
 	case KVM_CAP_ARM_PTRAUTH_GENERIC:
 		r = system_has_full_ptr_auth();
 		break;
-	case KVM_CAP_EXIT_HYPERCALL:
-		r = KVM_EXIT_HYPERCALL_VALID_MASK;
-		break;
 	default:
 		r = 0;
 	}
@@ -344,7 +327,6 @@ static int pkvm_check_extension(struct kvm *kvm, long ext, int kvm_cap)
 	case KVM_CAP_MAX_VCPU_ID:
 	case KVM_CAP_MSI_DEVID:
 	case KVM_CAP_ARM_VM_IPA_SIZE:
-	case KVM_CAP_EXIT_HYPERCALL:
 		r = kvm_cap;
 		break;
 	case KVM_CAP_GUEST_DEBUG_HW_BPS:
@@ -952,12 +934,6 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu)
 		ret = kvm_handle_mmio_return(vcpu);
 		if (ret)
 			return ret;
-	} else if (run->exit_reason == KVM_EXIT_HYPERCALL) {
-		smccc_set_retval(vcpu,
-				 vcpu->run->hypercall.ret,
-				 vcpu->run->hypercall.args[0],
-				 vcpu->run->hypercall.args[1],
-				 vcpu->run->hypercall.args[2]);
 	}
 
 	vcpu_load(vcpu);
@@ -1615,10 +1591,7 @@ static int kvm_init_vector_slots(void)
 	base = kern_hyp_va(kvm_ksym_ref(__bp_harden_hyp_vecs));
 	kvm_init_vector_slot(base, HYP_VECTOR_SPECTRE_DIRECT);
 
-	if (!cpus_have_const_cap(ARM64_SPECTRE_V3A))
-		return 0;
-
-	if (!has_vhe()) {
+	if (kvm_system_needs_idmapped_vectors() && !has_vhe()) {
 		err = create_hyp_exec_mappings(__pa_symbol(__bp_harden_hyp_vecs),
 					       __BP_HARDEN_HYP_VECS_SZ, &base);
 		if (err)
@@ -1904,17 +1877,6 @@ static bool init_psci_relay(void)
 	return true;
 }
 
-static int init_stage2_iommu(void)
-{
-	int ret;
-
-	ret = kvm_s2mpu_init();
-	if (!ret)
-		return KVM_IOMMU_DRIVER_S2MPU;
-
-	return (ret == -ENODEV) ? KVM_IOMMU_DRIVER_NONE : ret;
-}
-
 static int init_subsystems(void)
 {
 	int err = 0;
@@ -1974,7 +1936,7 @@ static void teardown_hyp_mode(void)
 	}
 }
 
-static int do_pkvm_init(u32 hyp_va_bits, enum kvm_iommu_driver iommu_driver)
+static int do_pkvm_init(u32 hyp_va_bits)
 {
 	void *per_cpu_base = kvm_ksym_ref(kvm_arm_hyp_percpu_base);
 	int ret;
@@ -1983,7 +1945,7 @@ static int do_pkvm_init(u32 hyp_va_bits, enum kvm_iommu_driver iommu_driver)
 	cpu_hyp_init_context();
 	ret = kvm_call_hyp_nvhe(__pkvm_init, hyp_mem_base, hyp_mem_size,
 				num_possible_cpus(), kern_hyp_va(per_cpu_base),
-				hyp_va_bits, iommu_driver);
+				hyp_va_bits);
 	cpu_hyp_init_features();
 
 	/*
@@ -2015,11 +1977,7 @@ static int kvm_hyp_init_protection(u32 hyp_va_bits)
 	if (ret)
 		return ret;
 
-	ret = init_stage2_iommu();
-	if (ret < 0)
-		return ret;
-
-	ret = do_pkvm_init(hyp_va_bits, (enum kvm_iommu_driver)ret);
+	ret = do_pkvm_init(hyp_va_bits);
 	if (ret)
 		return ret;
 
@@ -2091,6 +2049,13 @@ static int init_hyp_mode(void)
 				  kvm_ksym_ref(__hyp_text_end), PAGE_HYP_EXEC);
 	if (err) {
 		kvm_err("Cannot map world-switch code\n");
+		goto out_err;
+	}
+
+	err = create_hyp_mappings(kvm_ksym_ref(__hyp_data_start),
+				  kvm_ksym_ref(__hyp_data_end), PAGE_HYP);
+	if (err) {
+		kvm_err("Cannot map .hyp.data section\n");
 		goto out_err;
 	}
 
