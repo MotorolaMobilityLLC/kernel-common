@@ -1347,6 +1347,28 @@ static int ucsi_register_port(struct ucsi *ucsi, struct ucsi_connector *con)
 		ucsi_port_psy_changed(con);
 	}
 
+#if defined(CONFIG_MMI_FACTORY_BUILD) || defined(CONFIG_MMI_NON_GKI_DEBUG)
+	do {
+		con->usb_role_sw = fwnode_usb_role_switch_get(cap->fwnode);
+		if (IS_ERR_OR_NULL(con->usb_role_sw)) {
+			dev_err(ucsi->dev, "con%d: failed to get usb role switch\n",
+					con->num);
+			con->usb_role_sw = NULL;
+			msleep(100);
+		} else {
+			dev_err(ucsi->dev, "con%d: succeed to get usb role switch\n",
+					con->num);
+		}
+	} while (!con->usb_role_sw);
+#else
+	con->usb_role_sw = fwnode_usb_role_switch_get(cap->fwnode);
+	if (IS_ERR(con->usb_role_sw)) {
+		dev_err(ucsi->dev, "con%d: failed to get usb role switch\n",
+			con->num);
+		con->usb_role_sw = NULL;
+	}
+#endif
+
 	/* Only notify USB controller if partner supports USB data */
 	if (!(UCSI_CONSTAT_PARTNER_FLAGS(con->status.flags) & UCSI_CONSTAT_PARTNER_FLAG_USB))
 		u_role = USB_ROLE_NONE;
