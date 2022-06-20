@@ -1269,6 +1269,7 @@
   perf_pmu_unregister
   perf_trace_buf_alloc
   perf_trace_run_bpf_submit
+  pfn_valid
   phy_calibrate
   phy_exit
   phy_init
