@@ -637,8 +637,11 @@ static void blk_mq_complete_send_ipi(struct request *rq)
 	cpu = rq->mq_ctx->cpu;
 	list = &per_cpu(blk_cpu_done, cpu);
 	if (llist_add(&rq->ipi_list, list)) {
+		trace_printk("pre_init_csd\n");
 		INIT_CSD(&rq->csd, __blk_mq_complete_request_remote, rq);
+		trace_printk("post_init_csd\n");
 		smp_call_function_single_async(cpu, &rq->csd);
+		trace_printk("post_smp_call_async\n");
 	}
 }
 
