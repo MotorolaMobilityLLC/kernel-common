@@ -2530,7 +2530,9 @@ int usb_new_device(struct usb_device *udev)
 	 * allowed for hubs during binding.
 	 */
 	usb_disable_autosuspend(udev);
-
+#if defined(CONFIG_MMI_FACTORY_BUILD) || defined(CONFIG_MMI_NON_GKI_DEBUG)
+	msleep(200);
+#endif
 	err = usb_enumerate_device(udev);	/* Read descriptors */
 	if (err < 0)
 		goto fail;
