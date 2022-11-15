@@ -1687,8 +1687,6 @@ static blk_status_t scsi_queue_rq(struct blk_mq_hw_ctx *hctx,
 	blk_mq_start_request(req);
 	reason = scsi_dispatch_cmd(cmd);
 	if (reason) {
-		trace_printk("scsi_queue_rq:dispatch cmd failed, reason:%d",reason);
-		printk("scsi_queue_rq:dispatch cmd failed, reason:%d",reason);
 		scsi_set_blocked(cmd, reason);
 		ret = BLK_STS_RESOURCE;
 		goto out_dec_host_busy;
