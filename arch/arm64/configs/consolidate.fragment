@@ -7,14 +7,12 @@ CONFIG_BOOTPARAM_SOFTLOCKUP_PANIC=y
 CONFIG_BOOTPARAM_SOFTLOCKUP_PANIC_VALUE=1
 CONFIG_CMDLINE="kasan.stacktrace=off stack_depot_disable=off kvm-arm.mode=protected cgroup_disable=pressure cgroup.memory=nokmem page_owner=on no_hash_pointers panic_on_taint=0x20"
 # CONFIG_DEBUG_KMEMLEAK is not set
-# CONFIG_DEBUG_LOCKDEP is not set
-CONFIG_DEBUG_LOCK_ALLOC=y
-CONFIG_DEBUG_MUTEXES=y
+# CONFIG_DEBUG_LOCK_ALLOC is not set
+# CONFIG_DEBUG_MUTEXES is not set
 # CONFIG_DEBUG_OBJECTS is not set
 # CONFIG_DEBUG_PREEMPT is not set
-CONFIG_DEBUG_RT_MUTEXES=y
 CONFIG_DEBUG_RWSEMS=y
-CONFIG_DEBUG_SPINLOCK=y
+# CONFIG_DEBUG_SPINLOCK is not set
 # CONFIG_DPM_WATCHDOG is not set
 CONFIG_DYNAMIC_DEBUG=y
 # CONFIG_EXT4_KUNIT_TESTS is not set
