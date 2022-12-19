@@ -5495,13 +5495,6 @@ fail:
 
 	warn_alloc(gfp_mask, ac->nodemask,
 			"page allocation failure: order:%u", order);
-#ifdef CONFIG_MMI_NON_GKI_DEBUG
-	// MMI_STOPSHIP Memory: Temporarily add debug info to check IPA issue about memory alloc failure
-	if(!strcmp("netmgrd", current->comm) && ((order == 2) || (order == 3)) && (gfp_mask & GFP_ATOMIC) && (gfp_mask & 0x80000000)) {
-		printk("mmi: trigger panic for netmgrd debug\n");
-		BUG_ON(1);
-	}
-#endif
 got_pg:
 	trace_android_vh_alloc_pages_slowpath(gfp_mask, order, alloc_start);
 	return page;
