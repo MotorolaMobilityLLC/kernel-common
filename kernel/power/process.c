@@ -42,6 +42,9 @@ static int try_to_freeze_tasks(bool user_only)
 	int sleep_usecs = USEC_PER_MSEC;
 	bool todo_logging_on = false;
 
+	unsigned int el_1_msecs;
+	ktime_t st_1, ed_1, el_1;
+
 	start = ktime_get_boottime();
 
 	end_time = jiffies + msecs_to_jiffies(freeze_timeout_msecs);
@@ -53,11 +56,18 @@ static int try_to_freeze_tasks(bool user_only)
 		todo = 0;
 		read_lock(&tasklist_lock);
 		for_each_process_thread(g, p) {
+			st_1 = ktime_get_boottime();
 			if (p == current || !freeze_task(p))
 				continue;
 
 			if (!freezer_should_skip(p))
 				todo++;
+			ed_1 = ktime_get_boottime();
+			el_1 = ktime_sub(ed_1, st_1);
+			el_1_msecs = ktime_to_ms(el_1);
+			if(el_1_msecs/1000 >= 1) {
+				pr_err("p pid[%d], name[%s], time[%d.%d]s\n", p->pid, p->comm, el_1_msecs/1000, el_1_msecs%1000);
+			}
 		}
 		read_unlock(&tasklist_lock);
 
@@ -92,6 +102,10 @@ static int try_to_freeze_tasks(bool user_only)
 		pr_cont("\n");
 		pr_err("Freezing of tasks aborted after %d.%03d seconds",
 		       elapsed_msecs / 1000, elapsed_msecs % 1000);
+		if(elapsed_msecs/1000 >= 5) {
+			pr_err("Freezing time to long, trigger panic");
+			BUG();
+		}
 	} else if (todo) {
 		pr_cont("\n");
 		pr_err("Freezing of tasks failed after %d.%03d seconds"
