@@ -1920,6 +1920,8 @@
       <elf-symbol name='devm_kstrdup' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0xaa2bf0dd'/>
       <elf-symbol name='devm_kstrdup_const' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0xa63842c8'/>
       <elf-symbol name='devm_kvasprintf' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0xbdf4e607'/>
+      <elf-symbol name='devm_led_classdev_flash_register_ext' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0xa223468c'/>
+      <elf-symbol name='devm_led_classdev_multicolor_register_ext' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x2bccf61e'/>
       <elf-symbol name='devm_led_classdev_register_ext' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x69a8d917'/>
       <elf-symbol name='devm_led_classdev_unregister' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x53113513'/>
       <elf-symbol name='devm_mbox_controller_register' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x163aaaa7'/>
@@ -3780,6 +3782,7 @@
       <elf-symbol name='led_get_default_pattern' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0xa5b4e6d2'/>
       <elf-symbol name='led_get_flash_fault' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x6c0fdbc'/>
       <elf-symbol name='led_init_default_state_get' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0xb3acb235'/>
+      <elf-symbol name='led_mc_calc_color_components' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0xa6162bac'/>
       <elf-symbol name='led_set_brightness' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0x74d94a3a'/>
       <elf-symbol name='led_set_brightness_sync' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0xb3c9584f'/>
       <elf-symbol name='led_set_flash_brightness' type='func-type' binding='global-binding' visibility='default-visibility' is-defined='yes' crc='0xc89d6353'/>
@@ -57652,6 +57655,7 @@
           <var-decl name='dma' type-id='cf29c9b3' visibility='default' filepath='drivers/usb/host/xhci.h' line='1075' column='1'/>
         </data-member>
       </class-decl>
+      <pointer-type-def type-id='e1886b45' size-in-bits='64' id='784b0515'/>
       <function-type size-in-bits='64' id='784e7aa9'>
         <parameter type-id='3dad1a48'/>
         <parameter type-id='eaa32e2f'/>
@@ -58017,6 +58021,7 @@
           <var-decl name='android_kabi_reserved1' type-id='91ce1af9' visibility='default' filepath='drivers/usb/typec/class.h' line='39' column='1'/>
         </data-member>
       </class-decl>
+      <pointer-type-def type-id='f0c5a369' size-in-bits='64' id='7943b831'/>
       <pointer-type-def type-id='476eb32c' size-in-bits='64' id='7943d272'/>
       <pointer-type-def type-id='dd90dc09' size-in-bits='64' id='79480fd1'/>
       <enum-decl name='hdmi_audio_coding_type_ext' filepath='include/linux/hdmi.h' line='297' column='1' id='795120af'>
@@ -110509,6 +110514,20 @@
           <var-decl name='mask' type-id='01307915' visibility='default' filepath='include/net/flow_offload.h' line='20' column='1'/>
         </data-member>
       </class-decl>
+      <class-decl name='mc_subled' size-in-bits='128' is-struct='yes' visibility='default' filepath='include/linux/led-class-multicolor.h' line='12' column='1' id='e1886b45'>
+        <data-member access='public' layout-offset-in-bits='0'>
+          <var-decl name='color_index' type-id='f0981eeb' visibility='default' filepath='include/linux/led-class-multicolor.h' line='13' column='1'/>
+        </data-member>
+        <data-member access='public' layout-offset-in-bits='32'>
+          <var-decl name='brightness' type-id='f0981eeb' visibility='default' filepath='include/linux/led-class-multicolor.h' line='14' column='1'/>
+        </data-member>
+        <data-member access='public' layout-offset-in-bits='64'>
+          <var-decl name='intensity' type-id='f0981eeb' visibility='default' filepath='include/linux/led-class-multicolor.h' line='15' column='1'/>
+        </data-member>
+        <data-member access='public' layout-offset-in-bits='96'>
+          <var-decl name='channel' type-id='f0981eeb' visibility='default' filepath='include/linux/led-class-multicolor.h' line='16' column='1'/>
+        </data-member>
+      </class-decl>
       <class-decl name='snd_soc_tplg_io_ops' size-in-bits='96' is-struct='yes' visibility='default' filepath='include/uapi/sound/asoc.h' line='281' column='1' id='e189081e'>
         <data-member access='public' layout-offset-in-bits='0'>
           <var-decl name='get' type-id='2f162548' visibility='default' filepath='include/uapi/sound/asoc.h' line='282' column='1'/>
@@ -120925,6 +120944,17 @@
       <array-type-def dimensions='1' type-id='c0e2acc9' size-in-bits='1088' id='f0bfbfd1'>
         <subrange length='17' type-id='7ff19f0f' id='888ad0ed'/>
       </array-type-def>
+      <class-decl name='led_classdev_mc' size-in-bits='3520' is-struct='yes' visibility='default' filepath='include/linux/led-class-multicolor.h' line='19' column='1' id='f0c5a369'>
+        <data-member access='public' layout-offset-in-bits='0'>
+          <var-decl name='led_cdev' type-id='6e0e17b0' visibility='default' filepath='include/linux/led-class-multicolor.h' line='21' column='1'/>
+        </data-member>
+        <data-member access='public' layout-offset-in-bits='3392'>
+          <var-decl name='num_colors' type-id='f0981eeb' visibility='default' filepath='include/linux/led-class-multicolor.h' line='22' column='1'/>
+        </data-member>
+        <data-member access='public' layout-offset-in-bits='3456'>
+          <var-decl name='subled_info' type-id='784b0515' visibility='default' filepath='include/linux/led-class-multicolor.h' line='24' column='1'/>
+        </data-member>
+      </class-decl>
       <class-decl name='vsock_sock' size-in-bits='11776' is-struct='yes' visibility='default' filepath='include/net/af_vsock.h' line='27' column='1' id='f0c6a3fa'>
         <data-member access='public' layout-offset-in-bits='0'>
           <var-decl name='sk' type-id='a240f41d' visibility='default' filepath='include/net/af_vsock.h' line='29' column='1'/>
@@ -138860,6 +138890,18 @@
         <parameter type-id='2aee9912' name='ap' filepath='drivers/base/devres.c' line='994' column='1'/>
         <return type-id='26a90f95'/>
       </function-decl>
+      <function-decl name='devm_led_classdev_flash_register_ext' mangled-name='devm_led_classdev_flash_register_ext' filepath='drivers/leds/led-class-flash.c' line='333' column='1' visibility='default' binding='global' size-in-bits='64' elf-symbol-id='devm_led_classdev_flash_register_ext'>
+        <parameter type-id='fa0b179b' name='parent' filepath='drivers/leds/led-class-flash.c' line='333' column='1'/>
+        <parameter type-id='26deddb9' name='fled_cdev' filepath='drivers/leds/led-class-flash.c' line='334' column='1'/>
+        <parameter type-id='eebb8ee8' name='init_data' filepath='drivers/leds/led-class-flash.c' line='335' column='1'/>
+        <return type-id='95e97e5e'/>
+      </function-decl>
+      <function-decl name='devm_led_classdev_multicolor_register_ext' mangled-name='devm_led_classdev_multicolor_register_ext' filepath='drivers/leds/led-class-multicolor.c' line='155' column='1' visibility='default' binding='global' size-in-bits='64' elf-symbol-id='devm_led_classdev_multicolor_register_ext'>
+        <parameter type-id='fa0b179b' name='parent' filepath='drivers/leds/led-class-multicolor.c' line='155' column='1'/>
+        <parameter type-id='7943b831' name='mcled_cdev' filepath='drivers/leds/led-class-multicolor.c' line='156' column='1'/>
+        <parameter type-id='eebb8ee8' name='init_data' filepath='drivers/leds/led-class-multicolor.c' line='157' column='1'/>
+        <return type-id='95e97e5e'/>
+      </function-decl>
       <function-decl name='devm_led_classdev_register_ext' mangled-name='devm_led_classdev_register_ext' filepath='drivers/leds/led-class.c' line='486' column='1' visibility='default' binding='global' size-in-bits='64' elf-symbol-id='devm_led_classdev_register_ext'>
         <parameter type-id='fa0b179b' name='parent' filepath='drivers/leds/led-class.c' line='486' column='1'/>
         <parameter type-id='bd1c8eb6' name='led_cdev' filepath='drivers/leds/led-class.c' line='487' column='1'/>
@@ -148599,6 +148641,11 @@
       <function-decl name='led_init_default_state_get' mangled-name='led_init_default_state_get' filepath='drivers/leds/led-core.c' line='481' column='1' visibility='default' binding='global' size-in-bits='64' elf-symbol-id='led_init_default_state_get'>
         <parameter type-id='4a935625' name='fwnode' filepath='drivers/leds/led-core.c' line='481' column='1'/>
         <return type-id='0abd3de9'/>
+      </function-decl>
+      <function-decl name='led_mc_calc_color_components' mangled-name='led_mc_calc_color_components' filepath='drivers/leds/led-class-multicolor.c' line='15' column='1' visibility='default' binding='global' size-in-bits='64' elf-symbol-id='led_mc_calc_color_components'>
+        <parameter type-id='7943b831' name='mcled_cdev' filepath='drivers/leds/led-class-multicolor.c' line='15' column='1'/>
+        <parameter type-id='fa598f35' name='brightness' filepath='drivers/leds/led-class-multicolor.c' line='16' column='1'/>
+        <return type-id='95e97e5e'/>
       </function-decl>
       <function-decl name='led_set_brightness' mangled-name='led_set_brightness' filepath='drivers/leds/led-core.c' line='241' column='1' visibility='default' binding='global' size-in-bits='64' elf-symbol-id='led_set_brightness'>
         <parameter type-id='bd1c8eb6' name='led_cdev' filepath='drivers/leds/led-core.c' line='241' column='1'/>
