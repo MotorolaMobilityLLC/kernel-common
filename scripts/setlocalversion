@@ -77,7 +77,7 @@ scm_version()
 		# If we are at a tagged commit (like "v2.6.30-rc6"), by default
 		# we ignore it and manually define VERSION in the top level
 		# Makefile. Alternatively, set --save-tag to keep the tag.
-		tag="$(git describe --exact-match 2>/dev/null)"
+		tag="$(git describe --exact-match --match v[0-9].* --match android[0-9]* 2>/dev/null)"
 		if [ -z "$tag" ]; then
 			# If only the short version is requested, don't bother
 			# running further git commands
