@@ -501,7 +501,6 @@ static void set_node_addr(struct f2fs_sb_info *sbi, struct node_info *ni,
 #if !defined(CONFIG_MMI_FACTORY_BUILD)
 	if(nat_get_version(e) > 2) {
             printk(KERN_ERR "set_node_addr:bad nat version %d", nat_get_version(e));
-	    BUG_ON(1);
 	}
 #endif
 	if (!__is_valid_data_blkaddr(new_blkaddr))
@@ -2996,12 +2995,10 @@ static int __flush_nat_entry_set(struct f2fs_sb_info *sbi,
 		if(nat_get_version(ne) > 2) {
                     printk(KERN_ERR "__flust_nat_entry_set: bad nat version %d, block addr:%d\n"
 		        ,nat_get_version(ne), raw_ne->block_addr);
-                    BUG_ON(1);
 		}
                 if(__is_valid_data_blkaddr(raw_ne->block_addr) && !f2fs_is_valid_blkaddr(sbi, raw_ne->block_addr, DATA_GENERIC_ENHANCE)) {
 			printk(KERN_ERR "__flush_nat_entry_set: bad nat entry block addr %d, version: %d\n"
 					,raw_ne->block_addr, nat_get_version(ne));
-			BUG_ON(1);
 		}
 #endif
 		nat_reset_flag(ne);
