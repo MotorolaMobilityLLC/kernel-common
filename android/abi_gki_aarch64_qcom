@@ -308,6 +308,7 @@
   clk_set_rate
   clk_sync_state
   clk_unprepare
+  clk_unregister_fixed_rate
   close_candev
   close_fd
   cma_alloc
@@ -1093,8 +1094,11 @@
   ether_setup
   eth_header_parse
   eth_mac_addr
+  ethnl_cable_test_amplitude
   ethnl_cable_test_fault_length
+  ethnl_cable_test_pulse
   ethnl_cable_test_result
+  ethnl_cable_test_step
   eth_platform_get_mac_address
   eth_prepare_mac_addr_change
   ethtool_convert_legacy_u32_to_link_mode
@@ -1207,10 +1211,16 @@
   genlmsg_put
   genl_register_family
   genl_unregister_family
+  genphy_c45_an_config_aneg
+  genphy_c45_check_and_restart_aneg
+  genphy_c45_pma_setup_forced
+  genphy_c45_read_status
+  genphy_check_and_restart_aneg
   __genphy_config_aneg
   genphy_read_abilities
   genphy_read_mmd_unsupported
   genphy_read_status
+  genphy_read_status_fixed
   genphy_restart_aneg
   genphy_resume
   genphy_soft_reset
@@ -1243,11 +1253,13 @@
   get_page_owner_handle
   get_pfnblock_flags_mask
   get_pid_task
+  get_phy_device
   get_random_bytes
   get_random_u16
   get_random_u32
   __get_random_u32_below
   get_sg_io_hdr
+  get_shadow_from_swap_cache
   get_slabinfo
   get_state_synchronize_rcu
   get_state_synchronize_srcu
@@ -1314,6 +1326,7 @@
   gro_cells_destroy
   gro_cells_init
   gro_cells_receive
+  groups_free
   h4_recv_buf
   handle_bad_irq
   handle_edge_irq
@@ -1388,6 +1401,7 @@
   __hvc_resize
   __hw_addr_init
   __hw_addr_sync
+  __hw_addr_sync_dev
   __hw_addr_unsync
   hwrng_register
   hwrng_unregister
@@ -2013,6 +2027,7 @@
   netdev_change_features
   netdev_core_stats_alloc
   netdev_err
+  netdev_features_change
   netdev_increment_features
   netdev_info
   netdev_lower_state_changed
@@ -2189,6 +2204,7 @@
   of_match_device
   of_match_node
   __of_mdiobus_register
+  of_mdio_find_bus
   of_modalias_node
   of_n_addr_cells
   of_node_name_eq
@@ -2273,6 +2289,7 @@
   pci_disable_device
   pci_disable_msi
   pcie_capability_clear_and_set_word
+  pcie_capability_read_dword
   pcie_capability_read_word
   pci_enable_device
   pci_enable_pcie_error_reporting
@@ -2328,6 +2345,9 @@
   perf_trace_run_bpf_submit
   phy_attached_info
   phy_calibrate
+  phy_config_aneg
+  phy_device_free
+  phy_device_register
   phy_do_ioctl_running
   phy_drivers_register
   phy_drivers_unregister
@@ -2335,9 +2355,12 @@
   phy_ethtool_get_wol
   phy_ethtool_set_wol
   phy_exit
+  phy_gbit_fibre_features
   phy_init
   phy_init_eee
   phy_init_hw
+  phy_loopback
+  phy_lookup_setting
   phylink_connect_phy
   phylink_create
   phylink_destroy
@@ -2370,9 +2393,13 @@
   phy_mac_interrupt
   phy_modify
   phy_modify_mmd
+  phy_modify_mmd_changed
   phy_power_off
   phy_power_on
   phy_read_mmd
+  phy_resolve_aneg_linkmode
+  phy_restart_aneg
+  phy_set_max_speed
   phy_set_mode_ext
   phy_suspend
   phy_trigger_machine
@@ -2464,6 +2491,10 @@
   power_supply_set_property
   power_supply_unregister
   power_supply_unreg_notifier
+  powercap_register_control_type
+  powercap_register_zone
+  powercap_unregister_control_type
+  powercap_unregister_zone
   ppp_channel_index
   ppp_dev_name
   ppp_input
@@ -3413,11 +3444,14 @@
   __traceiter_android_vh_ftrace_oops_exit
   __traceiter_android_vh_ftrace_size_check
   __traceiter_android_vh_gic_v3_suspend
+  __traceiter_android_vh_hibernate_save_cmp_len
+  __traceiter_android_vh_hibernated_do_mem_alloc
   __traceiter_android_vh_ignore_dmabuf_vmap_bounds
   __traceiter_android_vh_init_aes_encrypt
   __traceiter_android_vh_ipi_stop
   __traceiter_android_vh_jiffies_update
   __traceiter_android_vh_kswapd_per_node
+  __traceiter_android_vh_madvise_cold_or_pageout_page
   __traceiter_android_vh_mpam_set
   __traceiter_android_vh_post_image_save
   __traceiter_android_vh_printk_hotplug
@@ -3562,11 +3596,14 @@
   __tracepoint_android_vh_ftrace_oops_exit
   __tracepoint_android_vh_ftrace_size_check
   __tracepoint_android_vh_gic_v3_suspend
+  __tracepoint_android_vh_hibernate_save_cmp_len
+  __tracepoint_android_vh_hibernated_do_mem_alloc
   __tracepoint_android_vh_ignore_dmabuf_vmap_bounds
   __tracepoint_android_vh_init_aes_encrypt
   __tracepoint_android_vh_ipi_stop
   __tracepoint_android_vh_jiffies_update
   __tracepoint_android_vh_kswapd_per_node
+  __tracepoint_android_vh_madvise_cold_or_pageout_page
   __tracepoint_android_vh_mpam_set
   __tracepoint_android_vh_post_image_save
   __tracepoint_android_vh_printk_hotplug
@@ -3783,6 +3820,7 @@
   usb_debug_root
   usb_decode_ctrl
   usb_deregister
+  usb_deregister_device_driver
   usb_device_match_id
   usb_disabled
   usb_driver_claim_interface
@@ -3803,6 +3841,8 @@
   usb_free_urb
   usb_function_register
   usb_function_unregister
+  usb_gadget_connect
+  usb_gadget_disconnect
   usb_gadget_wakeup
   usb_get_dev
   usb_get_from_anchor
@@ -3818,6 +3858,7 @@
   usb_put_dev
   usb_put_function_instance
   usb_put_intf
+  usb_register_device_driver
   usb_register_driver
   usb_register_notify
   usb_remove_phy
