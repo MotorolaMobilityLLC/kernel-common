@@ -94,7 +94,7 @@ scm_version()
 			# Add -g and exactly 12 hex chars.
 		elif $save_tag; then
 			printf '%s' - "$(echo $tag)"
-			# MMI_STOPSHIP: kernel: walkaround the kernel version length check
+			# kernel: walkaround the kernel version length check
 			#printf '%s%s' -g "$(echo $head | cut -c1-12)"
 		fi
 
