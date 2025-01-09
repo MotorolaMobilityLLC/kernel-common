@@ -42194,6 +42194,10 @@ member {
   type_id: 0x34f6a768
 }
 member {
+  id: 0x2efe0273
+  type_id: 0x34d679de
+}
+member {
   id: 0x2f71fc30
   type_id: 0x32e980d1
 }
@@ -43795,6 +43799,11 @@ member {
   id: 0x3f25e92e
   type_id: 0x73b9d605
   offset: 256
+}
+member {
+  id: 0x3f2a640d
+  type_id: 0x7387dd81
+  offset: 49472
 }
 member {
   id: 0x3f2df7ff
@@ -49644,10 +49653,9 @@ member {
   type_id: 0x92233392
 }
 member {
-  id: 0xb2e8fb7e
+  id: 0xb2e8f417
   name: "android_backport_reserved1"
   type_id: 0x1159eb36
-  offset: 49472
 }
 member {
   id: 0x71aeb2cd
@@ -221593,6 +221601,14 @@ struct_union {
   }
 }
 struct_union {
+  id: 0x34d679de
+  kind: STRUCT
+  definition {
+    bytesize: 32
+    member_id: 0xb2e8f417
+  }
+}
+struct_union {
   id: 0x34ed11d4
   kind: STRUCT
   definition {
@@ -225730,6 +225746,16 @@ struct_union {
     bytesize: 8
     member_id: 0x96950623
     member_id: 0x92478c56
+  }
+}
+struct_union {
+  id: 0x7387dd81
+  kind: UNION
+  definition {
+    bytesize: 32
+    member_id: 0x95dac977
+    member_id: 0x2efe0273
+    member_id: 0x36752b74
   }
 }
 struct_union {
@@ -231304,7 +231330,7 @@ struct_union {
     member_id: 0x2d2d08b0
     member_id: 0xe8e1b772
     member_id: 0x0de6d95b
-    member_id: 0xb2e8fb7e
+    member_id: 0x3f2a640d
   }
 }
 struct_union {
@@ -345334,6 +345360,15 @@ function {
   parameter_id: 0x18bd6530
 }
 function {
+  id: 0xa1164938
+  return_type_id: 0xfc0e1dbd
+  parameter_id: 0x18ea6ae3
+  parameter_id: 0x0379c823
+  parameter_id: 0x0b3a3706
+  parameter_id: 0xf435685e
+  parameter_id: 0x4585663f
+}
+function {
   id: 0xa12d5d56
   return_type_id: 0xfc0e1dbd
   parameter_id: 0x18ea6ae3
@@ -422851,6 +422886,15 @@ elf_symbol {
   full_name: "vfs_setpos"
 }
 elf_symbol {
+  id: 0x15481b49
+  name: "vfs_splice_read"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xda03ee39
+  type_id: 0xa1164938
+  full_name: "vfs_splice_read"
+}
+elf_symbol {
   id: 0xf96f1be3
   name: "vfs_statfs"
   is_defined: true
@@ -433596,6 +433640,7 @@ interface {
   symbol_id: 0xa59dd70a
   symbol_id: 0x8aac7146
   symbol_id: 0x2ad025fd
+  symbol_id: 0x15481b49
   symbol_id: 0xf96f1be3
   symbol_id: 0x2e5511da
   symbol_id: 0x6031d6ee
