@@ -1015,6 +1015,20 @@ int sched_update_scaling(void)
 
 static void clear_buddies(struct cfs_rq *cfs_rq, struct sched_entity *se);
 
+// get nr_running of task_group
+static unsigned int get_tg_nr_running(struct task_group *tg)
+{
+	struct cfs_rq *cfs_rq;
+	int i;
+	unsigned int nr_running = 0;
+
+	for_each_possible_cpu(i) {
+		cfs_rq = tg->cfs_rq[i];
+		nr_running += cfs_rq->nr_running;
+	}
+	return nr_running;
+}
+
 /*
  * XXX: strictly: vd_i += N*r_i/w_i such that: vd_i > ve_i
  * this is probably good enough.
@@ -1026,6 +1040,9 @@ static void update_deadline(struct cfs_rq *cfs_rq, struct sched_entity *se)
 	trace_android_rvh_update_deadline(cfs_rq, se, &skip_preempt);
 	if (skip_preempt)
 		return;
+
+	trace_printk("%s: se 0x%p cfs_rq->nr_running=%d, vruntime=%Lu, deadline=%Lu, delta=%Ld\n", \
+		__func__, se, cfs_rq->nr_running, se->vruntime, se->deadline, se->deadline - se->vruntime);
 
 	if ((s64)(se->vruntime - se->deadline) < 0)
 		return;
@@ -1049,6 +1066,13 @@ static void update_deadline(struct cfs_rq *cfs_rq, struct sched_entity *se)
 		resched_curr(rq_of(cfs_rq));
 		clear_buddies(cfs_rq, se);
 	}
+
+	if (entity_is_task(se))
+		trace_printk("%s: se 0x%p pid=%d, vruntime=%Lu, deadline=%Lu, delta=%Ld\n", \
+			__func__, se, task_of(se)->pid, se->vruntime, se->deadline, se->deadline-se->vruntime);
+	else
+		trace_printk("%s: se 0x%p nr_running %u, vruntime=%Lu, deadline=%Lu, delta=%Ld\n", \
+			__func__, se, group_cfs_rq(se)->nr_running, se->vruntime, se->deadline, se->deadline-se->vruntime);
 }
 
 #include "pelt.h"
@@ -3726,6 +3750,10 @@ static void reweight_eevdf(struct sched_entity *se, u64 avruntime,
 			   unsigned long weight)
 {
 	unsigned long old_weight = se->load.weight;
+	unsigned long old_vruntime = se->vruntime;
+	unsigned long old_deadline = se->deadline;
+	unsigned long old_vlag;
+
 	s64 vlag, vslice;
 
 	/*
@@ -3807,6 +3835,7 @@ static void reweight_eevdf(struct sched_entity *se, u64 avruntime,
 	 */
 	if (avruntime != se->vruntime) {
 		vlag = entity_lag(avruntime, se);
+		old_vlag = vlag;
 		vlag = div_s64(vlag * old_weight, weight);
 		se->vruntime = avruntime - vlag;
 	}
@@ -3826,6 +3855,15 @@ static void reweight_eevdf(struct sched_entity *se, u64 avruntime,
 	vslice = (s64)(se->deadline - avruntime);
 	vslice = div_s64(vslice * old_weight, weight);
 	se->deadline = avruntime + vslice;
+
+	if (entity_is_task(se))
+		trace_printk("%s: se 0x%p pid=%d, avruntime=%Lu, vruntime[%Lu / %lu], deadline[%Lu / %lu], weight[%lu / %lu], vlag[%ld / %Ld], delta=%Ld\n", \
+			__func__, se, task_of(se)->pid, avruntime, se->vruntime, old_vruntime, se->deadline, old_deadline, old_weight, weight, \
+				old_vlag, avruntime - old_vruntime, se->deadline-se->vruntime);
+	else
+		trace_printk("%s: se 0x%p nr_running [%u/%u], avruntime=%Lu, vruntime[%Lu / %lu], deadline[%Lu / %lu], weight[%lu / %lu], vlag[%ld / %Ld], delta=%Ld\n", \
+			__func__, se, group_cfs_rq(se)->nr_running, get_tg_nr_running(group_cfs_rq(se)->tg), avruntime, se->vruntime, old_vruntime, se->deadline, old_deadline, old_weight, weight, \
+				old_vlag, avruntime - old_vruntime, se->deadline-se->vruntime);
 }
 
 static void reweight_entity(struct cfs_rq *cfs_rq, struct sched_entity *se,
@@ -8653,6 +8691,13 @@ static void yield_task_fair(struct rq *rq)
 	rq_clock_skip_update(rq);
 
 	se->deadline += calc_delta_fair(se->slice, se);
+
+	if (entity_is_task(se))
+		trace_printk("%s: se 0x%p pid=%d, vruntime=%Lu, deadline=%Lu, delta=%Ld\n", \
+			__func__, se, task_of(se)->pid, se->vruntime, se->deadline, se->deadline-se->vruntime);
+	else
+		trace_printk("%s: se 0x%p nr_running %u, vruntime=%Lu, deadline=%Lu, delta=%Ld\n", \
+			__func__, se, group_cfs_rq(se)->nr_running, se->vruntime, se->deadline, se->deadline-se->vruntime);
 }
 
 static bool yield_to_task_fair(struct rq *rq, struct task_struct *p)
