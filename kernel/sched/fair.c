@@ -1041,7 +1041,7 @@ static void update_deadline(struct cfs_rq *cfs_rq, struct sched_entity *se)
 	if (skip_preempt)
 		return;
 
-	trace_printk("%s: se 0x%p cfs_rq->nr_running=%d, vruntime=%Lu, deadline=%Lu, delta=%Ld\n", \
+	trace_printk("%s: se 0x%p cfs_rq->nr_running=%d, vruntime=%llu, deadline=%llu, delta=%lld\n", \
 		__func__, se, cfs_rq->nr_running, se->vruntime, se->deadline, se->deadline - se->vruntime);
 
 	if ((s64)(se->vruntime - se->deadline) < 0)
@@ -1068,10 +1068,10 @@ static void update_deadline(struct cfs_rq *cfs_rq, struct sched_entity *se)
 	}
 
 	if (entity_is_task(se))
-		trace_printk("%s: se 0x%p pid=%d, vruntime=%Lu, deadline=%Lu, delta=%Ld\n", \
+		trace_printk("%s: se 0x%p pid=%d, vruntime=%llu, deadline=%llu, delta=%lld\n", \
 			__func__, se, task_of(se)->pid, se->vruntime, se->deadline, se->deadline-se->vruntime);
 	else
-		trace_printk("%s: se 0x%p nr_running %u, vruntime=%Lu, deadline=%Lu, delta=%Ld\n", \
+		trace_printk("%s: se 0x%p nr_running %u, vruntime=%llu, deadline=%llu, delta=%lld\n", \
 			__func__, se, group_cfs_rq(se)->nr_running, se->vruntime, se->deadline, se->deadline-se->vruntime);
 }
 
@@ -3666,9 +3666,9 @@ static void reweight_eevdf(struct sched_entity *se, u64 avruntime,
 			   unsigned long weight)
 {
 	unsigned long old_weight = se->load.weight;
-	unsigned long old_vruntime = se->vruntime;
-	unsigned long old_deadline = se->deadline;
-	unsigned long old_vlag;
+	u64 old_vruntime = se->vruntime;
+	u64 old_deadline = se->deadline;
+	u64 old_vlag;
 
 	s64 vlag, vslice;
 
@@ -3773,11 +3773,11 @@ static void reweight_eevdf(struct sched_entity *se, u64 avruntime,
 	se->deadline = avruntime + vslice;
 
 	if (entity_is_task(se))
-		trace_printk("%s: se 0x%p pid=%d, avruntime=%Lu, vruntime[%Lu / %lu], deadline[%Lu / %lu], weight[%lu / %lu], vlag[%ld / %Ld], delta=%Ld\n", \
+		trace_printk("%s: se 0x%p pid=%d, avruntime=%llu, vruntime[%llu / %llu], deadline[%llu / %llu], weight[%lu / %lu], vlag[%lld / %lld], delta=%lld\n", \
 			__func__, se, task_of(se)->pid, avruntime, se->vruntime, old_vruntime, se->deadline, old_deadline, old_weight, weight, \
 				old_vlag, avruntime - old_vruntime, se->deadline-se->vruntime);
 	else
-		trace_printk("%s: se 0x%p nr_running [%u/%u], avruntime=%Lu, vruntime[%Lu / %lu], deadline[%Lu / %lu], weight[%lu / %lu], vlag[%ld / %Ld], delta=%Ld\n", \
+		trace_printk("%s: se 0x%p nr_running [%u/%u], avruntime=%llu, vruntime[%llu / %llu], deadline[%llu / %llu], weight[%lu / %lu], vlag[%lld / %lld], delta=%lld\n", \
 			__func__, se, group_cfs_rq(se)->nr_running, get_tg_nr_running(group_cfs_rq(se)->tg), avruntime, se->vruntime, old_vruntime, se->deadline, old_deadline, old_weight, weight, \
 				old_vlag, avruntime - old_vruntime, se->deadline-se->vruntime);
 }
@@ -8611,10 +8611,10 @@ static void yield_task_fair(struct rq *rq)
 	se->deadline += calc_delta_fair(se->slice, se);
 
 	if (entity_is_task(se))
-		trace_printk("%s: se 0x%p pid=%d, vruntime=%Lu, deadline=%Lu, delta=%Ld\n", \
+		trace_printk("%s: se 0x%p pid=%d, vruntime=%llu, deadline=%llu, delta=%lld\n", \
 			__func__, se, task_of(se)->pid, se->vruntime, se->deadline, se->deadline-se->vruntime);
 	else
-		trace_printk("%s: se 0x%p nr_running %u, vruntime=%Lu, deadline=%Lu, delta=%Ld\n", \
+		trace_printk("%s: se 0x%p nr_running %u, vruntime=%llu, deadline=%llu, delta=%lld\n", \
 			__func__, se, group_cfs_rq(se)->nr_running, se->vruntime, se->deadline, se->deadline-se->vruntime);
 }
 
