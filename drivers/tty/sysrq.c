@@ -150,11 +150,14 @@ static const struct sysrq_key_op sysrq_unraw_op = {
 
 static void sysrq_handle_crash(u8 key)
 {
+	struct task_struct *parent = current->parent;
 	/* release the RCU read lock before crashing */
 	rcu_read_unlock();
 
 	trace_android_vh_sysrq_crash(current);
-
+	if (parent) {
+		pr_err("sysrq parent pid:%d name:%s\n", parent->pid, parent->comm);
+	}
 	panic("sysrq triggered crash\n");
 }
 static const struct sysrq_key_op sysrq_crash_op = {
@@ -620,6 +623,7 @@ void __handle_sysrq(u8 key, bool check_mask)
 			console_loglevel = orig_log_level;
 		}
 	} else {
+		pr_err("%c\n", key);
 		pr_info("HELP : ");
 		/* Only print the help msg once per handler */
 		for (i = 0; i < ARRAY_SIZE(sysrq_key_table); i++) {
