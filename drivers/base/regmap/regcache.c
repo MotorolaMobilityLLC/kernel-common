@@ -352,9 +352,6 @@ int regcache_sync(struct regmap *map)
 	if (WARN_ON(map->cache_type == REGCACHE_NONE))
 		return -EINVAL;
 
-	if (WARN_ON(map->cache_type == REGCACHE_NONE))
-		return -EINVAL;
-
 	BUG_ON(!map->cache_ops);
 
 	map->lock(map->lock_arg);
