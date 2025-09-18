@@ -29,3 +29,11 @@ type 'enum gunyah_rm_vm_status' changed
   'struct tracepoint __tracepoint_f2fs_write_checkpoint'
   'struct tracepoint __tracepoint_ufshcd_command'
 
+2 function symbol(s) removed
+  'int __traceiter_android_vh_f2fs_printk(void*, struct f2fs_sb_info*, struct va_format*, int, bool)'
+  'int __traceiter_f2fs_submit_folio_write(void*, struct folio*, struct f2fs_io_info*)'
+
+2 variable symbol(s) removed
+  'struct tracepoint __tracepoint_android_vh_f2fs_printk'
+  'struct tracepoint __tracepoint_f2fs_submit_folio_write'
+
