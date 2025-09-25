@@ -120,15 +120,8 @@ properties:
       '#clock-cells':
         const: 1
 
-      '#power-domain-cells':
-        const: 1
-
-    oneOf:
-      - required:
-          - '#clock-cells'
-
-      - required:
-          - '#power-domain-cells'
+    required:
+      - '#clock-cells'
 
   protocol@14:
     type: object
