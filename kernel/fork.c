@@ -133,13 +133,6 @@
  */
 #define MAX_THREADS FUTEX_TID_MASK
 
-#define EAGAIN_PRINT(ret, des) \
-    do { \
-        if (ret == -EAGAIN) \
-			pr_err("EAGAIN at <%s> <%s> line %d ", des, __func__, __LINE__);	\
-    } while (0)
-
-
 EXPORT_TRACEPOINT_SYMBOL_GPL(task_newtask);
 EXPORT_TRACEPOINT_SYMBOL_GPL(task_rename);
 
@@ -1770,7 +1763,6 @@ static int copy_fs(unsigned long clone_flags, struct task_struct *tsk)
 		/* "users" and "in_exec" locked for check_unsafe_exec() */
 		if (fs->in_exec) {
 			spin_unlock(&fs->lock);
-			EAGAIN_PRINT(-EAGAIN, "copy_fs");
 			return -EAGAIN;
 		}
 		fs->users++;
@@ -2269,18 +2261,14 @@ __latent_entropy struct task_struct *copy_process(
 	DEBUG_LOCKS_WARN_ON(!p->softirqs_enabled);
 #endif
 	retval = copy_creds(p, clone_flags);
-	if (retval < 0) {
-		EAGAIN_PRINT(retval, "copy_creds");
+	if (retval < 0)
 		goto bad_fork_free;
-	}
 
 	retval = -EAGAIN;
 	if (is_rlimit_overlimit(task_ucounts(p), UCOUNT_RLIMIT_NPROC, rlimit(RLIMIT_NPROC))) {
 		if (p->real_cred->user != INIT_USER &&
-		    !capable(CAP_SYS_RESOURCE) && !capable(CAP_SYS_ADMIN)) {
-			EAGAIN_PRINT(retval, "rlimit_overlimit");
+		    !capable(CAP_SYS_RESOURCE) && !capable(CAP_SYS_ADMIN))
 			goto bad_fork_cleanup_count;
-		}
 	}
 	current->flags &= ~PF_NPROC_EXCEEDED;
 
@@ -2290,10 +2278,8 @@ __latent_entropy struct task_struct *copy_process(
 	 * to stop root fork bombs.
 	 */
 	retval = -EAGAIN;
-	if (data_race(nr_threads >= max_threads)) {
-		EAGAIN_PRINT(retval, "nr_threads >= max_threads");
+	if (data_race(nr_threads >= max_threads))
 		goto bad_fork_cleanup_count;
-	}
 
 	delayacct_tsk_init(p);	/* Must remain after dup_task_struct() */
 	p->flags &= ~(PF_SUPERPRIV | PF_WQ_WORKER | PF_IDLE | PF_NO_SETAFFINITY);
@@ -2346,7 +2332,6 @@ __latent_entropy struct task_struct *copy_process(
 	if (IS_ERR(p->mempolicy)) {
 		retval = PTR_ERR(p->mempolicy);
 		p->mempolicy = NULL;
-		EAGAIN_PRINT(retval, "mpol_dup");
 		goto bad_fork_cleanup_delayacct;
 	}
 #endif
@@ -2389,73 +2374,47 @@ __latent_entropy struct task_struct *copy_process(
 
 	/* Perform scheduler related setup. Assign this task to a CPU. */
 	retval = sched_fork(clone_flags, p);
-	if (retval) {
-		EAGAIN_PRINT(retval, "sched_fork");
+	if (retval)
 		goto bad_fork_cleanup_policy;
-	}
 
 	retval = perf_event_init_task(p, clone_flags);
-	if (retval) {
-		EAGAIN_PRINT(retval, "perf_event_init_task");
+	if (retval)
 		goto bad_fork_sched_cancel_fork;
-	}
 	retval = audit_alloc(p);
-	if (retval) {
-		EAGAIN_PRINT(retval, "audit_alloc");
+	if (retval)
 		goto bad_fork_cleanup_perf;
-	}
 	/* copy all the process information */
 	shm_init_task(p);
 	retval = security_task_alloc(p, clone_flags);
-	if (retval) {
-		EAGAIN_PRINT(retval, "security_task_alloc");
+	if (retval)
 		goto bad_fork_cleanup_audit;
-	}
 	retval = copy_semundo(clone_flags, p);
-	if (retval) {
-		EAGAIN_PRINT(retval, "copy_semundo");
+	if (retval)
 		goto bad_fork_cleanup_security;
-	}
 	retval = copy_files(clone_flags, p, args->no_files);
-	if (retval) {
-		EAGAIN_PRINT(retval, "copy_files");
+	if (retval)
 		goto bad_fork_cleanup_semundo;
-	}
 	retval = copy_fs(clone_flags, p);
-	if (retval) {
-		EAGAIN_PRINT(retval, "copy_fs");
+	if (retval)
 		goto bad_fork_cleanup_files;
-	}
 	retval = copy_sighand(clone_flags, p);
-	if (retval) {
-		EAGAIN_PRINT(retval, "copy_sighand");
+	if (retval)
 		goto bad_fork_cleanup_fs;
-	}
 	retval = copy_signal(clone_flags, p);
-	if (retval) {
-		EAGAIN_PRINT(retval, "copy_signal");
+	if (retval)
 		goto bad_fork_cleanup_sighand;
-	}
 	retval = copy_mm(clone_flags, p);
-	if (retval) {
-		EAGAIN_PRINT(retval, "copy_mm");
+	if (retval)
 		goto bad_fork_cleanup_signal;
-	}
 	retval = copy_namespaces(clone_flags, p);
-	if (retval) {
-		EAGAIN_PRINT(retval, "copy_namespaces");
+	if (retval)
 		goto bad_fork_cleanup_mm;
-	}
 	retval = copy_io(clone_flags, p);
-	if (retval) {
-		EAGAIN_PRINT(retval, "copy_io");
+	if (retval)
 		goto bad_fork_cleanup_namespaces;
-	}
 	retval = copy_thread(p, args);
-	if (retval) {
-		EAGAIN_PRINT(retval, "copy_thread");
+	if (retval)
 		goto bad_fork_cleanup_io;
-	}
 
 	stackleak_task_init(p);
 
@@ -2464,7 +2423,6 @@ __latent_entropy struct task_struct *copy_process(
 				args->set_tid_size);
 		if (IS_ERR(pid)) {
 			retval = PTR_ERR(pid);
-			EAGAIN_PRINT(retval, "alloc_pid");
 			goto bad_fork_cleanup_thread;
 		}
 	}
@@ -2479,17 +2437,13 @@ __latent_entropy struct task_struct *copy_process(
 
 		/* Note that no task has been attached to @pid yet. */
 		retval = __pidfd_prepare(pid, flags, &pidfile);
-		if (retval < 0) {
-			EAGAIN_PRINT(retval, "__pidfd_prepare");
+		if (retval < 0)
 			goto bad_fork_free_pid;
-		}
 		pidfd = retval;
 
 		retval = put_user(pidfd, args->pidfd);
-		if (retval) {
-			EAGAIN_PRINT(retval, "put_user");
+		if (retval)
 			goto bad_fork_put_pidfd;
-		}
 	}
 
 #ifdef CONFIG_BLOCK
@@ -2546,10 +2500,8 @@ __latent_entropy struct task_struct *copy_process(
 	 * progress.
 	 */
 	retval = cgroup_can_fork(p, args);
-	if (retval) {
-		EAGAIN_PRINT(retval, "cgroup_can_fork");
+	if (retval)
 		goto bad_fork_put_pidfd;
-	}
 
 	/*
 	 * Now that the cgroups are pinned, re-clone the parent cgroup and put
@@ -2561,10 +2513,8 @@ __latent_entropy struct task_struct *copy_process(
 	 * runqueue.
 	 */
 	retval = sched_cgroup_fork(p, args);
-	if (retval) {
-		EAGAIN_PRINT(retval, "sched_cgroup_fork");
+	if (retval)
 		goto bad_fork_cancel_cgroup;
-	}
 
 	/*
 	 * From this point on we must avoid any synchronous user-space
@@ -2755,9 +2705,6 @@ fork_out:
 	spin_lock_irq(&current->sighand->siglock);
 	hlist_del_init(&delayed.node);
 	spin_unlock_irq(&current->sighand->siglock);
-
-	if (retval == -EAGAIN)
-		BUG();
 	return ERR_PTR(retval);
 }
 
