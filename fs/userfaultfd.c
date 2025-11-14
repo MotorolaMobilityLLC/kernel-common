@@ -18,6 +18,7 @@
 #include <linux/mm_inline.h>
 #include <linux/mmu_notifier.h>
 #include <linux/poll.h>
+#include <linux/page_size_compat.h>
 #include <linux/slab.h>
 #include <linux/seq_file.h>
 #include <linux/file.h>
@@ -718,6 +719,34 @@ void dup_userfaultfd_complete(struct list_head *fcs)
 
 	list_for_each_entry_safe(fctx, n, fcs, list) {
 		dup_fctx(fctx);
+		list_del(&fctx->list);
+		kfree(fctx);
+	}
+}
+
+void dup_userfaultfd_fail(struct list_head *fcs)
+{
+	struct userfaultfd_fork_ctx *fctx, *n;
+
+	/*
+	 * An error has occurred on fork, we will tear memory down, but have
+	 * allocated memory for fctx's and raised reference counts for both the
+	 * original and child contexts (and on the mm for each as a result).
+	 *
+	 * These would ordinarily be taken care of by a user handling the event,
+	 * but we are no longer doing so, so manually clean up here.
+	 *
+	 * mm tear down will take care of cleaning up VMA contexts.
+	 */
+	list_for_each_entry_safe(fctx, n, fcs, list) {
+		struct userfaultfd_ctx *octx = fctx->orig;
+		struct userfaultfd_ctx *ctx = fctx->new;
+
+		atomic_dec(&octx->mmap_changing);
+		VM_BUG_ON(atomic_read(&octx->mmap_changing) < 0);
+		userfaultfd_ctx_put(octx);
+		userfaultfd_ctx_put(ctx);
+
 		list_del(&fctx->list);
 		kfree(fctx);
 	}
@@ -2028,7 +2057,8 @@ static int userfaultfd_move(struct userfaultfd_ctx *ctx,
 		return ret;
 
 	if (uffdio_move.mode & ~(UFFDIO_MOVE_MODE_ALLOW_SRC_HOLES|
-				  UFFDIO_MOVE_MODE_DONTWAKE))
+				  UFFDIO_MOVE_MODE_DONTWAKE|
+				  UFFDIO_MOVE_MODE_CONFIRM_FIXED))
 		return -EINVAL;
 
 	if (mmget_not_zero(mm)) {
@@ -2272,6 +2302,9 @@ static inline bool userfaultfd_syscall_allowed(int flags)
 
 SYSCALL_DEFINE1(userfaultfd, int, flags)
 {
+	if (__PAGE_SIZE != PAGE_SIZE)
+		return -EOPNOTSUPP;
+
 	if (!userfaultfd_syscall_allowed(flags))
 		return -EPERM;
 
