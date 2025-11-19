@@ -555,6 +555,9 @@ DECLARE_HOOK(android_vh_gcma_cc_store_page_bypass,
 DECLARE_HOOK(android_vh_swap_bio_charge,
 	TP_PROTO(struct bio *bio),
 	TP_ARGS(bio));
+DECLARE_HOOK(android_vh_folio_add_lru,
+        TP_PROTO(struct folio *folio),
+        TP_ARGS(folio));
 #endif /* _TRACE_HOOK_MM_H */
 
 /* This part must be outside protection */
