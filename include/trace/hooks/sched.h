@@ -417,6 +417,16 @@ DECLARE_HOOK(android_vh_scx_restore_flags,
 		 const struct sched_class *next_class,
 		 int *flags),
 	TP_ARGS(prev_class, next_class, flags));
+
+struct scx_dispatch_q;
+DECLARE_HOOK(android_vh_enq_to_priq,
+	TP_PROTO(struct rq *rq, struct scx_dispatch_q *dsq, struct task_struct *p, bool *enq_priq),
+	TP_ARGS(rq, dsq, p, enq_priq));
+
+DECLARE_HOOK(android_vh_scx_switch_repeat_skip,
+	TP_PROTO(struct task_struct *p, bool *skip, int *repeat),
+	TP_ARGS(p, skip, repeat));
+
 DECLARE_HOOK(android_vh_task_should_scx,
 	TP_PROTO(int *should_scx, int policy, int prio),
 	TP_ARGS(should_scx, policy, prio));
@@ -438,6 +448,14 @@ DECLARE_HOOK(android_vh_scx_set_cpus_allowed,
 DECLARE_HOOK(android_vh_scx_task_switch_finish,
 	TP_PROTO(struct task_struct *p, int enable),
 	TP_ARGS(p, enable));
+DECLARE_HOOK(android_vh_scx_task_can_run_on,
+	TP_PROTO(bool *disallow, struct task_struct *p, struct rq *rq),
+	TP_ARGS(disallow, p, rq));
+
+struct scx_exit_info;
+DECLARE_HOOK(android_vh_scx_exit_on_abnormal,
+	TP_PROTO(struct scx_exit_info *ei),
+	TP_ARGS(ei));
 
 DECLARE_HOOK(android_vh_switching_to_scx,
 	TP_PROTO(struct rq *rq, struct task_struct *p),
