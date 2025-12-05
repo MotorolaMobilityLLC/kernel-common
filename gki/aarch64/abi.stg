@@ -36709,6 +36709,11 @@ pointer_reference {
   pointee_type_id: 0xd7275cab
 }
 pointer_reference {
+  id: 0x3f66742c
+  kind: POINTER
+  pointee_type_id: 0xd7d9362d
+}
+pointer_reference {
   id: 0x3f682667
   kind: POINTER
   pointee_type_id: 0xd7e07f03
@@ -41444,6 +41449,11 @@ qualified {
   qualified_type_id: 0x2eb9d9ff
 }
 qualified {
+  id: 0xd7d9362d
+  qualifier: CONST
+  qualified_type_id: 0x2f236e3c
+}
+qualified {
   id: 0xd8097a3b
   qualifier: CONST
   qualified_type_id: 0x10625e67
@@ -44778,6 +44788,11 @@ array {
   id: 0x2637f572
   number_of_elements: 3
   element_type_id: 0xd3c80119
+}
+array {
+  id: 0x27decd46
+  number_of_elements: 24
+  element_type_id: 0xc9082b19
 }
 array {
   id: 0x28929015
@@ -121593,6 +121608,11 @@ member {
   offset: 8576
 }
 member {
+  id: 0xb12f4d67
+  name: "function_row_physmap"
+  type_id: 0x27decd46
+}
+member {
   id: 0x7daa945a
   name: "functionality"
   type_id: 0x19a7a6e2
@@ -176133,6 +176153,12 @@ member {
   name: "num_freq_ranges"
   type_id: 0xc9082b19
   offset: 32
+}
+member {
+  id: 0x450600f6
+  name: "num_function_row_keys"
+  type_id: 0x4585663f
+  offset: 768
 }
 member {
   id: 0x5a168f19
@@ -348384,6 +348410,16 @@ struct_union {
   }
 }
 struct_union {
+  id: 0x2f236e3c
+  kind: STRUCT
+  name: "vivaldi_data"
+  definition {
+    bytesize: 100
+    member_id: 0xb12f4d67
+    member_id: 0x450600f6
+  }
+}
+struct_union {
   id: 0xbb2a4815
   kind: STRUCT
   name: "vlan_group"
@@ -383716,6 +383752,12 @@ function {
   parameter_id: 0x27a7c613
 }
 function {
+  id: 0x1b3a7311
+  return_type_id: 0xd5cc9c9a
+  parameter_id: 0x3f66742c
+  parameter_id: 0x0483e6f8
+}
+function {
   id: 0x1b3ae799
   return_type_id: 0x48b5725f
   parameter_id: 0x2e8ad82b
@@ -406540,6 +406582,11 @@ function {
   parameter_id: 0x6720d32f
 }
 function {
+  id: 0x98130b23
+  return_type_id: 0x3e10b518
+  parameter_id: 0x295c7202
+}
+function {
   id: 0x9813ab46
   return_type_id: 0x6720d32f
   parameter_id: 0x15923a42
@@ -419080,6 +419127,12 @@ function {
   parameter_id: 0x0f3dfb90
   parameter_id: 0x18bd6530
   parameter_id: 0x3e10b518
+}
+function {
+  id: 0x9d2f73ef
+  return_type_id: 0x6720d32f
+  parameter_id: 0x0258f96e
+  parameter_id: 0x0e6ba6f7
 }
 function {
   id: 0x9d2fa4f1
@@ -460077,6 +460130,15 @@ elf_symbol {
   full_name: "devm_led_classdev_unregister"
 }
 elf_symbol {
+  id: 0x3679e6ca
+  name: "devm_led_trigger_register"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x3f8fb515
+  type_id: 0x9d2f73ef
+  full_name: "devm_led_trigger_register"
+}
+elf_symbol {
   id: 0x57498e16
   name: "devm_mbox_controller_register"
   is_defined: true
@@ -480172,6 +480234,15 @@ elf_symbol {
   crc: 0x25b665b6
   type_id: 0x1c2afa5a
   full_name: "led_classdev_unregister"
+}
+elf_symbol {
+  id: 0xe9266420
+  name: "led_get_color_name"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x13277bdd
+  type_id: 0x98130b23
+  full_name: "led_get_color_name"
 }
 elf_symbol {
   id: 0x61740d72
@@ -514694,6 +514765,15 @@ elf_symbol {
   full_name: "virtqueue_set_dma_premapped"
 }
 elf_symbol {
+  id: 0x7dfe75cf
+  name: "vivaldi_function_row_physmap_show"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xb2097c87
+  type_id: 0x1b3a7311
+  full_name: "vivaldi_function_row_physmap_show"
+}
+elf_symbol {
   id: 0x8a60b44b
   name: "vlan_dev_vlan_id"
   is_defined: true
@@ -520181,6 +520261,7 @@ interface {
   symbol_id: 0x8b816c48
   symbol_id: 0x0f9aedf8
   symbol_id: 0x92b974cd
+  symbol_id: 0x3679e6ca
   symbol_id: 0x57498e16
   symbol_id: 0x407c1985
   symbol_id: 0x888f691d
@@ -522410,6 +522491,7 @@ interface {
   symbol_id: 0xa58e6f5d
   symbol_id: 0xfe24eb71
   symbol_id: 0x27d77d55
+  symbol_id: 0xe9266420
   symbol_id: 0x61740d72
   symbol_id: 0x62cd5012
   symbol_id: 0xda95494e
@@ -526244,6 +526326,7 @@ interface {
   symbol_id: 0xc7e5bb68
   symbol_id: 0x0ab935cb
   symbol_id: 0x135180b3
+  symbol_id: 0x7dfe75cf
   symbol_id: 0x8a60b44b
   symbol_id: 0xf63d0cfd
   symbol_id: 0x13e8d3f8
