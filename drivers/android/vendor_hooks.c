@@ -77,6 +77,7 @@
 #include <trace/hooks/user.h>
 #include <trace/hooks/gzvm.h>
 #include <trace/hooks/usb.h>
+#include <trace/hooks/dmv_debug.h>
 
 /*
  * Export tracepoints that act as a bare tracehook (ie: have no trace event
@@ -162,6 +163,7 @@ EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_f2fs_improve_priority);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_f2fs_restore_priority);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_f2fs_printk);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_f2fs_create);
+EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_f2fs_set_bio_flag);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_io_statistics);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_rvh_dpm_prepare);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_ogki_check_vip_status);
@@ -501,6 +503,7 @@ EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_vmscan_kswapd_done);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_shrink_folio_list);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_inode_lru_isolate);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_invalidate_mapping_pagevec);
+EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_mark_folio_accessed);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_alloc_pages_reclaim_bypass);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_alloc_pages_failure_bypass);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_save_vmalloc_stack);
@@ -595,3 +598,10 @@ EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_swap_bio_charge);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_binder_looper_state_registered);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_binder_thread_release);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_binder_read_done);
+EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_handle_add_fec_mismatch_blks);
+EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_handle_data_error);
+EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_handle_metadata_error);
+EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_handle_add_skipped_blks);
+EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_handle_add_blks_map);
+EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_handle_get_b_info);
+EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_folio_add_lru);

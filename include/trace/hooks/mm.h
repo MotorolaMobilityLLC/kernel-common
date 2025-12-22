@@ -364,6 +364,9 @@ DECLARE_HOOK(android_vh_check_new_page,
 DECLARE_HOOK(android_vh_split_large_folio_bypass,
 	TP_PROTO(bool *bypass),
 	TP_ARGS(bypass));
+DECLARE_HOOK(android_vh_mark_folio_accessed,
+	TP_PROTO(struct folio *folio),
+	TP_ARGS(folio));
 DECLARE_HOOK(android_vh_page_should_be_protected,
 	TP_PROTO(struct folio *folio, unsigned long nr_scanned,
 	s8 priority, u64 *ext, int *should_protect),
@@ -555,6 +558,9 @@ DECLARE_HOOK(android_vh_gcma_cc_store_page_bypass,
 DECLARE_HOOK(android_vh_swap_bio_charge,
 	TP_PROTO(struct bio *bio),
 	TP_ARGS(bio));
+DECLARE_HOOK(android_vh_folio_add_lru,
+        TP_PROTO(struct folio *folio),
+        TP_ARGS(folio));
 #endif /* _TRACE_HOOK_MM_H */
 
 /* This part must be outside protection */

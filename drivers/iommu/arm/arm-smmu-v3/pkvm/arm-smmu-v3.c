@@ -307,8 +307,12 @@ static int smmu_alloc_l2_strtab(struct hyp_arm_smmu_v3_device *smmu, u32 sid)
 	struct arm_smmu_strtab_l2 *l2table;
 	size_t l2_order = get_order(sizeof(struct arm_smmu_strtab_l2));
 	int flags = 0;
+	u32 l1_idx = arm_smmu_strtab_l1_idx(sid);
 
-	l1_desc = &cfg->l2.l1tab[arm_smmu_strtab_l1_idx(sid)];
+	if (l1_idx >= cfg->l2.num_l1_ents)
+		return -EINVAL;
+
+	l1_desc = &cfg->l2.l1tab[l1_idx];
 	if (l1_desc->l2ptr)
 		return 0;
 
@@ -343,7 +347,7 @@ smmu_get_ste_ptr(struct hyp_arm_smmu_v3_device *smmu, u32 sid)
 					&cfg->l2.l1tab[arm_smmu_strtab_l1_idx(sid)];
 		struct arm_smmu_strtab_l2 *l2ptr;
 
-		if (arm_smmu_strtab_l1_idx(sid) > cfg->l2.num_l1_ents)
+		if (arm_smmu_strtab_l1_idx(sid) >= cfg->l2.num_l1_ents)
 			return NULL;
 		/* L2 should be allocated before calling this. */
 		if (WARN_ON(!l1_desc->l2ptr))
@@ -354,7 +358,7 @@ smmu_get_ste_ptr(struct hyp_arm_smmu_v3_device *smmu, u32 sid)
 		return &l2ptr->stes[arm_smmu_strtab_l2_idx(sid)];
 	}
 
-	if (sid > cfg->linear.num_ents)
+	if (sid >= cfg->linear.num_ents)
 		return NULL;
 	/* Simple linear lookup */
 	return &cfg->linear.table[sid];
@@ -1360,7 +1364,8 @@ static int smmu_detach_dev(struct kvm_hyp_iommu *iommu, struct kvm_hyp_iommu_dom
 	struct hyp_arm_smmu_v3_device *smmu = to_smmu(iommu);
 	struct hyp_arm_smmu_v3_domain *smmu_domain = domain->priv;
 	u32 pasid_bits = 0;
-	u64 *cd_table, *cd;
+	u64 *cd_table = NULL, *cd;
+	u32 domain_id, ste_cfg;
 
 	hyp_write_lock(&smmu_domain->list_lock);
 	kvm_iommu_lock(iommu);
@@ -1370,12 +1375,17 @@ static int smmu_detach_dev(struct kvm_hyp_iommu *iommu, struct kvm_hyp_iommu_dom
 		goto out_unlock;
 	}
 
+	ste_cfg = FIELD_GET(STRTAB_STE_0_CFG, dst->data[0]);
 	/*
 	 * For stage-1:
 	 * - The kernel has to detach pasid = 0 the last.
 	 * - This will free the CD.
 	 */
 	if (smmu_domain->type == KVM_ARM_SMMU_DOMAIN_S1) {
+		if (ste_cfg != STRTAB_STE_0_CFG_S1_TRANS) {
+			ret = -EACCES;
+			goto out_unlock;
+		}
 		pasid_bits = FIELD_GET(STRTAB_STE_0_S1CDMAX, dst->data[0]);
 		if (pasid >= (1 << pasid_bits)) {
 			ret = -E2BIG;
@@ -1399,16 +1409,37 @@ static int smmu_detach_dev(struct kvm_hyp_iommu *iommu, struct kvm_hyp_iommu_dom
 					goto out_unlock;
 				}
 			}
-
-			smmu_free_cd(cd_table, pasid_bits);
+			cd = smmu_get_cd_ptr(cd_table, 0);
+			domain_id = FIELD_GET(CTXDESC_CD_0_ASID, cd[0]);
+			if (domain->domain_id != domain_id) {
+				ret = -EACCES;
+				goto out_unlock;
+			}
 		} else {
 			cd = smmu_get_cd_ptr(cd_table, pasid);
+			if (!(cd[0] & CTXDESC_CD_0_V)) {
+				/* The device is not actually attached! */
+				ret = -ENOENT;
+				goto out_unlock;
+			}
+			domain_id = FIELD_GET(CTXDESC_CD_0_ASID, cd[0]);
+			if (domain->domain_id != domain_id) {
+				ret = -EACCES;
+				goto out_unlock;
+			}
 			cd[0] = 0;
 			smmu_sync_cd(smmu, sid, pasid);
 			cd[1] = 0;
 			cd[2] = 0;
 			cd[3] = 0;
 			ret = smmu_sync_cd(smmu, sid, pasid);
+			goto out_unlock;
+		}
+	} else {
+		domain_id = FIELD_GET(STRTAB_STE_2_S2VMID, dst->data[2]);
+		if ((ste_cfg != STRTAB_STE_0_CFG_S2_TRANS) ||
+		    (domain->domain_id != domain_id)) {
+			ret = -EACCES;
 			goto out_unlock;
 		}
 	}
@@ -1422,6 +1453,8 @@ static int smmu_detach_dev(struct kvm_hyp_iommu *iommu, struct kvm_hyp_iommu_dom
 
 	ret = smmu_sync_ste(smmu, sid);
 
+	if (cd_table)
+		smmu_free_cd(cd_table, pasid_bits);
 	smmu_put_ref_domain(smmu, smmu_domain);
 out_unlock:
 	kvm_iommu_unlock(iommu);
