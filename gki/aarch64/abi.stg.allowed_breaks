@@ -93,3 +93,7 @@ variable symbol changed from 'u64 vendor_data_pad[64]' to 'u64 vendor_data_pad[1
   type changed from 'u64[64]' to 'u64[128]'
     number of elements changed from 64 to 128
 
+variable symbol changed from 'u64 vendor_data_pad[128]' to 'u64 vendor_data_pad[160]'
+  type changed from 'u64[128]' to 'u64[160]'
+    number of elements changed from 128 to 160
+
