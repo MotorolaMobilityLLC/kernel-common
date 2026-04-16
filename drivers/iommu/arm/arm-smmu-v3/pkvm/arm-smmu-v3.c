@@ -1649,7 +1649,7 @@ static int smmu_dev_block_dma(struct kvm_hyp_iommu *iommu, u32 sid, bool is_host
 				cd_table = (le64_to_cpu(dst->data[0]) & STRTAB_STE_0_S1CTXPTR_MASK);
 				nr_entries = 1 << FIELD_GET(STRTAB_STE_0_S1CDMAX,
 							    le64_to_cpu(dst->data[0]));
-				cd_sz = (1 << nr_entries) * (CTXDESC_CD_DWORDS << 3);
+				cd_sz = nr_entries * (CTXDESC_CD_DWORDS << 3);
 				kvm_iommu_reclaim_pages(hyp_phys_to_virt(cd_table), get_order(cd_sz));
 			}
 			/* zap zippity zop. */
