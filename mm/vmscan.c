@@ -1145,6 +1145,8 @@ retry:
 		if (!folio_trylock(folio))
 			goto keep;
 
+		trace_android_vh_shrink_folio_lock_owner_set(folio);
+
 		if (folio_contain_hwpoisoned_page(folio)) {
 			/*
 			 * unmap_poisoned_folio() can't handle large
@@ -1155,6 +1157,7 @@ retry:
 				goto keep_locked;
 
 			unmap_poisoned_folio(folio, folio_pfn(folio), false);
+			trace_android_vh_shrink_folio_lock_owner_clear(folio);
 			folio_unlock(folio);
 			folio_put(folio);
 			continue;
@@ -1279,6 +1282,7 @@ retry:
 
 			/* Case 3 above */
 			} else {
+				trace_android_vh_shrink_folio_lock_owner_clear(folio);
 				folio_unlock(folio);
 				folio_wait_writeback(folio);
 				/* then go back and try same folio again */
@@ -1308,6 +1312,7 @@ retry:
 		if (do_demote_pass &&
 		    (thp_migration_supported() || !folio_test_large(folio))) {
 			list_add(&folio->lru, &demote_folios);
+			trace_android_vh_shrink_folio_lock_owner_clear(folio);
 			folio_unlock(folio);
 			continue;
 		}
@@ -1529,6 +1534,7 @@ retry:
 			if (!filemap_release_folio(folio, sc->gfp_mask))
 				goto activate_locked;
 			if (!mapping && folio_ref_count(folio) == 1) {
+				trace_android_vh_shrink_folio_lock_owner_clear(folio);
 				folio_unlock(folio);
 				if (folio_put_testzero(folio))
 					goto free_it;
@@ -1564,6 +1570,7 @@ retry:
 							 sc->target_mem_cgroup))
 			goto keep_locked;
 
+		trace_android_vh_shrink_folio_lock_owner_clear(folio);
 		folio_unlock(folio);
 free_it:
 		/*
@@ -1607,6 +1614,7 @@ activate_locked:
 			count_memcg_folio_events(folio, PGACTIVATE, nr_pages);
 		}
 keep_locked:
+		trace_android_vh_shrink_folio_lock_owner_clear(folio);
 		folio_unlock(folio);
 keep:
 		trace_android_vh_adjust_nr_reclaimed(folio, &nr_reclaimed);
