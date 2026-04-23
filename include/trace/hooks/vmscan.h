@@ -142,6 +142,11 @@ DECLARE_RESTRICTED_HOOK(android_rvh_shrink_spec_lru,
 		bool *skip),
 	TP_ARGS(lruvec, sc, nr_reclaimed, nr_to_reclaim,
 		proportional_reclaim, nr, skip), 1);
+DECLARE_RESTRICTED_HOOK(android_rvh_mglru_shrink_spec_lru,
+	TP_PROTO(struct lruvec *lruvec, struct scan_control *sc,
+		int swappiness, int *delta, unsigned long nr_to_scan,
+		unsigned long *scanned, bool *skip),
+	TP_ARGS(lruvec, sc, swappiness, delta, nr_to_scan, scanned, skip), 1);
 DECLARE_HOOK(android_vh_direct_reclaim_begin,
 	TP_PROTO(int *prio),
 	TP_ARGS(prio));
