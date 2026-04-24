@@ -965,7 +965,6 @@ void __put_task_struct(struct task_struct *tsk)
 	WARN_ON(refcount_read(&tsk->usage));
 	WARN_ON(tsk == current);
 
-	put_dmabuf_info(tsk->dmabuf_info);
 	trace_android_vh_put_task(tsk);
 	put_dmabuf_info(tsk->dmabuf_info);
 	sched_ext_free(tsk);
