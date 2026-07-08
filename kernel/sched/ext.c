@@ -1059,6 +1059,14 @@ static struct scx_dispatch_q *find_user_dsq(u64 dsq_id)
 	return rhashtable_lookup_fast(&dsq_hash, &dsq_id, dsq_hash_params);
 }
 
+static const struct sched_class *scx_setscheduler_class(struct task_struct *p)
+{
+	if (p->sched_class == &stop_sched_class)
+		return &stop_sched_class;
+
+	return __setscheduler_class(p->policy, p->prio);
+}
+
 /*
  * scx_kf_mask enforcement. Some kfuncs can only be called from specific SCX
  * ops. When invoking SCX ops, SCX_CALL_OP[_RET]() should be used to indicate
@@ -4685,8 +4693,7 @@ repeat_iter:
 	scx_task_iter_start(&sti);
 	while ((p = scx_task_iter_next_locked(&sti))) {
 		const struct sched_class *old_class = p->sched_class;
-		const struct sched_class *new_class =
-			__setscheduler_class(p->policy, p->prio);
+		const struct sched_class *new_class = scx_setscheduler_class(p);
 		struct sched_enq_and_set_ctx ctx;
 		bool skip = false;
 
@@ -4694,6 +4701,7 @@ repeat_iter:
 		if (skip)
 			continue;
 
+		trace_android_vh_setscheduler_class(&new_class, NULL, p, p->policy, p->prio);
 		if (old_class != new_class && p->se.sched_delayed)
 			dequeue_task(task_rq(p), p, DEQUEUE_SLEEP | DEQUEUE_DELAYED);
 
@@ -5418,12 +5426,12 @@ repeat_iter:
 	scx_task_iter_start(&sti);
 	while ((p = scx_task_iter_next_locked(&sti))) {
 		const struct sched_class *old_class = p->sched_class;
-		const struct sched_class *new_class =
-			__setscheduler_class(p->policy, p->prio);
+		const struct sched_class *new_class = scx_setscheduler_class(p);
 		struct sched_enq_and_set_ctx ctx;
 		bool skip = false;
 
-		if (!tryget_task_struct(p))
+		trace_android_vh_setscheduler_class(&new_class, NULL, p, p->policy, p->prio);
+		if (scx_get_task_state(p) != SCX_TASK_READY)
 			continue;
 
 		trace_android_vh_scx_switch_repeat_skip(p, &skip, &repeat);
@@ -5442,7 +5450,6 @@ repeat_iter:
 		sched_enq_and_set_task(&ctx);
 
 		check_class_changed(task_rq(p), p, old_class, p->prio);
-		put_task_struct(p);
 	}
 	scx_task_iter_stop(&sti);
 	if (repeat > 0) {
