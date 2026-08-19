@@ -1530,6 +1530,14 @@ static size_t smmu_unmap_pages(struct kvm_hyp_iommu_domain *domain, unsigned lon
 		total_unmapped += unmapped;
 		pgcount -= unmapped / pgsize;
 	}
+
+	/*
+	 * Eagerly drain the gather list before the core code does to Keep
+	 * the page table walk locked.
+	 */
+	smmu_iotlb_sync(domain, gather);
+	gather->pgsize = 0;
+	iommu_iotlb_gather_init(gather);
 	hyp_spin_unlock(&smmu_domain->pgt_lock);
 	return total_unmapped;
 }
@@ -1636,7 +1644,7 @@ static int smmu_dev_block_dma(struct kvm_hyp_iommu *iommu, u32 sid, bool is_host
 
 				cd_table = (dst->data[0] & STRTAB_STE_0_S1CTXPTR_MASK);
 				nr_entries = 1 << FIELD_GET(STRTAB_STE_0_S1CDMAX, dst->data[0]);
-				cd_sz = (1 << nr_entries) * (CTXDESC_CD_DWORDS << 3);
+				cd_sz = nr_entries * (CTXDESC_CD_DWORDS << 3);
 				kvm_iommu_reclaim_pages(hyp_phys_to_virt(cd_table), get_order(cd_sz));
 			}
 			/* zap zippity zop. */

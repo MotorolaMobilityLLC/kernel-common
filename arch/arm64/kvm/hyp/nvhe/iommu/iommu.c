@@ -354,7 +354,7 @@ int kvm_iommu_free_domain(pkvm_handle_t domain_id)
 	if (hyp_vcpu)
 		vm = pkvm_hyp_vcpu_to_hyp_vm(hyp_vcpu);
 
-	if (WARN_ON(atomic_cmpxchg_acquire(&domain->refs, 1, 0) != 1) || domain->vm != vm) {
+	if (domain->vm != vm || WARN_ON(atomic_cmpxchg_acquire(&domain->refs, 1, 0) != 1)) {
 		ret = -EINVAL;
 		goto out_unlock;
 	}
@@ -491,6 +491,9 @@ size_t kvm_iommu_map_pages(pkvm_handle_t domain_id,
 	    iova + size < iova || paddr + size < paddr)
 		return -E2BIG;
 
+	if (!IS_ALIGNED(iova | paddr, pgsize))
+		return -EINVAL;
+
 	if (domain_id == KVM_IOMMU_DOMAIN_IDMAP_ID)
 		return -EINVAL;
 
@@ -555,6 +558,9 @@ size_t kvm_iommu_unmap_pages(pkvm_handle_t domain_id, unsigned long iova,
 
 	if (__builtin_mul_overflow(pgsize, pgcount, &size) ||
 	    iova + size < iova)
+		return 0;
+
+	if (!IS_ALIGNED(iova, pgsize))
 		return 0;
 
 	if (domain_id == KVM_IOMMU_DOMAIN_IDMAP_ID)
@@ -634,6 +640,9 @@ size_t kvm_iommu_map_sg(pkvm_handle_t domain_id, unsigned long iova, struct kvm_
 	if (prot & ~IOMMU_PROT_MASK)
 		return 0;
 
+	if (domain_id == KVM_IOMMU_DOMAIN_IDMAP_ID)
+		return 0;
+
 	domain = handle_to_domain(domain_id);
 	if (!domain || domain_get(domain))
 		return 0;
@@ -649,6 +658,9 @@ size_t kvm_iommu_map_sg(pkvm_handle_t domain_id, unsigned long iova, struct kvm_
 
 		if (__builtin_mul_overflow(pgsize, pgcount, &size) ||
 		    iova + size < iova)
+			goto out_unpin_sg;
+
+		if (!IS_ALIGNED(iova | phys, pgsize))
 			goto out_unpin_sg;
 
 		ret = __pkvm_use_dma(phys, size, __get_vcpu());
