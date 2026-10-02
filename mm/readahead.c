@@ -279,6 +279,10 @@ void page_cache_ra_unbounded(struct readahead_control *ractl,
 			read_pages(ractl);
 			ractl->_index += min_nrpages;
 			i = ractl->_index + ractl->_nr_pages - index;
+#ifdef CONFIG_ANDROID_VENDOR_OEM_DATA
+			trace_android_vh_page_cache_ra_unbounded(mapping, folio,
+					&ractl->android_oem_data1);
+#endif
 			continue;
 		}
 
@@ -287,6 +291,10 @@ void page_cache_ra_unbounded(struct readahead_control *ractl,
 					mapping_min_folio_order(mapping));
 		if (!folio)
 			break;
+
+		trace_android_vh_readahead_add_folio(folio, mapping);
+
+		trace_android_vh_page_cache_ra_mark(folio, mark, i);
 
 		ret = filemap_add_folio(mapping, folio, index + i, gfp_mask);
 		if (ret < 0) {
@@ -303,6 +311,10 @@ void page_cache_ra_unbounded(struct readahead_control *ractl,
 		ractl->_workingset |= folio_test_workingset(folio);
 		ractl->_nr_pages += min_nrpages;
 		i += min_nrpages;
+#ifdef CONFIG_ANDROID_VENDOR_OEM_DATA
+		trace_android_vh_page_cache_ra_unbounded(mapping, folio,
+				&ractl->android_oem_data1);
+#endif
 	}
 
 	/*
@@ -364,6 +376,9 @@ void force_page_cache_ra(struct readahead_control *ractl,
 	 */
 	max_pages = max_t(unsigned long, bdi->io_pages, ra->ra_pages);
 	nr_to_read = min_t(unsigned long, nr_to_read, max_pages);
+#ifdef CONFIG_ANDROID_VENDOR_OEM_DATA
+	trace_android_vh_force_page_cache_ra(mapping, &ractl->android_oem_data1);
+#endif
 	while (nr_to_read) {
 		unsigned long this_chunk = (2 * 1024 * 1024) / PAGE_SIZE;
 
@@ -461,6 +476,7 @@ static inline int ra_alloc_folio(struct readahead_control *ractl, pgoff_t index,
 	mark = round_down(mark, 1UL << order);
 	if (index == mark)
 		folio_set_readahead(folio);
+	trace_android_vh_readahead_add_folio(folio, ractl->mapping);
 	err = filemap_add_folio(ractl->mapping, folio, index, gfp);
 	if (err) {
 		folio_put(folio);
@@ -792,6 +808,7 @@ void readahead_expand(struct readahead_control *ractl,
 		if (!folio)
 			return;
 
+		trace_android_vh_readahead_add_folio(folio, mapping);
 		index = mapping_align_index(mapping, index);
 		if (filemap_add_folio(mapping, folio, index, gfp_mask) < 0) {
 			folio_put(folio);
@@ -821,6 +838,7 @@ void readahead_expand(struct readahead_control *ractl,
 		if (!folio)
 			return;
 
+		trace_android_vh_readahead_add_folio(folio, mapping);
 		index = mapping_align_index(mapping, index);
 		if (filemap_add_folio(mapping, folio, index, gfp_mask) < 0) {
 			folio_put(folio);

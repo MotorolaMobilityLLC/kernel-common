@@ -81,6 +81,7 @@ struct seq_file;
 struct sighand_struct;
 struct signal_struct;
 struct task_delay_info;
+struct task_dma_buf_info;
 struct task_group;
 struct task_struct;
 struct user_event_mm;
@@ -1634,8 +1635,12 @@ struct task_struct {
 	 */
 	struct callback_head		l1d_flush_kill;
 #endif
-	ANDROID_KABI_RESERVE(1);
+	ANDROID_KABI_USE(1, struct task_dma_buf_info *dmabuf_info);
+#ifdef CONFIG_ARM64_ERRATUM_4193714
+	ANDROID_KABI_USE(2, u64 __donotuse_b448672457);
+#else
 	ANDROID_KABI_RESERVE(2);
+#endif
 	ANDROID_KABI_RESERVE(3);
 	ANDROID_KABI_RESERVE(4);
 	ANDROID_KABI_RESERVE(5);

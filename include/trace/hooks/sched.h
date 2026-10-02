@@ -158,6 +158,10 @@ DECLARE_RESTRICTED_HOOK(android_rvh_try_to_wake_up,
 	TP_PROTO(struct task_struct *p),
 	TP_ARGS(p), 1);
 
+DECLARE_RESTRICTED_HOOK(android_rvh_try_to_wake_up_begin,
+	TP_PROTO(struct task_struct *p, unsigned int state, int *wake_flags),
+	TP_ARGS(p, state, wake_flags), 1);
+
 DECLARE_RESTRICTED_HOOK(android_rvh_try_to_wake_up_success,
 	TP_PROTO(struct task_struct *p),
 	TP_ARGS(p), 1);
@@ -280,6 +284,14 @@ DECLARE_RESTRICTED_HOOK(android_rvh_before_do_sched_yield,
 DECLARE_HOOK(android_vh_free_task,
 	TP_PROTO(struct task_struct *p),
 	TP_ARGS(p));
+
+DECLARE_HOOK(android_vh_mmap_lock_init,
+	TP_PROTO(struct rw_semaphore *sem),
+	TP_ARGS(sem));
+
+DECLARE_HOOK(android_vh_mmap_lock_free,
+	TP_PROTO(struct rw_semaphore *sem),
+	TP_ARGS(sem));
 
 DECLARE_HOOK(android_vh_irqtime_account_process_tick,
 	TP_PROTO(struct task_struct *p, struct rq *rq, int user_tick, int ticks),
@@ -418,6 +430,11 @@ DECLARE_RESTRICTED_HOOK(android_rvh_set_task_comm,
 DECLARE_HOOK(android_vh_move_entity,
 	TP_PROTO(int *move, unsigned int flags),
 	TP_ARGS(move, flags));
+
+DECLARE_HOOK(android_vh_sca_migrate_same,
+	TP_PROTO(struct task_struct *p, struct affinity_context *ctx),
+	TP_ARGS(p, ctx));
+
 DECLARE_HOOK(android_vh_scx_restore_flags,
 	TP_PROTO(const struct sched_class *prev_class,
 		 const struct sched_class *next_class,

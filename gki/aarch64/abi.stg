@@ -494,6 +494,11 @@ pointer_reference {
   pointee_type_id: 0x2eabff79
 }
 pointer_reference {
+  id: 0x0144254e
+  kind: POINTER
+  pointee_type_id: 0x2f5073a5
+}
+pointer_reference {
   id: 0x014b8475
   kind: POINTER
   pointee_type_id: 0x2f6ef74a
@@ -1234,6 +1239,11 @@ pointer_reference {
   pointee_type_id: 0x270c242d
 }
 pointer_reference {
+  id: 0x0355b30c
+  kind: POINTER
+  pointee_type_id: 0x27162aac
+}
+pointer_reference {
   id: 0x0355dc72
   kind: POINTER
   pointee_type_id: 0x27179756
@@ -1777,6 +1787,11 @@ pointer_reference {
   id: 0x04d62c3f
   kind: POINTER
   pointee_type_id: 0x39185662
+}
+pointer_reference {
+  id: 0x04d633c3
+  kind: POINTER
+  pointee_type_id: 0x39182992
 }
 pointer_reference {
   id: 0x04dad728
@@ -5442,6 +5457,11 @@ pointer_reference {
   id: 0x0ced5e19
   kind: POINTER
   pointee_type_id: 0x19f59ef9
+}
+pointer_reference {
+  id: 0x0ceda834
+  kind: POINTER
+  pointee_type_id: 0x19f6464c
 }
 pointer_reference {
   id: 0x0cef4974
@@ -10672,6 +10692,11 @@ pointer_reference {
   id: 0x12f15faf
   kind: POINTER
   pointee_type_id: 0x61859821
+}
+pointer_reference {
+  id: 0x12f234f7
+  kind: POINTER
+  pointee_type_id: 0x61883543
 }
 pointer_reference {
   id: 0x13012dce
@@ -17664,6 +17689,11 @@ pointer_reference {
   pointee_type_id: 0x8a68c517
 }
 pointer_reference {
+  id: 0x281136d8
+  kind: POINTER
+  pointee_type_id: 0x8a043dfc
+}
+pointer_reference {
   id: 0x281af600
   kind: POINTER
   pointee_type_id: 0x8a2b3e9d
@@ -20259,6 +20289,11 @@ pointer_reference {
   pointee_type_id: 0x9ba95149
 }
 pointer_reference {
+  id: 0x2c7aa6d4
+  kind: POINTER
+  pointee_type_id: 0x9baa7dce
+}
+pointer_reference {
   id: 0x2c7b32f9
   kind: POINTER
   pointee_type_id: 0x9bac2d7a
@@ -21592,6 +21627,11 @@ pointer_reference {
   id: 0x2d078518
   kind: POINTER
   pointee_type_id: 0x9e5ef2fc
+}
+pointer_reference {
+  id: 0x2d07cf05
+  kind: POINTER
+  pointee_type_id: 0x9e5fda8b
 }
 pointer_reference {
   id: 0x2d081f17
@@ -28444,6 +28484,11 @@ pointer_reference {
   pointee_type_id: 0xea5f49fa
 }
 pointer_reference {
+  id: 0x300812ba
+  kind: POINTER
+  pointee_type_id: 0xea60ac77
+}
+pointer_reference {
   id: 0x30092723
   kind: POINTER
   pointee_type_id: 0xea647a11
@@ -34044,6 +34089,11 @@ pointer_reference {
   pointee_type_id: 0xcd1e6a9f
 }
 pointer_reference {
+  id: 0x39daf541
+  kind: POINTER
+  pointee_type_id: 0xcd2b3398
+}
+pointer_reference {
   id: 0x39db4e33
   kind: POINTER
   pointee_type_id: 0xcd2dde52
@@ -35062,6 +35112,11 @@ pointer_reference {
   id: 0x3befe261
   kind: POINTER
   pointee_type_id: 0xc5ff6f1a
+}
+pointer_reference {
+  id: 0x3bf44f99
+  kind: POINTER
+  pointee_type_id: 0xc591d8f8
 }
 pointer_reference {
   id: 0x3bf581e3
@@ -41004,6 +41059,11 @@ qualified {
   qualified_type_id: 0x4474c556
 }
 qualified {
+  id: 0xcd2b3398
+  qualifier: CONST
+  qualified_type_id: 0x44eb78eb
+}
+qualified {
   id: 0xcd2dde52
   qualifier: CONST
   qualified_type_id: 0x44f0cfc0
@@ -42862,6 +42922,11 @@ qualified {
   id: 0xea41e62a
   qualifier: CONST
   qualified_type_id: 0xd9402e22
+}
+qualified {
+  id: 0xea60ac77
+  qualifier: CONST
+  qualified_type_id: 0xd9c50754
 }
 qualified {
   id: 0xea647a11
@@ -44723,11 +44788,6 @@ array {
   id: 0x16c3ef93
   number_of_elements: 38
   element_type_id: 0xf992fdc1
-}
-array {
-  id: 0x1723cb73
-  number_of_elements: 64
-  element_type_id: 0x92233392
 }
 array {
   id: 0x174bc012
@@ -47065,6 +47125,11 @@ array {
   element_type_id: 0x97012809
 }
 array {
+  id: 0x948fe175
+  number_of_elements: 6
+  element_type_id: 0xd4bacb77
+}
+array {
   id: 0x95043c75
   number_of_elements: 4
   element_type_id: 0x6524bdbf
@@ -47343,6 +47408,11 @@ array {
   id: 0xa7484371
   number_of_elements: 1
   element_type_id: 0x4a0697ed
+}
+array {
+  id: 0xa74c108c
+  number_of_elements: 160
+  element_type_id: 0x92233392
 }
 array {
   id: 0xa80a04d8
@@ -49231,6 +49301,10 @@ member {
   type_id: 0x266a8cae
 }
 member {
+  id: 0x2a7b033c
+  type_id: 0x26c27ce0
+}
+member {
   id: 0x2a99a59c
   type_id: 0x2548e662
 }
@@ -49504,6 +49578,11 @@ member {
   id: 0x307b36dc
   type_id: 0x4ec29f8c
   offset: 32
+}
+member {
+  id: 0x3094664a
+  type_id: 0x4d7fc6c8
+  offset: 27456
 }
 member {
   id: 0x309cb6d6
@@ -50116,6 +50195,11 @@ member {
   offset: 384
 }
 member {
+  id: 0x34d08c84
+  type_id: 0x5c6c61dc
+  offset: 12416
+}
+member {
   id: 0x34d342f1
   type_id: 0x5c637323
   offset: 704
@@ -50182,9 +50266,24 @@ member {
   type_id: 0x5ba545d0
 }
 member {
+  id: 0x355b4d01
+  type_id: 0x5a4366ad
+  offset: 768
+}
+member {
   id: 0x355c619d
   type_id: 0x5a5fd068
   offset: 96
+}
+member {
+  id: 0x355c71ec
+  type_id: 0x5a5fb136
+  offset: 9216
+}
+member {
+  id: 0x355c7c3c
+  type_id: 0x5a5fb136
+  offset: 27392
 }
 member {
   id: 0x3568359b
@@ -50276,6 +50375,11 @@ member {
   id: 0x364cb8e6
   type_id: 0x561c989b
   offset: 1216
+}
+member {
+  id: 0x3663ae8f
+  type_id: 0x56a0d424
+  offset: 2048
 }
 member {
   id: 0x36752b74
@@ -50523,11 +50627,6 @@ member {
   id: 0x39b53975
   type_id: 0x69fa9768
   offset: 256
-}
-member {
-  id: 0x39d59b29
-  type_id: 0x68783f6b
-  offset: 12416
 }
 member {
   id: 0x39d6d358
@@ -51657,6 +51756,11 @@ member {
   type_id: 0x312fa971
 }
 member {
+  id: 0x97086243
+  name: "__0"
+  type_id: 0xb111ced7
+}
+member {
   id: 0x970c579a
   name: "__0"
   type_id: 0xb5241757
@@ -51670,6 +51774,16 @@ member {
   id: 0x97287bd1
   name: "__0"
   type_id: 0x91085cd4
+}
+member {
+  id: 0x9734152a
+  name: "__0"
+  type_id: 0x8d66a704
+}
+member {
+  id: 0x9747d6be
+  name: "__0"
+  type_id: 0xfea53356
 }
 member {
   id: 0x975220f6
@@ -51797,6 +51911,11 @@ member {
   type_id: 0x30cfb851
 }
 member {
+  id: 0x978a7ad3
+  name: "__0"
+  type_id: 0x33095ea6
+}
+member {
   id: 0x978ac826
   name: "__0"
   type_id: 0x33bbabff
@@ -51807,9 +51926,19 @@ member {
   type_id: 0x367abe20
 }
 member {
+  id: 0x978ff8fe
+  name: "__0"
+  type_id: 0x368b737f
+}
+member {
   id: 0x97916214
   name: "__0"
   type_id: 0x2811994b
+}
+member {
+  id: 0x9793ae61
+  name: "__0"
+  type_id: 0x2addecdb
 }
 member {
   id: 0x9794a3f6
@@ -52095,6 +52224,11 @@ member {
   id: 0x97a2aea8
   name: "__0"
   type_id: 0x1bdd25e4
+}
+member {
+  id: 0x97a2d175
+  name: "__0"
+  type_id: 0x1ba2f807
 }
 member {
   id: 0x97a2d61f
@@ -53337,6 +53471,11 @@ member {
   type_id: 0x607f8710
 }
 member {
+  id: 0x97db6e16
+  name: "__0"
+  type_id: 0x621d9b10
+}
+member {
   id: 0x97de7d14
   name: "__0"
   type_id: 0x670e999f
@@ -53352,14 +53491,34 @@ member {
   type_id: 0x59b47c15
 }
 member {
+  id: 0x97e5b752
+  name: "__0"
+  type_id: 0x5cc4dffd
+}
+member {
+  id: 0x97e5ca87
+  name: "__0"
+  type_id: 0x5cb90ae0
+}
+member {
   id: 0x97e97aed
   name: "__0"
   type_id: 0x50096011
 }
 member {
+  id: 0x97f01b51
+  name: "__0"
+  type_id: 0x4968dc64
+}
+member {
   id: 0x97fda5b3
   name: "__0"
   type_id: 0x44d63e47
+}
+member {
+  id: 0x97ff074c
+  name: "__0"
+  type_id: 0x4674c1ef
 }
 member {
   id: 0xdb058bd1
@@ -53579,6 +53738,11 @@ member {
   type_id: 0xe70bbea8
 }
 member {
+  id: 0xaa2f1b84
+  name: "__bindgen_anon_1"
+  type_id: 0xe5b2ad46
+}
+member {
   id: 0xaa31541d
   name: "__bindgen_anon_1"
   type_id: 0xfbfd34ad
@@ -53595,6 +53759,12 @@ member {
   type_id: 0xfefcf1f3
 }
 member {
+  id: 0xaa34c763
+  name: "__bindgen_anon_1"
+  type_id: 0xfe66e4cc
+  offset: 768
+}
+member {
   id: 0xaa35f474
   name: "__bindgen_anon_1"
   type_id: 0xff59bc39
@@ -53605,6 +53775,11 @@ member {
   name: "__bindgen_anon_1"
   type_id: 0xfcf0955b
   offset: 128
+}
+member {
+  id: 0xaa377e00
+  name: "__bindgen_anon_1"
+  type_id: 0xfdd729e3
 }
 member {
   id: 0xaa381b3b
@@ -53712,6 +53887,11 @@ member {
   offset: 576
 }
 member {
+  id: 0xaa79a8e9
+  name: "__bindgen_anon_1"
+  type_id: 0xb301c0c6
+}
+member {
   id: 0xaa7b0c1a
   name: "__bindgen_anon_1"
   type_id: 0xb1a53308
@@ -53763,6 +53943,11 @@ member {
   offset: 64
 }
 member {
+  id: 0xaa976c81
+  name: "__bindgen_anon_1"
+  type_id: 0x5dc5a847
+}
+member {
   id: 0xaa97f961
   name: "__bindgen_anon_1"
   type_id: 0x5d598a53
@@ -53786,6 +53971,11 @@ member {
   type_id: 0x6a98a8fc
 }
 member {
+  id: 0xaaa07fcb
+  name: "__bindgen_anon_1"
+  type_id: 0x6ad6e2fc
+}
+member {
   id: 0xaaa0d408
   name: "__bindgen_anon_1"
   type_id: 0x6a74e361
@@ -53805,6 +53995,12 @@ member {
   id: 0xaaaed8ce
   name: "__bindgen_anon_1"
   type_id: 0x6471e7e4
+}
+member {
+  id: 0xaab300e6
+  name: "__bindgen_anon_1"
+  type_id: 0x79a5ba10
+  offset: 27392
 }
 member {
   id: 0xaab79811
@@ -53856,6 +54052,11 @@ member {
   id: 0xaac2de0e
   name: "__bindgen_anon_1"
   type_id: 0x08772710
+}
+member {
+  id: 0xaac4e9ae
+  name: "__bindgen_anon_1"
+  type_id: 0x0e408799
 }
 member {
   id: 0xaac72a10
@@ -53997,6 +54198,11 @@ member {
   offset: 32
 }
 member {
+  id: 0xc5160f20
+  name: "__bindgen_anon_2"
+  type_id: 0x1d11f9e0
+}
+member {
   id: 0xc51cb930
   name: "__bindgen_anon_2"
   type_id: 0x17a74264
@@ -54006,6 +54212,11 @@ member {
   id: 0xc51f77ed
   name: "__bindgen_anon_2"
   type_id: 0x14693404
+}
+member {
+  id: 0xc526dd32
+  name: "__bindgen_anon_2"
+  type_id: 0x2dc3eb4b
 }
 member {
   id: 0xc52bc671
@@ -54023,6 +54234,11 @@ member {
   name: "__bindgen_anon_2"
   type_id: 0x39f0734f
   offset: 320
+}
+member {
+  id: 0xc53e066b
+  name: "__bindgen_anon_2"
+  type_id: 0x3518b2be
 }
 member {
   id: 0xc544bea6
@@ -54045,6 +54261,23 @@ member {
   name: "__bindgen_anon_2"
   type_id: 0x64a0817e
   offset: 160
+}
+member {
+  id: 0xc5734cc8
+  name: "__bindgen_anon_2"
+  type_id: 0x7859edda
+  offset: 27456
+}
+member {
+  id: 0xc574e762
+  name: "__bindgen_anon_2"
+  type_id: 0x7ff9bb8a
+}
+member {
+  id: 0xc58504bb
+  name: "__bindgen_anon_2"
+  type_id: 0x8e1bc7ed
+  offset: 9216
 }
 member {
   id: 0xc58f4ca8
@@ -54098,10 +54331,20 @@ member {
   type_id: 0xa4a169a2
 }
 member {
+  id: 0xc5c4ed1d
+  name: "__bindgen_anon_2"
+  type_id: 0xcff3c4ff
+}
+member {
   id: 0xc5c8aa87
   name: "__bindgen_anon_2"
   type_id: 0xc3b5cc39
   offset: 384
+}
+member {
+  id: 0xc5d102b3
+  name: "__bindgen_anon_2"
+  type_id: 0xda1c6aa9
 }
 member {
   id: 0xc5d76267
@@ -54150,10 +54393,20 @@ member {
   offset: 1024
 }
 member {
+  id: 0x043ccb8d
+  name: "__bindgen_anon_3"
+  type_id: 0x7771908b
+}
+member {
   id: 0x0473e01a
   name: "__bindgen_anon_3"
   type_id: 0x385c0f1d
   offset: 3008
+}
+member {
+  id: 0x0480ad44
+  name: "__bindgen_anon_3"
+  type_id: 0xcb17598c
 }
 member {
   id: 0x0485ae3e
@@ -54164,6 +54417,11 @@ member {
   id: 0x049b50f4
   name: "__bindgen_anon_3"
   type_id: 0xd0eae9d1
+}
+member {
+  id: 0x049e250a
+  name: "__bindgen_anon_3"
+  type_id: 0xd59f1751
 }
 member {
   id: 0x04a3888f
@@ -54183,9 +54441,19 @@ member {
   offset: 1280
 }
 member {
+  id: 0x6e0f7c7e
+  name: "__bindgen_anon_4"
+  type_id: 0x8ad9f872
+}
+member {
   id: 0x6e1fb70f
   name: "__bindgen_anon_4"
   type_id: 0x9a1289bb
+}
+member {
+  id: 0x6e7345e3
+  name: "__bindgen_anon_4"
+  type_id: 0xf6e0650a
 }
 member {
   id: 0x6e7ca7d1
@@ -54203,6 +54471,11 @@ member {
   name: "__bindgen_anon_4"
   type_id: 0x1f66c5d3
   offset: 1600
+}
+member {
+  id: 0x6e9fa43a
+  name: "__bindgen_anon_4"
+  type_id: 0x1a01bc7e
 }
 member {
   id: 0x6ead6863
@@ -54285,6 +54558,12 @@ member {
   offset: 1480
 }
 member {
+  id: 0xa8814a31
+  name: "__bindgen_padding_0"
+  type_id: 0x948fe175
+  offset: 832
+}
+member {
   id: 0xa8961cbd
   name: "__bindgen_padding_0"
   type_id: 0x83d5e74b
@@ -54319,12 +54598,6 @@ member {
   name: "__bindgen_padding_0"
   type_id: 0xd4bacb77
   offset: 928
-}
-member {
-  id: 0xa8c4defe
-  name: "__bindgen_padding_0"
-  type_id: 0xd1103acf
-  offset: 768
 }
 member {
   id: 0xe943b4fc
@@ -54704,6 +54977,16 @@ member {
   type_id: 0xd3c80119
 }
 member {
+  id: 0x6e216a53
+  name: "__donotuse_b448672457"
+  type_id: 0x89d2d38c
+}
+member {
+  id: 0x6e3a9bb3
+  name: "__donotuse_b448672457"
+  type_id: 0x92233392
+}
+member {
   id: 0x6d24d29f
   name: "__empty_array"
   type_id: 0x186c44db
@@ -54859,12 +55142,6 @@ member {
   name: "__kabi_reserved1"
   type_id: 0x89d2d38c
   offset: 7808
-}
-member {
-  id: 0x4140f129
-  name: "__kabi_reserved1"
-  type_id: 0x89d2d38c
-  offset: 27392
 }
 member {
   id: 0x4140f18b
@@ -55035,10 +55312,9 @@ member {
   offset: 384
 }
 member {
-  id: 0x4140fcf9
+  id: 0x4140fd5c
   name: "__kabi_reserved1"
   type_id: 0x89d2d38c
-  offset: 9216
 }
 member {
   id: 0x4140fd65
@@ -55117,12 +55393,6 @@ member {
   name: "__kabi_reserved1"
   type_id: 0x92233392
   offset: 45952
-}
-member {
-  id: 0x415b00c9
-  name: "__kabi_reserved1"
-  type_id: 0x92233392
-  offset: 27392
 }
 member {
   id: 0x415b0159
@@ -55700,12 +55970,6 @@ member {
   type_id: 0x92233392
 }
 member {
-  id: 0x415b0d19
-  name: "__kabi_reserved1"
-  type_id: 0x92233392
-  offset: 9216
-}
-member {
   id: 0x415b0d1e
   name: "__kabi_reserved1"
   type_id: 0x92233392
@@ -55886,12 +56150,6 @@ member {
   offset: 5056
 }
 member {
-  id: 0xb10d1054
-  name: "__kabi_reserved2"
-  type_id: 0x89d2d38c
-  offset: 27456
-}
-member {
   id: 0xb10d110e
   name: "__kabi_reserved2"
   type_id: 0x89d2d38c
@@ -56018,6 +56276,11 @@ member {
   offset: 12608
 }
 member {
+  id: 0xb10d1ba8
+  name: "__kabi_reserved2"
+  type_id: 0x89d2d38c
+}
+member {
   id: 0xb10d1c6f
   name: "__kabi_reserved2"
   type_id: 0x89d2d38c
@@ -56106,12 +56369,6 @@ member {
   name: "__kabi_reserved2"
   type_id: 0x92233392
   offset: 219520
-}
-member {
-  id: 0xb116e1b4
-  name: "__kabi_reserved2"
-  type_id: 0x92233392
-  offset: 27456
 }
 member {
   id: 0xb116e235
@@ -71428,6 +71685,12 @@ member {
   offset: 224
 }
 member {
+  id: 0xd8ab47be
+  name: "bit_pulse"
+  type_id: 0x4585663f
+  offset: 64
+}
+member {
   id: 0x57244bc9
   name: "bit_rate"
   type_id: 0x6d472730
@@ -71443,6 +71706,12 @@ member {
   id: 0xeaf2eefb
   name: "bit_size"
   type_id: 0xe62ebf07
+}
+member {
+  id: 0xb6979874
+  name: "bit_space"
+  type_id: 0x7dc8196c
+  offset: 96
 }
 member {
   id: 0xa620dbc0
@@ -77932,6 +78201,12 @@ member {
   type_id: 0xe62ebf07
 }
 member {
+  id: 0xb623a0ae
+  name: "carrier"
+  type_id: 0xc9082b19
+  offset: 320
+}
+member {
   id: 0xb623a769
   name: "carrier"
   type_id: 0xc9082b19
@@ -81454,6 +81729,12 @@ member {
   name: "clock"
   type_id: 0x92233392
   offset: 27200
+}
+member {
+  id: 0x458b8235
+  name: "clock"
+  type_id: 0x4585663f
+  offset: 64
 }
 member {
   id: 0x458b86d4
@@ -93912,6 +94193,12 @@ member {
   offset: 4320
 }
 member {
+  id: 0x6e88de7a
+  name: "decode"
+  type_id: 0x2d07cf05
+  offset: 192
+}
+member {
   id: 0x86c5c02d
   name: "decode_vbi_line"
   type_id: 0x2de44294
@@ -101109,10 +101396,32 @@ member {
   offset: 768
 }
 member {
+  id: 0x082d878d
+  name: "dmabuf_count"
+  type_id: 0x4585663f
+  offset: 320
+}
+member {
+  id: 0x32aa5f08
+  name: "dmabuf_info"
+  type_id: 0x0ceda834
+}
+member {
+  id: 0x32b44094
+  name: "dmabuf_info"
+  type_id: 0x12f234f7
+}
+member {
   id: 0x810e204c
   name: "dmabufs"
   type_id: 0xeb923a9b
   offset: 384
+}
+member {
+  id: 0x8136732c
+  name: "dmabufs"
+  type_id: 0xd3c80119
+  offset: 192
 }
 member {
   id: 0x813678c9
@@ -106433,6 +106742,12 @@ member {
   type_id: 0xb3e7bac9
   offset: 22
   bitsize: 1
+}
+member {
+  id: 0xf632952b
+  name: "encode"
+  type_id: 0x281136d8
+  offset: 256
 }
 member {
   id: 0x6c984f90
@@ -128157,10 +128472,21 @@ member {
   offset: 320
 }
 member {
+  id: 0xe8a40f03
+  name: "header_pulse"
+  type_id: 0x4585663f
+}
+member {
   id: 0xf67296ed
   name: "header_size"
   type_id: 0x914dbfdc
   offset: 2816
+}
+member {
+  id: 0xd9e8634f
+  name: "header_space"
+  type_id: 0x4585663f
+  offset: 32
 }
 member {
   id: 0x61467847
@@ -139071,6 +139397,13 @@ member {
   offset: 896
 }
 member {
+  id: 0xeac27b10
+  name: "invert"
+  type_id: 0x4585663f
+  offset: 96
+  bitsize: 1
+}
+member {
   id: 0xe41df53a
   name: "invert_bclk"
   type_id: 0xb3e7bac9
@@ -147207,6 +147540,17 @@ member {
   name: "leader"
   type_id: 0x6720d32f
   offset: 3136
+}
+member {
+  id: 0x4cc0da76
+  name: "leader_pulse"
+  type_id: 0x4585663f
+}
+member {
+  id: 0xb407cc56
+  name: "leader_space"
+  type_id: 0x4585663f
+  offset: 32
 }
 member {
   id: 0x2e4133fd
@@ -161480,6 +161824,12 @@ member {
   offset: 7584
 }
 member {
+  id: 0x351e6705
+  name: "min_timeout"
+  type_id: 0xc9082b19
+  offset: 352
+}
+member {
   id: 0x351e6bb7
   name: "min_timeout"
   type_id: 0xc9082b19
@@ -164659,6 +165009,13 @@ member {
   name: "msb"
   type_id: 0x4585663f
   offset: 64
+}
+member {
+  id: 0xae927fdc
+  name: "msb_first"
+  type_id: 0x4585663f
+  offset: 224
+  bitsize: 1
 }
 member {
   id: 0x10b6405f
@@ -173992,6 +174349,11 @@ member {
   offset: 1056
 }
 member {
+  id: 0x014cd3d7
+  name: "nr_task_refs"
+  type_id: 0x1f4573ef
+}
+member {
   id: 0xe321d910
   name: "nr_tasks"
   type_id: 0x6720d32f
@@ -177694,6 +178056,13 @@ member {
   name: "offload_handle"
   type_id: 0x33756485
   offset: 128
+}
+member {
+  id: 0x92990fca
+  name: "offload_pm_locked"
+  type_id: 0x4585663f
+  offset: 1
+  bitsize: 1
 }
 member {
   id: 0xdfe00828
@@ -196263,6 +196632,12 @@ member {
   offset: 192
 }
 member {
+  id: 0x5084eb47
+  name: "protocols"
+  type_id: 0x92233392
+  offset: 128
+}
+member {
   id: 0xa2bb1b42
   name: "protonum"
   type_id: 0x0abe9fd1
@@ -200034,6 +200409,12 @@ member {
   offset: 16512
 }
 member {
+  id: 0xbc2dcf71
+  name: "raw_register"
+  type_id: 0x2d90ce2d
+  offset: 384
+}
+member {
   id: 0x3d617ac5
   name: "raw_request"
   type_id: 0x2d715b45
@@ -200123,6 +200504,12 @@ member {
   name: "raw_trim_mult"
   type_id: 0x295c7202
   offset: 1192
+}
+member {
+  id: 0x818075a5
+  name: "raw_unregister"
+  type_id: 0x2d90ce2d
+  offset: 448
 }
 member {
   id: 0x018e63c8
@@ -211089,6 +211476,11 @@ member {
   offset: 832
 }
 member {
+  id: 0x10789eb1
+  name: "rss"
+  type_id: 0x33756485
+}
+member {
   id: 0x10ad0965
   name: "rss"
   type_id: 0xe6e2b0f1
@@ -211120,6 +211512,12 @@ member {
   name: "rss_delete"
   type_id: 0x295c7202
   offset: 288
+}
+member {
+  id: 0x027688eb
+  name: "rss_hwm"
+  type_id: 0x33756485
+  offset: 64
 }
 member {
   id: 0x34f72ccf
@@ -241761,6 +242159,24 @@ member {
   offset: 256
 }
 member {
+  id: 0x0673a4c3
+  name: "trailer_pulse"
+  type_id: 0x4585663f
+  offset: 160
+}
+member {
+  id: 0x2a25d896
+  name: "trailer_space"
+  type_id: 0x4585663f
+  offset: 128
+}
+member {
+  id: 0x2a25d99d
+  name: "trailer_space"
+  type_id: 0x4585663f
+  offset: 192
+}
+member {
   id: 0xf5debb96
   name: "trans"
   type_id: 0x18bd6530
@@ -266528,7 +266944,7 @@ struct_union {
     member_id: 0xa1746f86
     member_id: 0x09004bec
     member_id: 0xca4d1134
-    member_id: 0x415b0d19
+    member_id: 0x355c71ec
   }
 }
 struct_union {
@@ -267929,6 +268345,15 @@ struct_union {
     bytesize: 32
     member_id: 0xfb47df92
     member_id: 0x86d928a7
+  }
+}
+struct_union {
+  id: 0x26c27ce0
+  kind: STRUCT
+  definition {
+    bytesize: 4
+    member_id: 0xfa2a79e0
+    member_id: 0x92990fca
   }
 }
 struct_union {
@@ -270442,6 +270867,16 @@ struct_union {
   }
 }
 struct_union {
+  id: 0x4d7fc6c8
+  kind: UNION
+  definition {
+    bytesize: 8
+    member_id: 0x6e3a9bb3
+    member_id: 0x2ec1e396
+    member_id: 0x36752b74
+  }
+}
+struct_union {
   id: 0x4db29c07
   kind: UNION
   definition {
@@ -270983,6 +271418,16 @@ struct_union {
   }
 }
 struct_union {
+  id: 0x56a0d424
+  kind: UNION
+  definition {
+    bytesize: 8
+    member_id: 0x014cd3d7
+    member_id: 0x24c2370a
+    member_id: 0x36752b74
+  }
+}
+struct_union {
   id: 0x56faddc1
   kind: UNION
   definition {
@@ -271097,6 +271542,25 @@ struct_union {
     bytesize: 16
     member_id: 0x3cd401f2
     member_id: 0x95dac977
+  }
+}
+struct_union {
+  id: 0x5a4366ad
+  kind: UNION
+  definition {
+    bytesize: 8
+    member_id: 0x32b44094
+    member_id: 0x52ad2439
+  }
+}
+struct_union {
+  id: 0x5a5fb136
+  kind: UNION
+  definition {
+    bytesize: 8
+    member_id: 0x32b44094
+    member_id: 0x21c53df9
+    member_id: 0x36752b74
   }
 }
 struct_union {
@@ -271235,6 +271699,16 @@ struct_union {
     bytesize: 32
     member_id: 0x2a406106
     member_id: 0x26da8dd3
+  }
+}
+struct_union {
+  id: 0x5c6c61dc
+  kind: UNION
+  definition {
+    bytesize: 8
+    member_id: 0x2a7b033c
+    member_id: 0x21c53df9
+    member_id: 0x36752b74
   }
 }
 struct_union {
@@ -272335,16 +272809,6 @@ struct_union {
     bytesize: 16
     member_id: 0xfa946861
     member_id: 0xab39140b
-  }
-}
-struct_union {
-  id: 0x68783f6b
-  kind: UNION
-  definition {
-    bytesize: 8
-    member_id: 0xfa2a79e0
-    member_id: 0x21c53df9
-    member_id: 0x36752b74
   }
 }
 struct_union {
@@ -275933,6 +276397,38 @@ struct_union {
   }
 }
 struct_union {
+  id: 0x0e408799
+  kind: STRUCT
+  name: "bindings::bindings_raw::__BindgenUnionField<bindings::bindings_raw::mm_struct__bindgen_ty_1__bindgen_ty_3__bindgen_ty_2__bindgen_ty_1>"
+  definition {
+    member_id: 0x978a7ad3
+  }
+}
+struct_union {
+  id: 0x2dc3eb4b
+  kind: STRUCT
+  name: "bindings::bindings_raw::__BindgenUnionField<bindings::bindings_raw::mm_struct__bindgen_ty_1__bindgen_ty_3__bindgen_ty_2__bindgen_ty_2>"
+  definition {
+    member_id: 0x9747d6be
+  }
+}
+struct_union {
+  id: 0xcb17598c
+  kind: STRUCT
+  name: "bindings::bindings_raw::__BindgenUnionField<bindings::bindings_raw::mm_struct__bindgen_ty_1__bindgen_ty_3__bindgen_ty_2__bindgen_ty_3>"
+  definition {
+    member_id: 0x97e5ca87
+  }
+}
+struct_union {
+  id: 0xf6e0650a
+  kind: STRUCT
+  name: "bindings::bindings_raw::__BindgenUnionField<bindings::bindings_raw::mm_struct__bindgen_ty_1__bindgen_ty_3__bindgen_ty_2__bindgen_ty_4>"
+  definition {
+    member_id: 0x9734152a
+  }
+}
+struct_union {
   id: 0x667a708a
   kind: STRUCT
   name: "bindings::bindings_raw::__BindgenUnionField<bindings::bindings_raw::page_counter>"
@@ -275946,6 +276442,70 @@ struct_union {
   name: "bindings::bindings_raw::__BindgenUnionField<bindings::bindings_raw::range>"
   definition {
     member_id: 0x97708796
+  }
+}
+struct_union {
+  id: 0xb301c0c6
+  kind: STRUCT
+  name: "bindings::bindings_raw::__BindgenUnionField<bindings::bindings_raw::task_struct__bindgen_ty_1__bindgen_ty_2__bindgen_ty_1>"
+  definition {
+    member_id: 0x97086243
+  }
+}
+struct_union {
+  id: 0xcff3c4ff
+  kind: STRUCT
+  name: "bindings::bindings_raw::__BindgenUnionField<bindings::bindings_raw::task_struct__bindgen_ty_1__bindgen_ty_2__bindgen_ty_2>"
+  definition {
+    member_id: 0x978ff8fe
+  }
+}
+struct_union {
+  id: 0x7771908b
+  kind: STRUCT
+  name: "bindings::bindings_raw::__BindgenUnionField<bindings::bindings_raw::task_struct__bindgen_ty_1__bindgen_ty_2__bindgen_ty_3>"
+  definition {
+    member_id: 0x97db6e16
+  }
+}
+struct_union {
+  id: 0x8ad9f872
+  kind: STRUCT
+  name: "bindings::bindings_raw::__BindgenUnionField<bindings::bindings_raw::task_struct__bindgen_ty_1__bindgen_ty_2__bindgen_ty_4>"
+  definition {
+    member_id: 0x97e5b752
+  }
+}
+struct_union {
+  id: 0x5dc5a847
+  kind: STRUCT
+  name: "bindings::bindings_raw::__BindgenUnionField<bindings::bindings_raw::task_struct__bindgen_ty_2__bindgen_ty_2__bindgen_ty_1>"
+  definition {
+    member_id: 0x97ff074c
+  }
+}
+struct_union {
+  id: 0x3518b2be
+  kind: STRUCT
+  name: "bindings::bindings_raw::__BindgenUnionField<bindings::bindings_raw::task_struct__bindgen_ty_2__bindgen_ty_2__bindgen_ty_2>"
+  definition {
+    member_id: 0x97a2d175
+  }
+}
+struct_union {
+  id: 0xd59f1751
+  kind: STRUCT
+  name: "bindings::bindings_raw::__BindgenUnionField<bindings::bindings_raw::task_struct__bindgen_ty_2__bindgen_ty_2__bindgen_ty_3>"
+  definition {
+    member_id: 0x97f01b51
+  }
+}
+struct_union {
+  id: 0x1a01bc7e
+  kind: STRUCT
+  name: "bindings::bindings_raw::__BindgenUnionField<bindings::bindings_raw::task_struct__bindgen_ty_2__bindgen_ty_2__bindgen_ty_4>"
+  definition {
+    member_id: 0x9793ae61
   }
 }
 struct_union {
@@ -280001,13 +280561,24 @@ struct_union {
     member_id: 0x3bdba7ab
     member_id: 0xf0c1d0c3
     member_id: 0x653345f1
-    member_id: 0xa8c4defe
+    member_id: 0xaa34c763
+    member_id: 0xa8814a31
     member_id: 0xfc8b9d00
     member_id: 0xa9be9750
     member_id: 0x1aaf0b68
     member_id: 0xff1124c6
     member_id: 0x7601ad60
     member_id: 0xcc9e235c
+  }
+}
+struct_union {
+  id: 0xfe66e4cc
+  kind: UNION
+  name: "bindings::bindings_raw::files_struct__bindgen_ty_1"
+  definition {
+    bytesize: 8
+    member_id: 0x32aa5f08
+    member_id: 0x52dd8aff
   }
 }
 struct_union {
@@ -282334,7 +282905,7 @@ struct_union {
     member_id: 0xa164c2b7
     member_id: 0x09914e1d
     member_id: 0xca733986
-    member_id: 0x4140fcf9
+    member_id: 0xc58504bb
   }
 }
 struct_union {
@@ -282355,6 +282926,38 @@ struct_union {
     member_id: 0x7cd42bdc
     member_id: 0x89789a18
     member_id: 0xc7603540
+  }
+}
+struct_union {
+  id: 0x8e1bc7ed
+  kind: UNION
+  name: "bindings::bindings_raw::mm_struct__bindgen_ty_1__bindgen_ty_3"
+  definition {
+    bytesize: 8
+    member_id: 0x32aa5f08
+    member_id: 0xaa2f1b84
+    member_id: 0xc574e762
+  }
+}
+struct_union {
+  id: 0xe5b2ad46
+  kind: STRUCT
+  name: "bindings::bindings_raw::mm_struct__bindgen_ty_1__bindgen_ty_3__bindgen_ty_1"
+  definition {
+    bytesize: 8
+    member_id: 0x4140fd5c
+  }
+}
+struct_union {
+  id: 0x7ff9bb8a
+  kind: STRUCT
+  name: "bindings::bindings_raw::mm_struct__bindgen_ty_1__bindgen_ty_3__bindgen_ty_2"
+  definition {
+    member_id: 0xaac4e9ae
+    member_id: 0xc526dd32
+    member_id: 0x0480ad44
+    member_id: 0x6e7345e3
+    member_id: 0xebbd65b6
   }
 }
 struct_union {
@@ -285244,6 +285847,14 @@ struct_union {
   }
 }
 struct_union {
+  id: 0x19f6464c
+  kind: STRUCT
+  name: "bindings::bindings_raw::task_dma_buf_info"
+  definition {
+    member_id: 0x16c5cb1d
+  }
+}
+struct_union {
   id: 0xabf3b417
   kind: STRUCT
   name: "bindings::bindings_raw::task_group"
@@ -285485,8 +286096,8 @@ struct_union {
     member_id: 0xed61f47f
     member_id: 0xd6603513
     member_id: 0x9a11b83a
-    member_id: 0x4140f129
-    member_id: 0xb10d1054
+    member_id: 0xaab300e6
+    member_id: 0xc5734cc8
     member_id: 0xf0cdaefa
     member_id: 0x0482c094
     member_id: 0x444f0833
@@ -285494,6 +286105,70 @@ struct_union {
     member_id: 0xc3cfe7ee
     member_id: 0x358ba235
     member_id: 0xfc94ab20
+  }
+}
+struct_union {
+  id: 0x79a5ba10
+  kind: UNION
+  name: "bindings::bindings_raw::task_struct__bindgen_ty_1"
+  definition {
+    bytesize: 8
+    member_id: 0x32aa5f08
+    member_id: 0xaaa07fcb
+    member_id: 0xc5160f20
+  }
+}
+struct_union {
+  id: 0x6ad6e2fc
+  kind: STRUCT
+  name: "bindings::bindings_raw::task_struct__bindgen_ty_1__bindgen_ty_1"
+  definition {
+    bytesize: 8
+    member_id: 0x4140fd5c
+  }
+}
+struct_union {
+  id: 0x1d11f9e0
+  kind: STRUCT
+  name: "bindings::bindings_raw::task_struct__bindgen_ty_1__bindgen_ty_2"
+  definition {
+    member_id: 0xaa79a8e9
+    member_id: 0xc5c4ed1d
+    member_id: 0x043ccb8d
+    member_id: 0x6e0f7c7e
+    member_id: 0xebbd65b6
+  }
+}
+struct_union {
+  id: 0x7859edda
+  kind: UNION
+  name: "bindings::bindings_raw::task_struct__bindgen_ty_2"
+  definition {
+    bytesize: 8
+    member_id: 0x6e216a53
+    member_id: 0xaa377e00
+    member_id: 0xc5d102b3
+  }
+}
+struct_union {
+  id: 0xfdd729e3
+  kind: STRUCT
+  name: "bindings::bindings_raw::task_struct__bindgen_ty_2__bindgen_ty_1"
+  definition {
+    bytesize: 8
+    member_id: 0xb10d1ba8
+  }
+}
+struct_union {
+  id: 0xda1c6aa9
+  kind: STRUCT
+  name: "bindings::bindings_raw::task_struct__bindgen_ty_2__bindgen_ty_2"
+  definition {
+    member_id: 0xaa976c81
+    member_id: 0xc53e066b
+    member_id: 0x049e250a
+    member_id: 0x6e9fa43a
+    member_id: 0xebbd65b6
   }
 }
 struct_union {
@@ -290995,6 +291670,34 @@ struct_union {
   }
 }
 struct_union {
+  id: 0x33095ea6
+  kind: STRUCT
+  name: "core::marker::PhantomData<bindings::bindings_raw::mm_struct__bindgen_ty_1__bindgen_ty_3__bindgen_ty_2__bindgen_ty_1>"
+  definition {
+  }
+}
+struct_union {
+  id: 0xfea53356
+  kind: STRUCT
+  name: "core::marker::PhantomData<bindings::bindings_raw::mm_struct__bindgen_ty_1__bindgen_ty_3__bindgen_ty_2__bindgen_ty_2>"
+  definition {
+  }
+}
+struct_union {
+  id: 0x5cb90ae0
+  kind: STRUCT
+  name: "core::marker::PhantomData<bindings::bindings_raw::mm_struct__bindgen_ty_1__bindgen_ty_3__bindgen_ty_2__bindgen_ty_3>"
+  definition {
+  }
+}
+struct_union {
+  id: 0x8d66a704
+  kind: STRUCT
+  name: "core::marker::PhantomData<bindings::bindings_raw::mm_struct__bindgen_ty_1__bindgen_ty_3__bindgen_ty_2__bindgen_ty_4>"
+  definition {
+  }
+}
+struct_union {
   id: 0x59b47c15
   kind: STRUCT
   name: "core::marker::PhantomData<bindings::bindings_raw::page_counter>"
@@ -291012,6 +291715,62 @@ struct_union {
   id: 0xc9f41b8e
   kind: STRUCT
   name: "core::marker::PhantomData<bindings::bindings_raw::range>"
+  definition {
+  }
+}
+struct_union {
+  id: 0xb111ced7
+  kind: STRUCT
+  name: "core::marker::PhantomData<bindings::bindings_raw::task_struct__bindgen_ty_1__bindgen_ty_2__bindgen_ty_1>"
+  definition {
+  }
+}
+struct_union {
+  id: 0x368b737f
+  kind: STRUCT
+  name: "core::marker::PhantomData<bindings::bindings_raw::task_struct__bindgen_ty_1__bindgen_ty_2__bindgen_ty_2>"
+  definition {
+  }
+}
+struct_union {
+  id: 0x621d9b10
+  kind: STRUCT
+  name: "core::marker::PhantomData<bindings::bindings_raw::task_struct__bindgen_ty_1__bindgen_ty_2__bindgen_ty_3>"
+  definition {
+  }
+}
+struct_union {
+  id: 0x5cc4dffd
+  kind: STRUCT
+  name: "core::marker::PhantomData<bindings::bindings_raw::task_struct__bindgen_ty_1__bindgen_ty_2__bindgen_ty_4>"
+  definition {
+  }
+}
+struct_union {
+  id: 0x4674c1ef
+  kind: STRUCT
+  name: "core::marker::PhantomData<bindings::bindings_raw::task_struct__bindgen_ty_2__bindgen_ty_2__bindgen_ty_1>"
+  definition {
+  }
+}
+struct_union {
+  id: 0x1ba2f807
+  kind: STRUCT
+  name: "core::marker::PhantomData<bindings::bindings_raw::task_struct__bindgen_ty_2__bindgen_ty_2__bindgen_ty_2>"
+  definition {
+  }
+}
+struct_union {
+  id: 0x4968dc64
+  kind: STRUCT
+  name: "core::marker::PhantomData<bindings::bindings_raw::task_struct__bindgen_ty_2__bindgen_ty_2__bindgen_ty_3>"
+  definition {
+  }
+}
+struct_union {
+  id: 0x2addecdb
+  kind: STRUCT
+  name: "core::marker::PhantomData<bindings::bindings_raw::task_struct__bindgen_ty_2__bindgen_ty_2__bindgen_ty_4>"
   definition {
   }
 }
@@ -299503,7 +300262,7 @@ struct_union {
     member_id: 0x5f2a8271
     member_id: 0x415b0d62
     member_id: 0xb116e8cc
-    member_id: 0x112ba40c
+    member_id: 0x3663ae8f
   }
 }
 struct_union {
@@ -305493,6 +306252,7 @@ struct_union {
     member_id: 0x3b07b402
     member_id: 0xf0dd114d
     member_id: 0x654043c9
+    member_id: 0x355b4d01
     member_id: 0xfca11463
     member_id: 0xa92fa8fd
     member_id: 0x1aac0c74
@@ -315051,6 +315811,50 @@ struct_union {
     member_id: 0x6a3f1957
     member_id: 0x83397906
     member_id: 0x5c802411
+  }
+}
+struct_union {
+  id: 0xc591d8f8
+  kind: STRUCT
+  name: "ir_raw_handler"
+  definition {
+    bytesize: 64
+    member_id: 0x7c00ef52
+    member_id: 0x5084eb47
+    member_id: 0x6e88de7a
+    member_id: 0xf632952b
+    member_id: 0xb623a0ae
+    member_id: 0x351e6705
+    member_id: 0xbc2dcf71
+    member_id: 0x818075a5
+  }
+}
+struct_union {
+  id: 0xd9c50754
+  kind: STRUCT
+  name: "ir_raw_timings_manchester"
+  definition {
+    bytesize: 20
+    member_id: 0x4cc0da76
+    member_id: 0xb407cc56
+    member_id: 0x458b8235
+    member_id: 0xeac27b10
+    member_id: 0x2a25d896
+  }
+}
+struct_union {
+  id: 0x44eb78eb
+  kind: STRUCT
+  name: "ir_raw_timings_pd"
+  definition {
+    bytesize: 32
+    member_id: 0xe8a40f03
+    member_id: 0xd9e8634f
+    member_id: 0xd8ab47be
+    member_id: 0xb6979874
+    member_id: 0x0673a4c3
+    member_id: 0x2a25d99d
+    member_id: 0xae927fdc
   }
 }
 struct_union {
@@ -337519,6 +338323,20 @@ struct_union {
   }
 }
 struct_union {
+  id: 0x61883543
+  kind: STRUCT
+  name: "task_dma_buf_info"
+  definition {
+    bytesize: 48
+    member_id: 0x10789eb1
+    member_id: 0x027688eb
+    member_id: 0xb7dcf16e
+    member_id: 0x2d1fe165
+    member_id: 0x8136732c
+    member_id: 0x082d878d
+  }
+}
+struct_union {
   id: 0x84d533ac
   kind: STRUCT
   name: "task_group"
@@ -337796,8 +338614,8 @@ struct_union {
     member_id: 0xed670807
     member_id: 0xd666c96b
     member_id: 0x9a3adcaf
-    member_id: 0x415b00c9
-    member_id: 0xb116e1b4
+    member_id: 0x355c7c3c
+    member_id: 0x3094664a
     member_id: 0xf0d65f1a
     member_id: 0x04993174
     member_id: 0x4454f9d3
@@ -342503,7 +343321,7 @@ struct_union {
     member_id: 0x7407d3f8
     member_id: 0xcbfaf84d
     member_id: 0x0e98d4e4
-    member_id: 0x39d59b29
+    member_id: 0x34d08c84
     member_id: 0x32fdcbdd
     member_id: 0xf0d6517f
     member_id: 0x04993e52
@@ -373672,6 +374490,14 @@ function {
   parameter_id: 0xe02e14d6
 }
 function {
+  id: 0x1013ec0e
+  return_type_id: 0x48b5725f
+  parameter_id: 0x06835e9c
+  parameter_id: 0x4585663f
+  parameter_id: 0xf1a6dfed
+  parameter_id: 0x4585663f
+}
+function {
   id: 0x1014b61a
   return_type_id: 0x48b5725f
   parameter_id: 0x01950729
@@ -374485,6 +375311,13 @@ function {
   id: 0x10bce19f
   return_type_id: 0x48b5725f
   parameter_id: 0x0092c032
+}
+function {
+  id: 0x10bd6e9a
+  return_type_id: 0x17a37c1c
+  parameter_id: 0x0258f96e
+  parameter_id: 0x387c15ae
+  parameter_id: 0x0b27dc43
 }
 function {
   id: 0x10c02563
@@ -375555,6 +376388,13 @@ function {
   parameter_id: 0x05003835
 }
 function {
+  id: 0x11d96a86
+  return_type_id: 0x48b5725f
+  parameter_id: 0x054f691a
+  parameter_id: 0x054f691a
+  parameter_id: 0x1f73dead
+}
+function {
   id: 0x11ddd684
   return_type_id: 0x48b5725f
   parameter_id: 0x0611572c
@@ -375719,6 +376559,12 @@ function {
   parameter_id: 0x18bd6530
 }
 function {
+  id: 0x1201f8b1
+  return_type_id: 0x48b5725f
+  parameter_id: 0x0a2e9ae5
+  parameter_id: 0x0483e6f8
+}
+function {
   id: 0x12051b11
   return_type_id: 0x48b5725f
   parameter_id: 0x09427c40
@@ -375747,6 +376593,14 @@ function {
   parameter_id: 0x18bd6530
 }
 function {
+  id: 0x12101ef3
+  return_type_id: 0x1b8590a8
+  parameter_id: 0x26ee682a
+  parameter_id: 0x33756485
+  parameter_id: 0x2c7aa6d4
+  parameter_id: 0x18bd6530
+}
+function {
   id: 0x1210c1fa
   return_type_id: 0x1b8590a8
   parameter_id: 0x26ee682a
@@ -375765,6 +376619,11 @@ function {
   return_type_id: 0x48b5725f
   parameter_id: 0x0c56e1ee
   parameter_id: 0x6720d32f
+}
+function {
+  id: 0x1213f72a
+  return_type_id: 0x48b5725f
+  parameter_id: 0x0a2e9ae5
 }
 function {
   id: 0x121493f8
@@ -378026,6 +378885,11 @@ function {
   parameter_id: 0x11c449ec
 }
 function {
+  id: 0x14ebaa05
+  return_type_id: 0x48b5725f
+  parameter_id: 0x11cfee5a
+}
+function {
   id: 0x14ec6c55
   return_type_id: 0x48b5725f
   parameter_id: 0x11d0f719
@@ -378534,6 +379398,12 @@ function {
   parameter_id: 0x27a7c613
   parameter_id: 0x27a7c613
   parameter_id: 0x6720d32f
+}
+function {
+  id: 0x156e22f0
+  return_type_id: 0x48b5725f
+  parameter_id: 0x16f99983
+  parameter_id: 0x120540d1
 }
 function {
   id: 0x156efee0
@@ -381235,6 +382105,12 @@ function {
   id: 0x18a64f21
   return_type_id: 0x48b5725f
   parameter_id: 0x20f87ac8
+}
+function {
+  id: 0x18a6901c
+  return_type_id: 0x48b5725f
+  parameter_id: 0x2170d06d
+  parameter_id: 0x18bd6530
 }
 function {
   id: 0x18a8127c
@@ -385570,6 +386446,11 @@ function {
   return_type_id: 0x48b5725f
   parameter_id: 0x397d00ab
   parameter_id: 0x292cb268
+}
+function {
+  id: 0x1e654275
+  return_type_id: 0x48b5725f
+  parameter_id: 0x3bf44f99
 }
 function {
   id: 0x1e6686a2
@@ -391023,6 +391904,13 @@ function {
   parameter_id: 0xf1a6dfed
 }
 function {
+  id: 0x56fc975d
+  return_type_id: 0x92233392
+  parameter_id: 0x0665e6b6
+  parameter_id: 0x26ad5dc1
+  parameter_id: 0x92233392
+}
+function {
   id: 0x56fd367d
   return_type_id: 0x18bd6530
   parameter_id: 0x01ae1e33
@@ -392744,6 +393632,13 @@ function {
   id: 0x6c15334b
   return_type_id: 0x34c60997
   parameter_id: 0x3e10b518
+}
+function {
+  id: 0x6c9b19cf
+  return_type_id: 0x1d5bae2a
+  parameter_id: 0x1d5bae2a
+  parameter_id: 0x1d5bae2a
+  parameter_id: 0x1a5ea01f
 }
 function {
   id: 0x6c9e1249
@@ -395382,6 +396277,14 @@ function {
   parameter_id: 0x295c7202
   parameter_id: 0x6720d32f
   parameter_id: 0x0b553223
+}
+function {
+  id: 0x8a043dfc
+  return_type_id: 0x6720d32f
+  parameter_id: 0x52a8f1d9
+  parameter_id: 0xc9082b19
+  parameter_id: 0x2f5073a5
+  parameter_id: 0x4585663f
 }
 function {
   id: 0x8a129bb5
@@ -399000,6 +399903,13 @@ function {
   parameter_id: 0x315b7e01
 }
 function {
+  id: 0x91d78a46
+  return_type_id: 0x6720d32f
+  parameter_id: 0x3e10b518
+  parameter_id: 0xf435685e
+  parameter_id: 0x0e463afc
+}
+function {
   id: 0x91d7d502
   return_type_id: 0x6720d32f
   parameter_id: 0x32a623d7
@@ -401659,6 +402569,11 @@ function {
   parameter_id: 0x31b5a66f
 }
 function {
+  id: 0x937df0c9
+  return_type_id: 0x6720d32f
+  parameter_id: 0x3bf44f99
+}
+function {
   id: 0x937fa102
   return_type_id: 0x6720d32f
   parameter_id: 0x3bb11c92
@@ -401981,6 +402896,13 @@ function {
   return_type_id: 0x6720d32f
   parameter_id: 0x39a4e83f
   parameter_id: 0x171be96c
+}
+function {
+  id: 0x93b5d84c
+  return_type_id: 0x6720d32f
+  parameter_id: 0x39a4e83f
+  parameter_id: 0x13580d6c
+  parameter_id: 0x4585663f
 }
 function {
   id: 0x93b5eea7
@@ -403519,6 +404441,14 @@ function {
   return_type_id: 0x6720d32f
   parameter_id: 0x2560a232
   parameter_id: 0x6720d32f
+}
+function {
+  id: 0x95452d54
+  return_type_id: 0x120540d1
+  parameter_id: 0x6720d32f
+  parameter_id: 0x3e10b518
+  parameter_id: 0x16f99983
+  parameter_id: 0x4585663f
 }
 function {
   id: 0x95452ea3
@@ -406021,6 +406951,12 @@ function {
   parameter_id: 0x3a583251
 }
 function {
+  id: 0x982e650f
+  return_type_id: 0x6720d32f
+  parameter_id: 0x12e24ee1
+  parameter_id: 0x4585663f
+}
+function {
   id: 0x982f20ff
   return_type_id: 0x6720d32f
   parameter_id: 0x12e75923
@@ -407537,6 +408473,13 @@ function {
   parameter_id: 0x1e9745d3
   parameter_id: 0xc9082b19
   parameter_id: 0x5a8462fa
+}
+function {
+  id: 0x9917f312
+  return_type_id: 0x6720d32f
+  parameter_id: 0x1285100d
+  parameter_id: 0x0e88ae5c
+  parameter_id: 0x31da1e83
 }
 function {
   id: 0x991a5468
@@ -409917,6 +410860,14 @@ function {
   parameter_id: 0x33756485
 }
 function {
+  id: 0x9aa1a783
+  return_type_id: 0x6720d32f
+  parameter_id: 0x17a37c1c
+  parameter_id: 0xbdd18903
+  parameter_id: 0xf435685e
+  parameter_id: 0xf435685e
+}
+function {
   id: 0x9aa1ff3f
   return_type_id: 0x6720d32f
   parameter_id: 0x18bd6530
@@ -410557,6 +411508,13 @@ function {
   parameter_id: 0x3f979b84
 }
 function {
+  id: 0x9b04a709
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x2b16c036
+  parameter_id: 0x1d19a9d5
+}
+function {
   id: 0x9b04b788
   return_type_id: 0x6720d32f
   parameter_id: 0x18bd6530
@@ -410782,6 +411740,13 @@ function {
   parameter_id: 0x6720d32f
 }
 function {
+  id: 0x9b125901
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x2e64265f
+  parameter_id: 0x11cfee5a
+}
+function {
   id: 0x9b12f46e
   return_type_id: 0x6720d32f
   parameter_id: 0x1b8590a8
@@ -410805,6 +411770,13 @@ function {
   return_type_id: 0x6720d32f
   parameter_id: 0x18bd6530
   parameter_id: 0x2e18f543
+  parameter_id: 0x11cfee5a
+}
+function {
+  id: 0x9b13c3e5
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x2e029f76
   parameter_id: 0x11cfee5a
 }
 function {
@@ -410994,6 +411966,14 @@ function {
   parameter_id: 0x107606b0
 }
 function {
+  id: 0x9b21a2d5
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x23f6f3f6
+  parameter_id: 0x0355b30c
+  parameter_id: 0x4585663f
+}
+function {
   id: 0x9b222516
   return_type_id: 0x6720d32f
   parameter_id: 0x18bd6530
@@ -411112,6 +412092,28 @@ function {
   parameter_id: 0x227b260f
 }
 function {
+  id: 0x9b2669ae
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x2170d06d
+  parameter_id: 0x33756485
+  parameter_id: 0x33756485
+}
+function {
+  id: 0x9b26a115
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x2170d06d
+  parameter_id: 0x3360dff4
+}
+function {
+  id: 0x9b26a47b
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x2170d06d
+  parameter_id: 0x33756485
+}
+function {
   id: 0x9b26efe4
   return_type_id: 0x6720d32f
   parameter_id: 0x18bd6530
@@ -411183,6 +412185,15 @@ function {
   parameter_id: 0x064d6086
   parameter_id: 0x064d6086
   parameter_id: 0x064d6086
+}
+function {
+  id: 0x9b2a5cbe
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x2170d06d
+  parameter_id: 0x06835e9c
+  parameter_id: 0x6720d32f
+  parameter_id: 0x6720d32f
 }
 function {
   id: 0x9b2a7922
@@ -411270,6 +412281,13 @@ function {
   parameter_id: 0x18bd6530
   parameter_id: 0x2170d06d
   parameter_id: 0x15a30023
+}
+function {
+  id: 0x9b2f1988
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x2170d06d
+  parameter_id: 0x1582ab06
 }
 function {
   id: 0x9b2f7851
@@ -411465,6 +412483,16 @@ function {
   parameter_id: 0x6d7f5ff6
 }
 function {
+  id: 0x9b3b07b9
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x2170d06d
+  parameter_id: 0x4585663f
+  parameter_id: 0x04d633c3
+  parameter_id: 0x33756485
+  parameter_id: 0x11cfee5a
+}
+function {
   id: 0x9b3b4856
   return_type_id: 0x6720d32f
   parameter_id: 0x1aeeade4
@@ -411535,6 +412563,13 @@ function {
   parameter_id: 0x2170d06d
 }
 function {
+  id: 0x9b3fcc9f
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x24373219
+  parameter_id: 0x02a8d0c9
+}
+function {
   id: 0x9b3fd927
   return_type_id: 0x6720d32f
   parameter_id: 0x191de370
@@ -411546,6 +412581,18 @@ function {
   parameter_id: 0x18bd6530
   parameter_id: 0x38d23361
   parameter_id: 0x33756485
+}
+function {
+  id: 0x9b40579e
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x39182992
+  parameter_id: 0x2e64265f
+  parameter_id: 0x064d6086
+  parameter_id: 0x33756485
+  parameter_id: 0x6d7f5ff6
+  parameter_id: 0x3ea31487
+  parameter_id: 0x11cfee5a
 }
 function {
   id: 0x9b41a786
@@ -411560,6 +412607,18 @@ function {
   parameter_id: 0x1d44326e
   parameter_id: 0x6720d32f
   parameter_id: 0x33756485
+}
+function {
+  id: 0x9b41db55
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x39182992
+  parameter_id: 0x2e64265f
+  parameter_id: 0x6720d32f
+  parameter_id: 0x13580d6c
+  parameter_id: 0x33756485
+  parameter_id: 0x064d6086
+  parameter_id: 0x11cfee5a
 }
 function {
   id: 0x9b41e906
@@ -411589,6 +412648,14 @@ function {
   parameter_id: 0x4585663f
   parameter_id: 0x00c72527
   parameter_id: 0x13580d6c
+}
+function {
+  id: 0x9b4396e7
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x3861403d
+  parameter_id: 0x3e6396e0
+  parameter_id: 0x8c586ef5
 }
 function {
   id: 0x9b43a9b0
@@ -411738,6 +412805,12 @@ function {
   parameter_id: 0x1d44326e
   parameter_id: 0x6720d32f
   parameter_id: 0x13580d6c
+}
+function {
+  id: 0x9b4a4e61
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x397d00ab
 }
 function {
   id: 0x9b4a7bac
@@ -412726,6 +413799,13 @@ function {
   parameter_id: 0xc9082b19
 }
 function {
+  id: 0x9b6e1777
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x36194830
+  parameter_id: 0x6720d32f
+}
+function {
   id: 0x9b6e1aa4
   return_type_id: 0x6720d32f
   parameter_id: 0x18bd6530
@@ -412968,6 +414048,13 @@ function {
   parameter_id: 0xf435685e
 }
 function {
+  id: 0x9b752560
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x37765a7c
+  parameter_id: 0x1d19a9d5
+}
+function {
   id: 0x9b753d50
   return_type_id: 0x6720d32f
   parameter_id: 0x1bd69199
@@ -413050,6 +414137,12 @@ function {
   return_type_id: 0x6720d32f
   parameter_id: 0x18bd6530
   parameter_id: 0x36198464
+}
+function {
+  id: 0x9b77df43
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x36194830
 }
 function {
   id: 0x9b781cd5
@@ -413322,6 +414415,13 @@ function {
   parameter_id: 0x18ea6ae3
   parameter_id: 0x0858434c
   parameter_id: 0x716d7970
+}
+function {
+  id: 0x9b87a5dd
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x0a63398f
+  parameter_id: 0x064d6086
 }
 function {
   id: 0x9b87e6ee
@@ -413955,6 +415055,13 @@ function {
   parameter_id: 0x11cfee5a
 }
 function {
+  id: 0x9ba69f54
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x0355b30c
+  parameter_id: 0x11cfee5a
+}
+function {
   id: 0x9ba6ac88
   return_type_id: 0x6720d32f
   parameter_id: 0x19118777
@@ -414077,6 +415184,21 @@ function {
   parameter_id: 0x1d5bae2a
 }
 function {
+  id: 0x9baa562c
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x0355b30c
+  parameter_id: 0x23f6f3f6
+  parameter_id: 0x11cfee5a
+}
+function {
+  id: 0x9baa7dce
+  return_type_id: 0x6720d32f
+  parameter_id: 0x1b8590a8
+  parameter_id: 0x33756485
+  parameter_id: 0x18bd6530
+}
+function {
   id: 0x9baa8508
   return_type_id: 0x6720d32f
   parameter_id: 0x18bd6530
@@ -414091,6 +415213,14 @@ function {
   parameter_id: 0x18bd6530
   parameter_id: 0x078316ff
   parameter_id: 0x6d7f5ff6
+}
+function {
+  id: 0x9baaf7a4
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x0355b30c
+  parameter_id: 0x2170d06d
+  parameter_id: 0x11cfee5a
 }
 function {
   id: 0x9bab2f7e
@@ -414260,6 +415390,13 @@ function {
   parameter_id: 0xa2114faf
 }
 function {
+  id: 0x9bb259e2
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x064d6086
+  parameter_id: 0x13580d6c
+}
+function {
   id: 0x9bb2af63
   return_type_id: 0x6720d32f
   parameter_id: 0x1b084782
@@ -414284,6 +415421,13 @@ function {
   parameter_id: 0x24373219
   parameter_id: 0x1f8dbf97
   parameter_id: 0x6720d32f
+  parameter_id: 0x11cfee5a
+}
+function {
+  id: 0x9bb3403e
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x0622699d
   parameter_id: 0x11cfee5a
 }
 function {
@@ -414391,6 +415535,15 @@ function {
   parameter_id: 0x18bd6530
   parameter_id: 0x0622699d
   parameter_id: 0x06835e9c
+  parameter_id: 0x11cfee5a
+}
+function {
+  id: 0x9bb701ff
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x064d6086
+  parameter_id: 0x064d6086
+  parameter_id: 0x064d6086
   parameter_id: 0x11cfee5a
 }
 function {
@@ -414605,6 +415758,14 @@ function {
   parameter_id: 0x084ef4c8
 }
 function {
+  id: 0x9bbd7ad0
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x06835e9c
+  parameter_id: 0x20007040
+  parameter_id: 0x33756485
+}
+function {
   id: 0x9bbd9550
   return_type_id: 0x6720d32f
   parameter_id: 0x18bd6530
@@ -414698,6 +415859,14 @@ function {
   parameter_id: 0x04185b66
 }
 function {
+  id: 0x9bc00937
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x1b8590a8
+  parameter_id: 0x02cc0dbc
+  parameter_id: 0x4585663f
+}
+function {
   id: 0x9bc00e0e
   return_type_id: 0x6720d32f
   parameter_id: 0x18bd6530
@@ -414734,6 +415903,15 @@ function {
   parameter_id: 0x18bd6530
   parameter_id: 0x1b8590a8
   parameter_id: 0x064d6086
+}
+function {
+  id: 0x9bc05227
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x18ea6ae3
+  parameter_id: 0x33756485
+  parameter_id: 0x2170d06d
+  parameter_id: 0x65d74a06
 }
 function {
   id: 0x9bc07fe3
@@ -415045,6 +416223,14 @@ function {
   parameter_id: 0x2efe8065
 }
 function {
+  id: 0x9bc93dc0
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x1b8590a8
+  parameter_id: 0x2170d06d
+  parameter_id: 0x33756485
+}
+function {
   id: 0x9bc953c5
   return_type_id: 0x6720d32f
   parameter_id: 0x18bd6530
@@ -415102,6 +416288,14 @@ function {
   parameter_id: 0x18bd6530
   parameter_id: 0x1d19a9d5
   parameter_id: 0x4585663f
+}
+function {
+  id: 0x9bcaf0fd
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x1d19a9d5
+  parameter_id: 0x4585663f
+  parameter_id: 0x13580d6c
 }
 function {
   id: 0x9bcb2775
@@ -415950,6 +417144,13 @@ function {
   parameter_id: 0x141e84b4
 }
 function {
+  id: 0x9bdd9427
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x1d19a9d5
+  parameter_id: 0x19238db3
+}
+function {
   id: 0x9bddb220
   return_type_id: 0x6720d32f
   parameter_id: 0x18bd6530
@@ -416092,6 +417293,15 @@ function {
   parameter_id: 0x13580d6c
 }
 function {
+  id: 0x9be05830
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x1023f4f6
+  parameter_id: 0x3e909b01
+  parameter_id: 0x33756485
+  parameter_id: 0x11cfee5a
+}
+function {
   id: 0x9be0a31d
   return_type_id: 0x6720d32f
   parameter_id: 0x18bd6530
@@ -416129,6 +417339,17 @@ function {
   return_type_id: 0x6720d32f
   parameter_id: 0x18bd6530
   parameter_id: 0x13580d6c
+}
+function {
+  id: 0x9be31f79
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x1023f4f6
+  parameter_id: 0x33756485
+  parameter_id: 0x3e909b01
+  parameter_id: 0x33756485
+  parameter_id: 0x4585663f
+  parameter_id: 0x6720d32f
 }
 function {
   id: 0x9be3cdfa
@@ -416217,6 +417438,14 @@ function {
   parameter_id: 0x18bd6530
   parameter_id: 0x11b57133
   parameter_id: 0x33756485
+}
+function {
+  id: 0x9be64b37
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x1285100d
+  parameter_id: 0x0e88ae5c
+  parameter_id: 0x11cfee5a
 }
 function {
   id: 0x9be64bdf
@@ -416352,12 +417581,28 @@ function {
   parameter_id: 0x1013df15
 }
 function {
+  id: 0x9bf05906
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x1582ab06
+  parameter_id: 0x2170d06d
+  parameter_id: 0x6d7f5ff6
+}
+function {
   id: 0x9bf1212e
   return_type_id: 0x6720d32f
   parameter_id: 0x18bd6530
   parameter_id: 0x1582ab06
   parameter_id: 0x2170d06d
   parameter_id: 0x33756485
+}
+function {
+  id: 0x9bf15498
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x1582ab06
+  parameter_id: 0x2170d06d
+  parameter_id: 0x2e18f543
 }
 function {
   id: 0x9bf18f52
@@ -416368,9 +417613,24 @@ function {
   parameter_id: 0x18ea6ae3
 }
 function {
+  id: 0x9bf1a19b
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x1582ab06
+  parameter_id: 0x2170d06d
+  parameter_id: 0x13580d6c
+}
+function {
   id: 0x9bf1e232
   return_type_id: 0x6720d32f
   parameter_id: 0x19c40476
+}
+function {
+  id: 0x9bf1ecfb
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x1582ab06
+  parameter_id: 0x2170d06d
 }
 function {
   id: 0x9bf23070
@@ -416378,6 +417638,13 @@ function {
   parameter_id: 0x18bd6530
   parameter_id: 0x11b57133
   parameter_id: 0x6d7f5ff6
+}
+function {
+  id: 0x9bf236f2
+  return_type_id: 0x6720d32f
+  parameter_id: 0x18bd6530
+  parameter_id: 0x1582ab06
+  parameter_id: 0x2e18f543
 }
 function {
   id: 0x9bf26c94
@@ -417943,6 +419210,15 @@ function {
   parameter_id: 0x18bd6530
 }
 function {
+  id: 0x9cc8bbc4
+  return_type_id: 0x6720d32f
+  parameter_id: 0x0144254e
+  parameter_id: 0x4585663f
+  parameter_id: 0x39daf541
+  parameter_id: 0x4585663f
+  parameter_id: 0x92233392
+}
+function {
   id: 0x9cc9d859
   return_type_id: 0x6720d32f
   parameter_id: 0x0524edd8
@@ -417969,6 +419245,15 @@ function {
   parameter_id: 0xeb3a06b4
   parameter_id: 0x6720d32f
   parameter_id: 0x342a1515
+}
+function {
+  id: 0x9ccacf7d
+  return_type_id: 0x6720d32f
+  parameter_id: 0x0144254e
+  parameter_id: 0x4585663f
+  parameter_id: 0x300812ba
+  parameter_id: 0x4585663f
+  parameter_id: 0x92233392
 }
 function {
   id: 0x9ccae70d
@@ -420493,6 +421778,13 @@ function {
   parameter_id: 0x3c88bbfa
 }
 function {
+  id: 0x9de5199d
+  return_type_id: 0x6720d32f
+  parameter_id: 0x0258f96e
+  parameter_id: 0x3e10b518
+  parameter_id: 0x2e18f543
+}
+function {
   id: 0x9de52f75
   return_type_id: 0x6720d32f
   parameter_id: 0x0258f96e
@@ -421301,6 +422593,12 @@ function {
   id: 0x9e5ef2fc
   return_type_id: 0x6720d32f
   parameter_id: 0x0f78474f
+}
+function {
+  id: 0x9e5fda8b
+  return_type_id: 0x6720d32f
+  parameter_id: 0x060cf413
+  parameter_id: 0x97012809
 }
 function {
   id: 0x9e5fde3c
@@ -425942,6 +427240,11 @@ function {
   parameter_id: 0x32a623d7
 }
 function {
+  id: 0xc298cefc
+  return_type_id: 0x4585663f
+  parameter_id: 0x310ec01d
+}
+function {
   id: 0xc29f6b92
   return_type_id: 0x3b399f9e
   parameter_id: 0x31fe2b41
@@ -426789,6 +428092,12 @@ function {
   parameter_id: 0x3f37d9d5
   parameter_id: 0x4585663f
   parameter_id: 0x3e10b518
+}
+function {
+  id: 0xcf3975d4
+  return_type_id: 0x3b4ce03a
+  parameter_id: 0x3f37d9d5
+  parameter_id: 0x4585663f
 }
 function {
   id: 0xcf4a3461
@@ -430701,6 +432010,15 @@ elf_symbol {
   full_name: "__blkg_prfill_rwstat"
 }
 elf_symbol {
+  id: 0xbf1d0365
+  name: "__blkg_prfill_u64"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x12bcedf6
+  type_id: 0x56fc975d
+  full_name: "__blkg_prfill_u64"
+}
+elf_symbol {
   id: 0x2d1c1f2d
   name: "__blockdev_direct_IO"
   is_defined: true
@@ -431204,6 +432522,15 @@ elf_symbol {
   crc: 0x0141b25a
   type_id: 0x708776d9
   full_name: "__devm_of_phy_provider_register"
+}
+elf_symbol {
+  id: 0x661620a3
+  name: "__devm_pci_epc_create"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x9ba05a05
+  type_id: 0x10bd6e9a
+  full_name: "__devm_pci_epc_create"
 }
 elf_symbol {
   id: 0x220972ea
@@ -431754,6 +433081,15 @@ elf_symbol {
   crc: 0x0d231a3e
   type_id: 0x59e95427
   full_name: "__filemap_get_folio"
+}
+elf_symbol {
+  id: 0xc4cc0fc6
+  name: "__filemap_remove_folio"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x1853086d
+  type_id: 0x18a6901c
+  full_name: "__filemap_remove_folio"
 }
 elf_symbol {
   id: 0x6036d483
@@ -435006,6 +436342,15 @@ elf_symbol {
   full_name: "__traceiter_android_rvh_kswapd_shrink_node"
 }
 elf_symbol {
+  id: 0x0ccee092
+  name: "__traceiter_android_rvh_kswapd_shrink_node_bypass"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xaa191724
+  type_id: 0x9bb701ff
+  full_name: "__traceiter_android_rvh_kswapd_shrink_node_bypass"
+}
+elf_symbol {
   id: 0xc6985675
   name: "__traceiter_android_rvh_madvise_pageout_begin"
   is_defined: true
@@ -435040,6 +436385,15 @@ elf_symbol {
   crc: 0x66605e25
   type_id: 0x9bb62df9
   full_name: "__traceiter_android_rvh_meminfo_proc_show"
+}
+elf_symbol {
+  id: 0x9b04cc3c
+  name: "__traceiter_android_rvh_mglru_shrink_spec_lru"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xa53cc018
+  type_id: 0x9b41db55
+  full_name: "__traceiter_android_rvh_mglru_shrink_spec_lru"
 }
 elf_symbol {
   id: 0x1ea5d323
@@ -435654,6 +437008,15 @@ elf_symbol {
   full_name: "__traceiter_android_rvh_show_max_freq"
 }
 elf_symbol {
+  id: 0x970d0e94
+  name: "__traceiter_android_rvh_shrink_spec_lru"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x7b497149
+  type_id: 0x9b40579e
+  full_name: "__traceiter_android_rvh_shrink_spec_lru"
+}
+elf_symbol {
   id: 0x6c071d53
   name: "__traceiter_android_rvh_swap_read_folio_bdev_sync"
   is_defined: true
@@ -435715,6 +437078,15 @@ elf_symbol {
   crc: 0xb3e539cb
   type_id: 0x9bdbdcc4
   full_name: "__traceiter_android_rvh_try_to_wake_up"
+}
+elf_symbol {
+  id: 0x50dd8419
+  name: "__traceiter_android_rvh_try_to_wake_up_begin"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x997429d4
+  type_id: 0x9bcaf0fd
+  full_name: "__traceiter_android_rvh_try_to_wake_up_begin"
 }
 elf_symbol {
   id: 0x09f2fded
@@ -436455,6 +437827,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_binder_transaction_init"
 }
 elf_symbol {
+  id: 0x81345265
+  name: "__traceiter_android_vh_binder_transaction_priority"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x70be71a4
+  type_id: 0x9b3fcc9f
+  full_name: "__traceiter_android_vh_binder_transaction_priority"
+}
+elf_symbol {
   id: 0xcc2edef9
   name: "__traceiter_android_vh_binder_transaction_received"
   is_defined: true
@@ -436635,6 +438016,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_check_new_page"
 }
 elf_symbol {
+  id: 0x77e39748
+  name: "__traceiter_android_vh_check_swap_entry_range_free"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xb0463148
+  type_id: 0x9b21a2d5
+  full_name: "__traceiter_android_vh_check_swap_entry_range_free"
+}
+elf_symbol {
   id: 0xa2224fa6
   name: "__traceiter_android_vh_check_uninterruptible_tasks"
   is_defined: true
@@ -436660,6 +438050,15 @@ elf_symbol {
   crc: 0x14c38fb4
   type_id: 0x9b93638b
   full_name: "__traceiter_android_vh_chk_task"
+}
+elf_symbol {
+  id: 0x124b6497
+  name: "__traceiter_android_vh_clear_curr_lazy"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xc9a1a392
+  type_id: 0x9bdbdcc4
+  full_name: "__traceiter_android_vh_clear_curr_lazy"
 }
 elf_symbol {
   id: 0xe50d4e50
@@ -436707,6 +438106,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_cma_alloc_bypass"
 }
 elf_symbol {
+  id: 0xe0295cb9
+  name: "__traceiter_android_vh_cma_alloc_end"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x9a372a5d
+  type_id: 0x9be31f79
+  full_name: "__traceiter_android_vh_cma_alloc_end"
+}
+elf_symbol {
   id: 0xa9ea0208
   name: "__traceiter_android_vh_cma_alloc_fail"
   is_defined: true
@@ -436741,6 +438149,24 @@ elf_symbol {
   crc: 0x8a06e063
   type_id: 0x9bef35b0
   full_name: "__traceiter_android_vh_cma_alloc_start"
+}
+elf_symbol {
+  id: 0x943ca30b
+  name: "__traceiter_android_vh_cma_release_bypass"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xa32b0634
+  type_id: 0x9be05830
+  full_name: "__traceiter_android_vh_cma_release_bypass"
+}
+elf_symbol {
+  id: 0x98a764e2
+  name: "__traceiter_android_vh_compact_bypass"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x26f73975
+  type_id: 0x9bb3403e
+  full_name: "__traceiter_android_vh_compact_bypass"
 }
 elf_symbol {
   id: 0xf3cb298b
@@ -436896,6 +438322,24 @@ elf_symbol {
   full_name: "__traceiter_android_vh_cpuidle_psci_exit"
 }
 elf_symbol {
+  id: 0x9004b9db
+  name: "__traceiter_android_vh_cpuset_attach_task"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x36fd4c71
+  type_id: 0x9b04a709
+  full_name: "__traceiter_android_vh_cpuset_attach_task"
+}
+elf_symbol {
+  id: 0x3d81eceb
+  name: "__traceiter_android_vh_cpuset_css_online"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xd90282f9
+  type_id: 0x9b03e163
+  full_name: "__traceiter_android_vh_cpuset_css_online"
+}
+elf_symbol {
   id: 0x96cfd964
   name: "__traceiter_android_vh_customize_alloc_gfp"
   is_defined: true
@@ -437022,6 +438466,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_do_async_mmap_readahead"
 }
 elf_symbol {
+  id: 0x9f9229ec
+  name: "__traceiter_android_vh_do_fault_around"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x022651cd
+  type_id: 0x9b63aa44
+  full_name: "__traceiter_android_vh_do_fault_around"
+}
+elf_symbol {
   id: 0xd593b3ef
   name: "__traceiter_android_vh_do_futex"
   is_defined: true
@@ -437092,6 +438545,24 @@ elf_symbol {
   crc: 0xc2cbedcf
   type_id: 0x9b2612dc
   full_name: "__traceiter_android_vh_do_swap_page"
+}
+elf_symbol {
+  id: 0x43a88164
+  name: "__traceiter_android_vh_do_swap_page_folio_lock_check"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x079ae841
+  type_id: 0x9b26a115
+  full_name: "__traceiter_android_vh_do_swap_page_folio_lock_check"
+}
+elf_symbol {
+  id: 0xcc2b8317
+  name: "__traceiter_android_vh_do_swap_page_wait"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x079ae841
+  type_id: 0x9b26a115
+  full_name: "__traceiter_android_vh_do_swap_page_wait"
 }
 elf_symbol {
   id: 0x9dbd7b92
@@ -437346,6 +438817,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_filemap_add_folio"
 }
 elf_symbol {
+  id: 0xb4752447
+  name: "__traceiter_android_vh_filemap_adjust_folio_flags"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x0847c3a8
+  type_id: 0x9bf1212e
+  full_name: "__traceiter_android_vh_filemap_adjust_folio_flags"
+}
+elf_symbol {
   id: 0x19fc04e0
   name: "__traceiter_android_vh_filemap_fault_end"
   is_defined: true
@@ -437353,6 +438833,24 @@ elf_symbol {
   crc: 0x7727b7bc
   type_id: 0x9bc0ce91
   full_name: "__traceiter_android_vh_filemap_fault_end"
+}
+elf_symbol {
+  id: 0xbd855995
+  name: "__traceiter_android_vh_filemap_fault_folio_locked"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x0a9d2de4
+  type_id: 0x9bc93dc0
+  full_name: "__traceiter_android_vh_filemap_fault_folio_locked"
+}
+elf_symbol {
+  id: 0x5f6dd48c
+  name: "__traceiter_android_vh_filemap_fault_post_folio_locked"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x0a9d2de4
+  type_id: 0x9bc93dc0
+  full_name: "__traceiter_android_vh_filemap_fault_post_folio_locked"
 }
 elf_symbol {
   id: 0x980c4b2d
@@ -437391,6 +438889,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_filemap_get_folio"
 }
 elf_symbol {
+  id: 0x2c39dada
+  name: "__traceiter_android_vh_filemap_get_folio_end"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x90933609
+  type_id: 0x9bf1ecfb
+  full_name: "__traceiter_android_vh_filemap_get_folio_end"
+}
+elf_symbol {
   id: 0x5893591b
   name: "__traceiter_android_vh_filemap_get_folio_gfp"
   is_defined: true
@@ -437425,6 +438932,15 @@ elf_symbol {
   crc: 0xf1850029
   type_id: 0x9bc62aec
   full_name: "__traceiter_android_vh_filemap_read"
+}
+elf_symbol {
+  id: 0x48ad4ccb
+  name: "__traceiter_android_vh_filemap_read_end"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x93c61128
+  type_id: 0x9bc00937
+  full_name: "__traceiter_android_vh_filemap_read_end"
 }
 elf_symbol {
   id: 0x0e217a5e
@@ -437472,6 +438988,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_flush_wq_wait_start"
 }
 elf_symbol {
+  id: 0x306fa992
+  name: "__traceiter_android_vh_folio_add_file_rmap"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x5db051d6
+  type_id: 0x9b2a5cbe
+  full_name: "__traceiter_android_vh_folio_add_file_rmap"
+}
+elf_symbol {
   id: 0xfaa99ddb
   name: "__traceiter_android_vh_folio_add_lru"
   is_defined: true
@@ -437490,6 +439015,33 @@ elf_symbol {
   full_name: "__traceiter_android_vh_folio_add_lru_folio_activate"
 }
 elf_symbol {
+  id: 0xc8a10243
+  name: "__traceiter_android_vh_folio_alloc_swap_bypass"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xc74fd135
+  type_id: 0x9baaf7a4
+  full_name: "__traceiter_android_vh_folio_alloc_swap_bypass"
+}
+elf_symbol {
+  id: 0x3678bbd5
+  name: "__traceiter_android_vh_folio_expected_ref_count"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xe91211cc
+  type_id: 0x9bf1a19b
+  full_name: "__traceiter_android_vh_folio_expected_ref_count"
+}
+elf_symbol {
+  id: 0x37c66367
+  name: "__traceiter_android_vh_folio_remove_rmap"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x5db051d6
+  type_id: 0x9b2a5cbe
+  full_name: "__traceiter_android_vh_folio_remove_rmap"
+}
+elf_symbol {
   id: 0xef70c295
   name: "__traceiter_android_vh_folio_remove_rmap_ptes"
   is_defined: true
@@ -437497,6 +439049,42 @@ elf_symbol {
   crc: 0xba77e0c4
   type_id: 0x9b2a7922
   full_name: "__traceiter_android_vh_folio_remove_rmap_ptes"
+}
+elf_symbol {
+  id: 0xb079e2fd
+  name: "__traceiter_android_vh_folio_skip_activate"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x53dafb0d
+  type_id: 0x9b2e0ad9
+  full_name: "__traceiter_android_vh_folio_skip_activate"
+}
+elf_symbol {
+  id: 0xa157ce59
+  name: "__traceiter_android_vh_folio_trylock_clear_bypass"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xde6d7cf3
+  type_id: 0x9b2e0ad9
+  full_name: "__traceiter_android_vh_folio_trylock_clear_bypass"
+}
+elf_symbol {
+  id: 0x18234c18
+  name: "__traceiter_android_vh_folios_put_refs_direct_free_extent"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x9f41db5c
+  type_id: 0x9b3b07b9
+  full_name: "__traceiter_android_vh_folios_put_refs_direct_free_extent"
+}
+elf_symbol {
+  id: 0xb10c10b1
+  name: "__traceiter_android_vh_force_page_cache_ra"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xdfa61288
+  type_id: 0x9bf236f2
+  full_name: "__traceiter_android_vh_force_page_cache_ra"
 }
 elf_symbol {
   id: 0xe78b407f
@@ -437553,6 +439141,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_free_page_bypass"
 }
 elf_symbol {
+  id: 0xc0c16ab7
+  name: "__traceiter_android_vh_free_pages_and_swap_cache"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xba77e0c4
+  type_id: 0x9b2a7922
+  full_name: "__traceiter_android_vh_free_pages_and_swap_cache"
+}
+elf_symbol {
   id: 0xcbee3d67
   name: "__traceiter_android_vh_free_pages_ok_bypass"
   is_defined: true
@@ -437578,6 +439175,15 @@ elf_symbol {
   crc: 0x6c293efb
   type_id: 0x9bac3812
   full_name: "__traceiter_android_vh_free_pages_prepare_init"
+}
+elf_symbol {
+  id: 0xf9541634
+  name: "__traceiter_android_vh_free_swap_slot_bypass"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x6dea6b65
+  type_id: 0x9ba69f54
+  full_name: "__traceiter_android_vh_free_swap_slot_bypass"
 }
 elf_symbol {
   id: 0x5ecff02f
@@ -437713,6 +439319,15 @@ elf_symbol {
   crc: 0x666b0641
   type_id: 0x9be64bdf
   full_name: "__traceiter_android_vh_fuse_request_end_ext"
+}
+elf_symbol {
+  id: 0x24bd444b
+  name: "__traceiter_android_vh_fuse_request_fetch"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x666b0641
+  type_id: 0x9be64bdf
+  full_name: "__traceiter_android_vh_fuse_request_fetch"
 }
 elf_symbol {
   id: 0xdd3e0da4
@@ -438165,6 +439780,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_kvmalloc_node_use_vmalloc"
 }
 elf_symbol {
+  id: 0xedae015e
+  name: "__traceiter_android_vh_lock_delay_schedule"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xbe38553a
+  type_id: 0x9bc253cf
+  full_name: "__traceiter_android_vh_lock_delay_schedule"
+}
+elf_symbol {
   id: 0xf56758ea
   name: "__traceiter_android_vh_lock_folio_drop_mmap_end"
   is_defined: true
@@ -438181,6 +439805,24 @@ elf_symbol {
   crc: 0x1d07edbb
   type_id: 0x9b94b8e2
   full_name: "__traceiter_android_vh_lock_folio_drop_mmap_start"
+}
+elf_symbol {
+  id: 0xc955d513
+  name: "__traceiter_android_vh_lock_task_exit"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x00f755e7
+  type_id: 0x9bdbdcc4
+  full_name: "__traceiter_android_vh_lock_task_exit"
+}
+elf_symbol {
+  id: 0xfc3decf6
+  name: "__traceiter_android_vh_lock_task_fork"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x00f755e7
+  type_id: 0x9bdbdcc4
+  full_name: "__traceiter_android_vh_lock_task_fork"
 }
 elf_symbol {
   id: 0x66cefe64
@@ -438298,6 +439940,15 @@ elf_symbol {
   crc: 0xba7470ba
   type_id: 0x9b33e2c9
   full_name: "__traceiter_android_vh_madvise_swapin_walk_pmd_entry"
+}
+elf_symbol {
+  id: 0x8399021c
+  name: "__traceiter_android_vh_map_order0_folio"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x453624a9
+  type_id: 0x9bc05227
+  full_name: "__traceiter_android_vh_map_order0_folio"
 }
 elf_symbol {
   id: 0x61ea12b8
@@ -438651,6 +440302,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_mm_free_page"
 }
 elf_symbol {
+  id: 0x7f7c30a9
+  name: "__traceiter_android_vh_mm_get_zone_mark"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x772ec52f
+  type_id: 0x9b87a5dd
+  full_name: "__traceiter_android_vh_mm_get_zone_mark"
+}
+elf_symbol {
   id: 0x945dd126
   name: "__traceiter_android_vh_mm_isolate_priv_lru"
   is_defined: true
@@ -438714,6 +440374,24 @@ elf_symbol {
   full_name: "__traceiter_android_vh_mm_try_split_folio_bypass"
 }
 elf_symbol {
+  id: 0x01554a41
+  name: "__traceiter_android_vh_mmap_lock_free"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xff2b6413
+  type_id: 0x9bad4369
+  full_name: "__traceiter_android_vh_mmap_lock_free"
+}
+elf_symbol {
+  id: 0x9b40ad23
+  name: "__traceiter_android_vh_mmap_lock_init"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xff2b6413
+  type_id: 0x9bad4369
+  full_name: "__traceiter_android_vh_mmap_lock_init"
+}
+elf_symbol {
   id: 0xe44dacb1
   name: "__traceiter_android_vh_mmap_region"
   is_defined: true
@@ -438721,6 +440399,33 @@ elf_symbol {
   crc: 0xb8ed3340
   type_id: 0x9b8b2a3f
   full_name: "__traceiter_android_vh_mmap_region"
+}
+elf_symbol {
+  id: 0xb6126b05
+  name: "__traceiter_android_vh_mmc_attach_sd"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x73e01a0e
+  type_id: 0x9b6e1777
+  full_name: "__traceiter_android_vh_mmc_attach_sd"
+}
+elf_symbol {
+  id: 0x6ac4216b
+  name: "__traceiter_android_vh_mmc_blk_reset"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x73e01a0e
+  type_id: 0x9b6e1777
+  full_name: "__traceiter_android_vh_mmc_blk_reset"
+}
+elf_symbol {
+  id: 0xabd010ba
+  name: "__traceiter_android_vh_mmc_gpio_cd_irqt"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x2e928630
+  type_id: 0x9b77df43
+  full_name: "__traceiter_android_vh_mmc_gpio_cd_irqt"
 }
 elf_symbol {
   id: 0x5612c9d1
@@ -438903,6 +440608,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_page_add_new_anon_rmap"
 }
 elf_symbol {
+  id: 0x7fae80cd
+  name: "__traceiter_android_vh_page_cache_ra_mark"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xd71e152a
+  type_id: 0x9b2669ae
+  full_name: "__traceiter_android_vh_page_cache_ra_mark"
+}
+elf_symbol {
   id: 0xbf28fbd5
   name: "__traceiter_android_vh_page_cache_ra_order_bypass"
   is_defined: true
@@ -438910,6 +440624,15 @@ elf_symbol {
   crc: 0x3415bb41
   type_id: 0x9b37ef14
   full_name: "__traceiter_android_vh_page_cache_ra_order_bypass"
+}
+elf_symbol {
+  id: 0x7f95d934
+  name: "__traceiter_android_vh_page_cache_ra_unbounded"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xabecd358
+  type_id: 0x9bf15498
+  full_name: "__traceiter_android_vh_page_cache_ra_unbounded"
 }
 elf_symbol {
   id: 0xd0065122
@@ -438966,6 +440689,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_percpu_rwsem_down_read"
 }
 elf_symbol {
+  id: 0x12b996bc
+  name: "__traceiter_android_vh_percpu_rwsem_init"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xcb539617
+  type_id: 0x9be96fa7
+  full_name: "__traceiter_android_vh_percpu_rwsem_init"
+}
+elf_symbol {
   id: 0xc72f2012
   name: "__traceiter_android_vh_percpu_rwsem_up_write"
   is_defined: true
@@ -438982,6 +440714,15 @@ elf_symbol {
   crc: 0x3dcb9fbe
   type_id: 0x9bf23070
   full_name: "__traceiter_android_vh_percpu_rwsem_wq_add"
+}
+elf_symbol {
+  id: 0xd6204bb5
+  name: "__traceiter_android_vh_pick_swap_device_bypass"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x1bb627d1
+  type_id: 0x9baa562c
+  full_name: "__traceiter_android_vh_pick_swap_device_bypass"
 }
 elf_symbol {
   id: 0xfa839fbe
@@ -439173,6 +440914,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_psi_group"
 }
 elf_symbol {
+  id: 0x358b7cff
+  name: "__traceiter_android_vh_put_super"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xd3e0f36e
+  type_id: 0x9b3403c3
+  full_name: "__traceiter_android_vh_put_super"
+}
+elf_symbol {
   id: 0x1adac14e
   name: "__traceiter_android_vh_put_task"
   is_defined: true
@@ -439198,6 +440948,33 @@ elf_symbol {
   crc: 0xa7159199
   type_id: 0x9b3343fb
   full_name: "__traceiter_android_vh_ra_tuning_max_page"
+}
+elf_symbol {
+  id: 0xaa42bd9c
+  name: "__traceiter_android_vh_rcu_boost_end"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xaa9be5f7
+  type_id: 0x9b752560
+  full_name: "__traceiter_android_vh_rcu_boost_end"
+}
+elf_symbol {
+  id: 0xcf2bdce0
+  name: "__traceiter_android_vh_rcu_boost_start"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xaa9be5f7
+  type_id: 0x9b752560
+  full_name: "__traceiter_android_vh_rcu_boost_start"
+}
+elf_symbol {
+  id: 0x6fe03e45
+  name: "__traceiter_android_vh_readahead_add_folio"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xc0e0404d
+  type_id: 0x9b2f1988
+  full_name: "__traceiter_android_vh_readahead_add_folio"
 }
 elf_symbol {
   id: 0xb6218fbe
@@ -439290,6 +441067,33 @@ elf_symbol {
   full_name: "__traceiter_android_vh_regmap_update"
 }
 elf_symbol {
+  id: 0x4ac41e54
+  name: "__traceiter_android_vh_remove_mapping"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x8e004dd4
+  type_id: 0x9bf05906
+  full_name: "__traceiter_android_vh_remove_mapping"
+}
+elf_symbol {
+  id: 0xda7f66bc
+  name: "__traceiter_android_vh_remove_mapping_failed"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x8e004dd4
+  type_id: 0x9bf05906
+  full_name: "__traceiter_android_vh_remove_mapping_failed"
+}
+elf_symbol {
+  id: 0x799188c0
+  name: "__traceiter_android_vh_resched_curr_lazy"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xbf140346
+  type_id: 0x9b13c3e5
+  full_name: "__traceiter_android_vh_resched_curr_lazy"
+}
+elf_symbol {
   id: 0xd0707ed1
   name: "__traceiter_android_vh_reserve_highatomic_bypass"
   is_defined: true
@@ -439297,6 +441101,15 @@ elf_symbol {
   crc: 0x8afd330b
   type_id: 0x9bb1c4e2
   full_name: "__traceiter_android_vh_reserve_highatomic_bypass"
+}
+elf_symbol {
+  id: 0xfb6f79f6
+  name: "__traceiter_android_vh_restore_curr_resched"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xa213f12d
+  type_id: 0x9bb259e2
+  full_name: "__traceiter_android_vh_restore_curr_resched"
 }
 elf_symbol {
   id: 0xf10ce16f
@@ -439560,6 +441373,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_save_vmalloc_stack"
 }
 elf_symbol {
+  id: 0x3b3c5487
+  name: "__traceiter_android_vh_sca_migrate_same"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x4811fe2c
+  type_id: 0x9bdd9427
+  full_name: "__traceiter_android_vh_sca_migrate_same"
+}
+elf_symbol {
   id: 0xa413d12c
   name: "__traceiter_android_vh_sched_move_task"
   is_defined: true
@@ -439693,6 +441515,15 @@ elf_symbol {
   crc: 0x8a6ef5e6
   type_id: 0x9bc214f0
   full_name: "__traceiter_android_vh_scx_task_switch_finish"
+}
+elf_symbol {
+  id: 0xf302c041
+  name: "__traceiter_android_vh_sdhci_get_cd"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x52720fb7
+  type_id: 0x9b4a4e61
+  full_name: "__traceiter_android_vh_sdhci_get_cd"
 }
 elf_symbol {
   id: 0x537d5581
@@ -439884,6 +441715,24 @@ elf_symbol {
   full_name: "__traceiter_android_vh_shrink_folio_list"
 }
 elf_symbol {
+  id: 0xc6962dfb
+  name: "__traceiter_android_vh_shrink_folio_lock_owner_clear"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xba77e0c4
+  type_id: 0x9b2a7922
+  full_name: "__traceiter_android_vh_shrink_folio_lock_owner_clear"
+}
+elf_symbol {
+  id: 0x1e6acbc8
+  name: "__traceiter_android_vh_shrink_folio_lock_owner_set"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xba77e0c4
+  type_id: 0x9b2a7922
+  full_name: "__traceiter_android_vh_shrink_folio_lock_owner_set"
+}
+elf_symbol {
   id: 0x6f5e0f48
   name: "__traceiter_android_vh_shrink_node"
   is_defined: true
@@ -439974,6 +441823,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_sk_free"
 }
 elf_symbol {
+  id: 0x5b621135
+  name: "__traceiter_android_vh_skip_cma"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x32e6ff51
+  type_id: 0x9b125901
+  full_name: "__traceiter_android_vh_skip_cma"
+}
+elf_symbol {
   id: 0x8f7ad177
   name: "__traceiter_android_vh_skip_swap_map_write"
   is_defined: true
@@ -440028,6 +441886,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_sock_create"
 }
 elf_symbol {
+  id: 0x805e06dd
+  name: "__traceiter_android_vh_spec_promote_folio"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xba77e0c4
+  type_id: 0x9b2a7922
+  full_name: "__traceiter_android_vh_spec_promote_folio"
+}
+elf_symbol {
   id: 0x7068c1fb
   name: "__traceiter_android_vh_split_large_folio_bypass"
   is_defined: true
@@ -440053,6 +441920,42 @@ elf_symbol {
   crc: 0xa5106695
   type_id: 0x9bb72f36
   full_name: "__traceiter_android_vh_swap_writepage"
+}
+elf_symbol {
+  id: 0xdb713553
+  name: "__traceiter_android_vh_swap_writepage_end"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xe5a037bf
+  type_id: 0x9bbd7ad0
+  full_name: "__traceiter_android_vh_swap_writepage_end"
+}
+elf_symbol {
+  id: 0x51c4ce10
+  name: "__traceiter_android_vh_swap_writepage_start"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x99b2923f
+  type_id: 0x9bb68fe1
+  full_name: "__traceiter_android_vh_swap_writepage_start"
+}
+elf_symbol {
+  id: 0xe15c6398
+  name: "__traceiter_android_vh_swapin_end"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xe74c6d34
+  type_id: 0x9b26a47b
+  full_name: "__traceiter_android_vh_swapin_end"
+}
+elf_symbol {
+  id: 0xeb557125
+  name: "__traceiter_android_vh_swapin_start"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xf2e4d2ab
+  type_id: 0x9bb68fe1
+  full_name: "__traceiter_android_vh_swapin_start"
 }
 elf_symbol {
   id: 0x445e3749
@@ -440107,6 +442010,24 @@ elf_symbol {
   crc: 0xa8620c6e
   type_id: 0x9b629efc
   full_name: "__traceiter_android_vh_sync_irq_wait_start"
+}
+elf_symbol {
+  id: 0x6dae8aa1
+  name: "__traceiter_android_vh_sync_rcu_wait_end"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x912e6508
+  type_id: 0x9bdbdcc4
+  full_name: "__traceiter_android_vh_sync_rcu_wait_end"
+}
+elf_symbol {
+  id: 0x41c88b09
+  name: "__traceiter_android_vh_sync_rcu_wait_start"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x912e6508
+  type_id: 0x9bdbdcc4
+  full_name: "__traceiter_android_vh_sync_rcu_wait_start"
 }
 elf_symbol {
   id: 0x58e7556b
@@ -440757,6 +442678,15 @@ elf_symbol {
   full_name: "__traceiter_android_vh_wb_dirty_limits"
 }
 elf_symbol {
+  id: 0x49fda23e
+  name: "__traceiter_android_vh_workingset_active"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xba77e0c4
+  type_id: 0x9b2a7922
+  full_name: "__traceiter_android_vh_workingset_active"
+}
+elf_symbol {
   id: 0x20e7f214
   name: "__traceiter_android_vh_wp_page_reuse"
   is_defined: true
@@ -440773,6 +442703,15 @@ elf_symbol {
   crc: 0x5338bdc3
   type_id: 0x9a3fe476
   full_name: "__traceiter_android_vh_wq_lockup_pool"
+}
+elf_symbol {
+  id: 0xbc1f9cf9
+  name: "__traceiter_android_vh_xhci_handle_offload"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xa0a4cf48
+  type_id: 0x9be64b37
+  full_name: "__traceiter_android_vh_xhci_handle_offload"
 }
 elf_symbol {
   id: 0x18619e65
@@ -441594,6 +443533,15 @@ elf_symbol {
   full_name: "__traceiter_tcp_retransmit_skb"
 }
 elf_symbol {
+  id: 0xf2cd7e13
+  name: "__traceiter_tcp_send_reset"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xb297a0b1
+  type_id: 0x9b4396e7
+  full_name: "__traceiter_tcp_send_reset"
+}
+elf_symbol {
   id: 0x35f53d2e
   name: "__traceiter_ufshcd_profile_clk_gating"
   is_defined: true
@@ -442377,6 +444325,15 @@ elf_symbol {
   full_name: "__tracepoint_android_rvh_kswapd_shrink_node"
 }
 elf_symbol {
+  id: 0x30425cb0
+  name: "__tracepoint_android_rvh_kswapd_shrink_node_bypass"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_rvh_kswapd_shrink_node_bypass"
+}
+elf_symbol {
   id: 0xf35a6597
   name: "__tracepoint_android_rvh_madvise_pageout_begin"
   is_defined: true
@@ -442411,6 +444368,15 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_rvh_meminfo_proc_show"
+}
+elf_symbol {
+  id: 0xc50fd35e
+  name: "__tracepoint_android_rvh_mglru_shrink_spec_lru"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_rvh_mglru_shrink_spec_lru"
 }
 elf_symbol {
   id: 0x3cb4db49
@@ -443025,6 +444991,15 @@ elf_symbol {
   full_name: "__tracepoint_android_rvh_show_max_freq"
 }
 elf_symbol {
+  id: 0x0f16c786
+  name: "__tracepoint_android_rvh_shrink_spec_lru"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_rvh_shrink_spec_lru"
+}
+elf_symbol {
   id: 0x95871e95
   name: "__tracepoint_android_rvh_swap_read_folio_bdev_sync"
   is_defined: true
@@ -443086,6 +445061,15 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_rvh_try_to_wake_up"
+}
+elf_symbol {
+  id: 0x2020ec0f
+  name: "__tracepoint_android_rvh_try_to_wake_up_begin"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_rvh_try_to_wake_up_begin"
 }
 elf_symbol {
   id: 0xdf07959f
@@ -443826,6 +445810,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_binder_transaction_init"
 }
 elf_symbol {
+  id: 0x0b059e5b
+  name: "__tracepoint_android_vh_binder_transaction_priority"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_binder_transaction_priority"
+}
+elf_symbol {
   id: 0xabc729f7
   name: "__tracepoint_android_vh_binder_transaction_received"
   is_defined: true
@@ -444006,6 +445999,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_check_new_page"
 }
 elf_symbol {
+  id: 0xc1125f2e
+  name: "__tracepoint_android_vh_check_swap_entry_range_free"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_check_swap_entry_range_free"
+}
+elf_symbol {
   id: 0x2cf5984c
   name: "__tracepoint_android_vh_check_uninterruptible_tasks"
   is_defined: true
@@ -444031,6 +446033,15 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_chk_task"
+}
+elf_symbol {
+  id: 0x00405915
+  name: "__tracepoint_android_vh_clear_curr_lazy"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_clear_curr_lazy"
 }
 elf_symbol {
   id: 0xe8cdcd02
@@ -444078,6 +446089,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_cma_alloc_bypass"
 }
 elf_symbol {
+  id: 0x74d9da97
+  name: "__tracepoint_android_vh_cma_alloc_end"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_cma_alloc_end"
+}
+elf_symbol {
   id: 0xdb2e754e
   name: "__tracepoint_android_vh_cma_alloc_fail"
   is_defined: true
@@ -444112,6 +446132,24 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_cma_alloc_start"
+}
+elf_symbol {
+  id: 0xb122c55d
+  name: "__tracepoint_android_vh_cma_release_bypass"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_cma_release_bypass"
+}
+elf_symbol {
+  id: 0xfaa47418
+  name: "__tracepoint_android_vh_compact_bypass"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_compact_bypass"
 }
 elf_symbol {
   id: 0xd7bdd001
@@ -444267,6 +446305,24 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_cpuidle_psci_exit"
 }
 elf_symbol {
+  id: 0xa1b79b01
+  name: "__tracepoint_android_vh_cpuset_attach_task"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_cpuset_attach_task"
+}
+elf_symbol {
+  id: 0xa16eb965
+  name: "__tracepoint_android_vh_cpuset_css_online"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_cpuset_css_online"
+}
+elf_symbol {
   id: 0x611b30be
   name: "__tracepoint_android_vh_customize_alloc_gfp"
   is_defined: true
@@ -444393,6 +446449,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_do_async_mmap_readahead"
 }
 elf_symbol {
+  id: 0xfbc457d6
+  name: "__tracepoint_android_vh_do_fault_around"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_do_fault_around"
+}
+elf_symbol {
   id: 0x9fe99d05
   name: "__tracepoint_android_vh_do_futex"
   is_defined: true
@@ -444463,6 +446528,24 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_do_swap_page"
+}
+elf_symbol {
+  id: 0x8c4b4146
+  name: "__tracepoint_android_vh_do_swap_page_folio_lock_check"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_do_swap_page_folio_lock_check"
+}
+elf_symbol {
+  id: 0xbce15ba5
+  name: "__tracepoint_android_vh_do_swap_page_wait"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_do_swap_page_wait"
 }
 elf_symbol {
   id: 0xe2d7542c
@@ -444717,6 +446800,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_filemap_add_folio"
 }
 elf_symbol {
+  id: 0x0bed5ac9
+  name: "__tracepoint_android_vh_filemap_adjust_folio_flags"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_filemap_adjust_folio_flags"
+}
+elf_symbol {
   id: 0x197d6be2
   name: "__tracepoint_android_vh_filemap_fault_end"
   is_defined: true
@@ -444724,6 +446816,24 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_filemap_fault_end"
+}
+elf_symbol {
+  id: 0xee4c2077
+  name: "__tracepoint_android_vh_filemap_fault_folio_locked"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_filemap_fault_folio_locked"
+}
+elf_symbol {
+  id: 0x1afa87b6
+  name: "__tracepoint_android_vh_filemap_fault_post_folio_locked"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_filemap_fault_post_folio_locked"
 }
 elf_symbol {
   id: 0xf045a23f
@@ -444762,6 +446872,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_filemap_get_folio"
 }
 elf_symbol {
+  id: 0x7b27aae8
+  name: "__tracepoint_android_vh_filemap_get_folio_end"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_filemap_get_folio_end"
+}
+elf_symbol {
   id: 0x85c23431
   name: "__tracepoint_android_vh_filemap_get_folio_gfp"
   is_defined: true
@@ -444796,6 +446915,15 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_filemap_read"
+}
+elf_symbol {
+  id: 0x25deef51
+  name: "__tracepoint_android_vh_filemap_read_end"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_filemap_read_end"
 }
 elf_symbol {
   id: 0xa8c30e54
@@ -444843,6 +446971,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_flush_wq_wait_start"
 }
 elf_symbol {
+  id: 0x58b7f538
+  name: "__tracepoint_android_vh_folio_add_file_rmap"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_folio_add_file_rmap"
+}
+elf_symbol {
   id: 0xc09285c1
   name: "__tracepoint_android_vh_folio_add_lru"
   is_defined: true
@@ -444861,6 +446998,33 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_folio_add_lru_folio_activate"
 }
 elf_symbol {
+  id: 0xf56e5915
+  name: "__tracepoint_android_vh_folio_alloc_swap_bypass"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_folio_alloc_swap_bypass"
+}
+elf_symbol {
+  id: 0xd3e119c7
+  name: "__tracepoint_android_vh_folio_expected_ref_count"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_folio_expected_ref_count"
+}
+elf_symbol {
+  id: 0x136a16c5
+  name: "__tracepoint_android_vh_folio_remove_rmap"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_folio_remove_rmap"
+}
+elf_symbol {
   id: 0xb2684007
   name: "__tracepoint_android_vh_folio_remove_rmap_ptes"
   is_defined: true
@@ -444868,6 +447032,42 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_folio_remove_rmap_ptes"
+}
+elf_symbol {
+  id: 0x616c8f3b
+  name: "__tracepoint_android_vh_folio_skip_activate"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_folio_skip_activate"
+}
+elf_symbol {
+  id: 0xfdfb5a53
+  name: "__tracepoint_android_vh_folio_trylock_clear_bypass"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_folio_trylock_clear_bypass"
+}
+elf_symbol {
+  id: 0xe04fc49a
+  name: "__tracepoint_android_vh_folios_put_refs_direct_free_extent"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_folios_put_refs_direct_free_extent"
+}
+elf_symbol {
+  id: 0xd808cc6f
+  name: "__tracepoint_android_vh_force_page_cache_ra"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_force_page_cache_ra"
 }
 elf_symbol {
   id: 0x63048a89
@@ -444924,6 +447124,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_free_page_bypass"
 }
 elf_symbol {
+  id: 0xead7a7f9
+  name: "__tracepoint_android_vh_free_pages_and_swap_cache"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_free_pages_and_swap_cache"
+}
+elf_symbol {
   id: 0x770fd919
   name: "__tracepoint_android_vh_free_pages_ok_bypass"
   is_defined: true
@@ -444949,6 +447158,15 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_free_pages_prepare_init"
+}
+elf_symbol {
+  id: 0x6bf7659e
+  name: "__tracepoint_android_vh_free_swap_slot_bypass"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_free_swap_slot_bypass"
 }
 elf_symbol {
   id: 0xe6918e09
@@ -445084,6 +447302,15 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_fuse_request_end_ext"
+}
+elf_symbol {
+  id: 0xa4ee9479
+  name: "__tracepoint_android_vh_fuse_request_fetch"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_fuse_request_fetch"
 }
 elf_symbol {
   id: 0xacb1802a
@@ -445536,6 +447763,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_kvmalloc_node_use_vmalloc"
 }
 elf_symbol {
+  id: 0x247a5590
+  name: "__tracepoint_android_vh_lock_delay_schedule"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_lock_delay_schedule"
+}
+elf_symbol {
   id: 0xb1ce9338
   name: "__tracepoint_android_vh_lock_folio_drop_mmap_end"
   is_defined: true
@@ -445552,6 +447788,24 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_lock_folio_drop_mmap_start"
+}
+elf_symbol {
+  id: 0x911d1d91
+  name: "__tracepoint_android_vh_lock_task_exit"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_lock_task_exit"
+}
+elf_symbol {
+  id: 0x86a7c204
+  name: "__tracepoint_android_vh_lock_task_fork"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_lock_task_fork"
 }
 elf_symbol {
   id: 0x39d42312
@@ -445669,6 +447923,15 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_madvise_swapin_walk_pmd_entry"
+}
+elf_symbol {
+  id: 0x026c48c6
+  name: "__tracepoint_android_vh_map_order0_folio"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_map_order0_folio"
 }
 elf_symbol {
   id: 0x00a5fe5e
@@ -446022,6 +448285,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_mm_free_page"
 }
 elf_symbol {
+  id: 0x046ed8db
+  name: "__tracepoint_android_vh_mm_get_zone_mark"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_mm_get_zone_mark"
+}
+elf_symbol {
   id: 0xba9e92f8
   name: "__tracepoint_android_vh_mm_isolate_priv_lru"
   is_defined: true
@@ -446085,6 +448357,24 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_mm_try_split_folio_bypass"
 }
 elf_symbol {
+  id: 0x32e11a2b
+  name: "__tracepoint_android_vh_mmap_lock_free"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_mmap_lock_free"
+}
+elf_symbol {
+  id: 0xab985ad9
+  name: "__tracepoint_android_vh_mmap_lock_init"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_mmap_lock_init"
+}
+elf_symbol {
   id: 0xb6da564f
   name: "__tracepoint_android_vh_mmap_region"
   is_defined: true
@@ -446092,6 +448382,33 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_mmap_region"
+}
+elf_symbol {
+  id: 0xa1c3d037
+  name: "__tracepoint_android_vh_mmc_attach_sd"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_mmc_attach_sd"
+}
+elf_symbol {
+  id: 0xb9d48f4d
+  name: "__tracepoint_android_vh_mmc_blk_reset"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_mmc_blk_reset"
+}
+elf_symbol {
+  id: 0x9e78b2f8
+  name: "__tracepoint_android_vh_mmc_gpio_cd_irqt"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_mmc_gpio_cd_irqt"
 }
 elf_symbol {
   id: 0x41c8d09b
@@ -446274,6 +448591,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_page_add_new_anon_rmap"
 }
 elf_symbol {
+  id: 0xa202f0f3
+  name: "__tracepoint_android_vh_page_cache_ra_mark"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_page_cache_ra_mark"
+}
+elf_symbol {
   id: 0x6e9a5b3f
   name: "__tracepoint_android_vh_page_cache_ra_order_bypass"
   is_defined: true
@@ -446281,6 +448607,15 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_page_cache_ra_order_bypass"
+}
+elf_symbol {
+  id: 0x62445736
+  name: "__tracepoint_android_vh_page_cache_ra_unbounded"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_page_cache_ra_unbounded"
 }
 elf_symbol {
   id: 0xa5409038
@@ -446337,6 +448672,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_percpu_rwsem_down_read"
 }
 elf_symbol {
+  id: 0xffa6607a
+  name: "__tracepoint_android_vh_percpu_rwsem_init"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_percpu_rwsem_init"
+}
+elf_symbol {
   id: 0x7d42b7c8
   name: "__tracepoint_android_vh_percpu_rwsem_up_write"
   is_defined: true
@@ -446353,6 +448697,15 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_percpu_rwsem_wq_add"
+}
+elf_symbol {
+  id: 0x4a8ddca7
+  name: "__tracepoint_android_vh_pick_swap_device_bypass"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_pick_swap_device_bypass"
 }
 elf_symbol {
   id: 0x13ddef28
@@ -446544,6 +448897,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_psi_group"
 }
 elf_symbol {
+  id: 0x428834b1
+  name: "__tracepoint_android_vh_put_super"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_put_super"
+}
+elf_symbol {
   id: 0x74120954
   name: "__tracepoint_android_vh_put_task"
   is_defined: true
@@ -446569,6 +448931,33 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_ra_tuning_max_page"
+}
+elf_symbol {
+  id: 0xf0a69156
+  name: "__tracepoint_android_vh_rcu_boost_end"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_rcu_boost_end"
+}
+elf_symbol {
+  id: 0x9cdcdb66
+  name: "__tracepoint_android_vh_rcu_boost_start"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_rcu_boost_start"
+}
+elf_symbol {
+  id: 0xa0e3c9e3
+  name: "__tracepoint_android_vh_readahead_add_folio"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_readahead_add_folio"
 }
 elf_symbol {
   id: 0x53ff9924
@@ -446661,6 +449050,33 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_regmap_update"
 }
 elf_symbol {
+  id: 0x8a5eba26
+  name: "__tracepoint_android_vh_remove_mapping"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_remove_mapping"
+}
+elf_symbol {
+  id: 0xa6c678f2
+  name: "__tracepoint_android_vh_remove_mapping_failed"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_remove_mapping_failed"
+}
+elf_symbol {
+  id: 0x2732d436
+  name: "__tracepoint_android_vh_resched_curr_lazy"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_resched_curr_lazy"
+}
+elf_symbol {
   id: 0xa8bc195b
   name: "__tracepoint_android_vh_reserve_highatomic_bypass"
   is_defined: true
@@ -446668,6 +449084,15 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_reserve_highatomic_bypass"
+}
+elf_symbol {
+  id: 0x7ca6fd40
+  name: "__tracepoint_android_vh_restore_curr_resched"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_restore_curr_resched"
 }
 elf_symbol {
   id: 0xd6904c6d
@@ -446931,6 +449356,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_save_vmalloc_stack"
 }
 elf_symbol {
+  id: 0xd7fa0501
+  name: "__tracepoint_android_vh_sca_migrate_same"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_sca_migrate_same"
+}
+elf_symbol {
   id: 0xbb309826
   name: "__tracepoint_android_vh_sched_move_task"
   is_defined: true
@@ -447064,6 +449498,15 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_scx_task_switch_finish"
+}
+elf_symbol {
+  id: 0x5f4d0d53
+  name: "__tracepoint_android_vh_sdhci_get_cd"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_sdhci_get_cd"
 }
 elf_symbol {
   id: 0xffae3bcf
@@ -447255,6 +449698,24 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_shrink_folio_list"
 }
 elf_symbol {
+  id: 0x090c5819
+  name: "__tracepoint_android_vh_shrink_folio_lock_owner_clear"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_shrink_folio_lock_owner_clear"
+}
+elf_symbol {
+  id: 0x8a3d0382
+  name: "__tracepoint_android_vh_shrink_folio_lock_owner_set"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_shrink_folio_lock_owner_set"
+}
+elf_symbol {
   id: 0x1f2d6f1e
   name: "__tracepoint_android_vh_shrink_node"
   is_defined: true
@@ -447345,6 +449806,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_sk_free"
 }
 elf_symbol {
+  id: 0xdcd5ec43
+  name: "__tracepoint_android_vh_skip_cma"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_skip_cma"
+}
+elf_symbol {
   id: 0x3204c8e5
   name: "__tracepoint_android_vh_skip_swap_map_write"
   is_defined: true
@@ -447399,6 +449869,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_sock_create"
 }
 elf_symbol {
+  id: 0x2629138f
+  name: "__tracepoint_android_vh_spec_promote_folio"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_spec_promote_folio"
+}
+elf_symbol {
   id: 0x02bb68bd
   name: "__tracepoint_android_vh_split_large_folio_bypass"
   is_defined: true
@@ -447424,6 +449903,42 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_swap_writepage"
+}
+elf_symbol {
+  id: 0x125199a1
+  name: "__tracepoint_android_vh_swap_writepage_end"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_swap_writepage_end"
+}
+elf_symbol {
+  id: 0x9bdbd8da
+  name: "__tracepoint_android_vh_swap_writepage_start"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_swap_writepage_start"
+}
+elf_symbol {
+  id: 0xaf5a6a16
+  name: "__tracepoint_android_vh_swapin_end"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_swapin_end"
+}
+elf_symbol {
+  id: 0x6a8c0907
+  name: "__tracepoint_android_vh_swapin_start"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_swapin_start"
 }
 elf_symbol {
   id: 0x052557d7
@@ -447478,6 +449993,24 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_sync_irq_wait_start"
+}
+elf_symbol {
+  id: 0xf9259183
+  name: "__tracepoint_android_vh_sync_rcu_wait_end"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_sync_rcu_wait_end"
+}
+elf_symbol {
+  id: 0x0708a437
+  name: "__tracepoint_android_vh_sync_rcu_wait_start"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_sync_rcu_wait_start"
 }
 elf_symbol {
   id: 0x39e68fed
@@ -448128,6 +450661,15 @@ elf_symbol {
   full_name: "__tracepoint_android_vh_wb_dirty_limits"
 }
 elf_symbol {
+  id: 0x7a5785dc
+  name: "__tracepoint_android_vh_workingset_active"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_workingset_active"
+}
+elf_symbol {
   id: 0xf1bbc512
   name: "__tracepoint_android_vh_wp_page_reuse"
   is_defined: true
@@ -448144,6 +450686,15 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_android_vh_wq_lockup_pool"
+}
+elf_symbol {
+  id: 0x87ed67f3
+  name: "__tracepoint_android_vh_xhci_handle_offload"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_android_vh_xhci_handle_offload"
 }
 elf_symbol {
   id: 0x85ad7f9f
@@ -448963,6 +451514,15 @@ elf_symbol {
   crc: 0x7c5aa8a7
   type_id: 0x18ccbd2c
   full_name: "__tracepoint_tcp_retransmit_skb"
+}
+elf_symbol {
+  id: 0x3482f919
+  name: "__tracepoint_tcp_send_reset"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x7c5aa8a7
+  type_id: 0x18ccbd2c
+  full_name: "__tracepoint_tcp_send_reset"
 }
 elf_symbol {
   id: 0x5dd7d3e4
@@ -450052,6 +452612,15 @@ elf_symbol {
   crc: 0xe1037dd9
   type_id: 0xb02b353a
   full_name: "_totalram_pages"
+}
+elf_symbol {
+  id: 0xaabe18ee
+  name: "_trace_android_rvh_mapping_shrinkable"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xdc7116a9
+  type_id: 0x14ebaa05
+  full_name: "_trace_android_rvh_mapping_shrinkable"
 }
 elf_symbol {
   id: 0x993e379e
@@ -452327,6 +454896,24 @@ elf_symbol {
   crc: 0xee6530b7
   type_id: 0x9dfe50e2
   full_name: "blkdev_issue_zeroout"
+}
+elf_symbol {
+  id: 0x3a816bcd
+  name: "blkg_conf_exit"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x9b2aecc6
+  type_id: 0x1213f72a
+  full_name: "blkg_conf_exit"
+}
+elf_symbol {
+  id: 0xb0f09bc0
+  name: "blkg_conf_init"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xc09f033d
+  type_id: 0x1201f8b1
+  full_name: "blkg_conf_init"
 }
 elf_symbol {
   id: 0x35eb35db
@@ -455114,6 +457701,15 @@ elf_symbol {
   full_name: "cma_get_name"
 }
 elf_symbol {
+  id: 0x8e3563cc
+  name: "cma_mutex"
+  is_defined: true
+  symbol_type: OBJECT
+  crc: 0x91306d30
+  type_id: 0xa7c362b0
+  full_name: "cma_mutex"
+}
+elf_symbol {
   id: 0xab62b21c
   name: "cma_release"
   is_defined: true
@@ -456326,6 +458922,15 @@ elf_symbol {
   crc: 0xe7f8d838
   type_id: 0xc25cf5fc
   full_name: "cpumask_any_and_distribute"
+}
+elf_symbol {
+  id: 0x4c5ac0a5
+  name: "cpumask_any_distribute"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xf121ed3d
+  type_id: 0xc298cefc
+  full_name: "cpumask_any_distribute"
 }
 elf_symbol {
   id: 0xd53a5822
@@ -463573,6 +466178,15 @@ elf_symbol {
   full_name: "do_wait_intr_irq"
 }
 elf_symbol {
+  id: 0x870822b9
+  name: "done_path_create"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x042ab35b
+  type_id: 0x156e22f0
+  full_name: "done_path_create"
+}
+elf_symbol {
   id: 0x1f647fed
   name: "double_rq_lock"
   is_defined: true
@@ -469909,6 +472523,15 @@ elf_symbol {
   full_name: "find_get_pid"
 }
 elf_symbol {
+  id: 0xf5a1bc09
+  name: "find_inode_nowait"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x6a31d709
+  type_id: 0x12101ef3
+  full_name: "find_inode_nowait"
+}
+elf_symbol {
   id: 0x90d375c5
   name: "find_pid_ns"
   is_defined: true
@@ -470240,6 +472863,15 @@ elf_symbol {
   crc: 0x48c66ed8
   type_id: 0x18c46588
   full_name: "folio_end_writeback"
+}
+elf_symbol {
+  id: 0x2d014c6c
+  name: "folio_isolate_lru"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xf9d35024
+  type_id: 0xf6f86f1f
+  full_name: "folio_isolate_lru"
 }
 elf_symbol {
   id: 0x159a69a3
@@ -474153,6 +476785,15 @@ elf_symbol {
   full_name: "hdmi_avi_infoframe_pack_only"
 }
 elf_symbol {
+  id: 0x668cde28
+  name: "hdmi_drm_infoframe_check"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x626713af
+  type_id: 0x9f3d453e
+  full_name: "hdmi_drm_infoframe_check"
+}
+elf_symbol {
   id: 0x7ec10e18
   name: "hdmi_drm_infoframe_init"
   is_defined: true
@@ -476103,6 +478744,15 @@ elf_symbol {
   full_name: "iio_read_channel_processed"
 }
 elf_symbol {
+  id: 0xfcd2e6df
+  name: "iio_read_channel_processed_scale"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x263c1994
+  type_id: 0x93b5d84c
+  full_name: "iio_read_channel_processed_scale"
+}
+elf_symbol {
   id: 0x350d9a11
   name: "iio_read_channel_raw"
   is_defined: true
@@ -476794,6 +479444,15 @@ elf_symbol {
   crc: 0xbd80f1f8
   type_id: 0x16e7aaa1
   full_name: "inode_add_bytes"
+}
+elf_symbol {
+  id: 0xe71273b9
+  name: "inode_add_lru"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xc0ec8aac
+  type_id: 0x167935b9
+  full_name: "inode_add_lru"
 }
 elf_symbol {
   id: 0x2669fc5e
@@ -478353,6 +481012,42 @@ elf_symbol {
   full_name: "ir_raw_event_store_edge"
 }
 elf_symbol {
+  id: 0xe481ba66
+  name: "ir_raw_gen_manchester"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xdbe61105
+  type_id: 0x9ccacf7d
+  full_name: "ir_raw_gen_manchester"
+}
+elf_symbol {
+  id: 0x6a48ce69
+  name: "ir_raw_gen_pd"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x9fcbee9f
+  type_id: 0x9cc8bbc4
+  full_name: "ir_raw_gen_pd"
+}
+elf_symbol {
+  id: 0x6d6a0985
+  name: "ir_raw_handler_register"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x65e3e661
+  type_id: 0x937df0c9
+  full_name: "ir_raw_handler_register"
+}
+elf_symbol {
+  id: 0xa01685ea
+  name: "ir_raw_handler_unregister"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x903a5fe0
+  type_id: 0x1e654275
+  full_name: "ir_raw_handler_unregister"
+}
+elf_symbol {
   id: 0xbf9d3356
   name: "irq_check_status_bit"
   is_defined: true
@@ -478837,6 +481532,15 @@ elf_symbol {
   crc: 0x703bf5b2
   type_id: 0x8c02526b
   full_name: "irq_get_percpu_devid_partition"
+}
+elf_symbol {
+  id: 0x84d5c32a
+  name: "irq_has_action"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x2a08acda
+  type_id: 0xefc5028b
+  full_name: "irq_has_action"
 }
 elf_symbol {
   id: 0x28fabc56
@@ -479387,6 +482091,15 @@ elf_symbol {
   crc: 0xdf1b4b10
   type_id: 0x93176597
   full_name: "kern_path"
+}
+elf_symbol {
+  id: 0x3c8854b7
+  name: "kern_path_create"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x4d43a826
+  type_id: 0x95452d54
+  full_name: "kern_path_create"
 }
 elf_symbol {
   id: 0x3b31be3d
@@ -482880,6 +485593,15 @@ elf_symbol {
   crc: 0xb233f134
   type_id: 0x59f18b0b
   full_name: "mem_cgroup_from_id"
+}
+elf_symbol {
+  id: 0xb07b6948
+  name: "mem_cgroup_iter"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x45aab4d7
+  type_id: 0x6c9b19cf
+  full_name: "mem_cgroup_iter"
 }
 elf_symbol {
   id: 0xa9fabdf2
@@ -486382,6 +489104,15 @@ elf_symbol {
   full_name: "nla_strscpy"
 }
 elf_symbol {
+  id: 0x6e09b6e4
+  name: "no_seek_end_llseek"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x72c16011
+  type_id: 0x2d64ae3e
+  full_name: "no_seek_end_llseek"
+}
+elf_symbol {
   id: 0x39787440
   name: "node_states"
   is_defined: true
@@ -486632,6 +489363,15 @@ elf_symbol {
   crc: 0x2ecf0f69
   type_id: 0x9de0ab2c
   full_name: "nvmem_cell_read_u32"
+}
+elf_symbol {
+  id: 0x00111bab
+  name: "nvmem_cell_read_u64"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xea5426b8
+  type_id: 0x9de5199d
+  full_name: "nvmem_cell_read_u64"
 }
 elf_symbol {
   id: 0x571ba415
@@ -488898,6 +491638,15 @@ elf_symbol {
   full_name: "param_set_ulong"
 }
 elf_symbol {
+  id: 0x51f19d19
+  name: "parse_int_array_user"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xe81c57b6
+  type_id: 0x91d78a46
+  full_name: "parse_int_array_user"
+}
+elf_symbol {
   id: 0x67d6372c
   name: "passthru_features_check"
   is_defined: true
@@ -489313,6 +492062,15 @@ elf_symbol {
   full_name: "pci_epc_mem_alloc_addr"
 }
 elf_symbol {
+  id: 0xc47c8c17
+  name: "pci_epc_mem_exit"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x6427c7cf
+  type_id: 0x15708e94
+  full_name: "pci_epc_mem_exit"
+}
+elf_symbol {
   id: 0xffb38889
   name: "pci_epc_mem_free_addr"
   is_defined: true
@@ -489320,6 +492078,15 @@ elf_symbol {
   crc: 0x87d2a43a
   type_id: 0x1782373c
   full_name: "pci_epc_mem_free_addr"
+}
+elf_symbol {
+  id: 0xbf238642
+  name: "pci_epc_mem_init"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x3c72a1b0
+  type_id: 0x9aa1a783
+  full_name: "pci_epc_mem_init"
 }
 elf_symbol {
   id: 0x8a8d0c1a
@@ -492634,6 +495401,15 @@ elf_symbol {
   full_name: "platform_get_irq_optional"
 }
 elf_symbol {
+  id: 0x3b8354ef
+  name: "platform_get_mem_or_io"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x06230b45
+  type_id: 0xcf3975d4
+  full_name: "platform_get_mem_or_io"
+}
+elf_symbol {
   id: 0xb7a7a808
   name: "platform_get_resource"
   is_defined: true
@@ -493577,6 +496353,15 @@ elf_symbol {
   crc: 0x14e4e892
   type_id: 0x12ef7c12
   full_name: "prep_new_hpage"
+}
+elf_symbol {
+  id: 0x4e6d24f1
+  name: "prep_new_page"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xe1bc01e6
+  type_id: 0x1013ec0e
+  full_name: "prep_new_page"
 }
 elf_symbol {
   id: 0x98d05c44
@@ -498303,6 +501088,15 @@ elf_symbol {
   full_name: "sbitmap_queue_clear"
 }
 elf_symbol {
+  id: 0x9b795cee
+  name: "sbitmap_queue_get_shallow"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xb99dfbed
+  type_id: 0x982e650f
+  full_name: "sbitmap_queue_get_shallow"
+}
+elf_symbol {
   id: 0xe160a711
   name: "sbitmap_queue_init_node"
   is_defined: true
@@ -501544,6 +504338,15 @@ elf_symbol {
   full_name: "skb_add_rx_frag_netmem"
 }
 elf_symbol {
+  id: 0x34556105
+  name: "skb_append"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0xf04a2e6a
+  type_id: 0x11d96a86
+  full_name: "skb_append"
+}
+elf_symbol {
   id: 0x736f4bcb
   name: "skb_append_pagefrags"
   is_defined: true
@@ -502271,6 +505074,15 @@ elf_symbol {
   crc: 0x465c8923
   type_id: 0x918095e2
   full_name: "snd_card_rw_proc_new"
+}
+elf_symbol {
+  id: 0x66f18d57
+  name: "snd_compr_free_pages"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x705a8b2e
+  type_id: 0x9b3b4856
+  full_name: "snd_compr_free_pages"
 }
 elf_symbol {
   id: 0x62b259b4
@@ -515423,7 +518235,7 @@ elf_symbol {
   is_defined: true
   symbol_type: OBJECT
   crc: 0xf54e5881
-  type_id: 0x1723cb73
+  type_id: 0xa74c108c
   full_name: "vendor_data_pad"
 }
 elf_symbol {
@@ -518157,6 +520969,15 @@ elf_symbol {
   full_name: "xhci_get_ep_ctx"
 }
 elf_symbol {
+  id: 0x1bc8d75d
+  name: "xhci_handle_event_trb"
+  is_defined: true
+  symbol_type: FUNCTION
+  crc: 0x5edaf9e1
+  type_id: 0x9917f312
+  full_name: "xhci_handle_event_trb"
+}
+elf_symbol {
   id: 0x71f2808e
   name: "xhci_init_driver"
   is_defined: true
@@ -519016,6 +521837,7 @@ interface {
   symbol_id: 0x5a6afeee
   symbol_id: 0xc8eb813d
   symbol_id: 0x7bf707d4
+  symbol_id: 0xbf1d0365
   symbol_id: 0x2d1c1f2d
   symbol_id: 0x9bed4545
   symbol_id: 0xefdcf4c1
@@ -519072,6 +521894,7 @@ interface {
   symbol_id: 0xa650eb31
   symbol_id: 0x42461b3b
   symbol_id: 0x4633b40f
+  symbol_id: 0x661620a3
   symbol_id: 0x220972ea
   symbol_id: 0x53979c85
   symbol_id: 0x0088cc73
@@ -519133,6 +521956,7 @@ interface {
   symbol_id: 0x80f1cf36
   symbol_id: 0x3e32c80e
   symbol_id: 0x68fbcad4
+  symbol_id: 0xc4cc0fc6
   symbol_id: 0x6036d483
   symbol_id: 0xb19fdffe
   symbol_id: 0x746a66fc
@@ -519494,10 +522318,12 @@ interface {
   symbol_id: 0x7e99bc71
   symbol_id: 0x7c212080
   symbol_id: 0xa5a0ecca
+  symbol_id: 0x0ccee092
   symbol_id: 0xc6985675
   symbol_id: 0x15c6d0dd
   symbol_id: 0xc5bd3dc9
   symbol_id: 0xed2646da
+  symbol_id: 0x9b04cc3c
   symbol_id: 0x1ea5d323
   symbol_id: 0x0d22882d
   symbol_id: 0xe81b2ff2
@@ -519566,6 +522392,7 @@ interface {
   symbol_id: 0x73c83ef4
   symbol_id: 0xb0d7946f
   symbol_id: 0x46515de8
+  symbol_id: 0x970d0e94
   symbol_id: 0x6c071d53
   symbol_id: 0xcf016f05
   symbol_id: 0x79480d0a
@@ -519573,6 +522400,7 @@ interface {
   symbol_id: 0x7b07c7f1
   symbol_id: 0xb3596828
   symbol_id: 0x968833a5
+  symbol_id: 0x50dd8419
   symbol_id: 0x09f2fded
   symbol_id: 0x23097c08
   symbol_id: 0xcce6f612
@@ -519655,6 +522483,7 @@ interface {
   symbol_id: 0x25f13dbe
   symbol_id: 0xf6faffcb
   symbol_id: 0x5cf60b10
+  symbol_id: 0x81345265
   symbol_id: 0xcc2edef9
   symbol_id: 0xb02eec40
   symbol_id: 0x61c82fb5
@@ -519675,18 +522504,23 @@ interface {
   symbol_id: 0x42428033
   symbol_id: 0x23a3e1fa
   symbol_id: 0x17b6819f
+  symbol_id: 0x77e39748
   symbol_id: 0xa2224fa6
   symbol_id: 0xd37cc550
   symbol_id: 0x253229ea
+  symbol_id: 0x124b6497
   symbol_id: 0xe50d4e50
   symbol_id: 0xaed0a325
   symbol_id: 0xc308efa9
   symbol_id: 0xcad7fba0
   symbol_id: 0x672f593f
+  symbol_id: 0xe0295cb9
   symbol_id: 0xa9ea0208
   symbol_id: 0x606360ad
   symbol_id: 0x9cbc7813
   symbol_id: 0x1104ae4c
+  symbol_id: 0x943ca30b
+  symbol_id: 0x98a764e2
   symbol_id: 0xf3cb298b
   symbol_id: 0xa4527895
   symbol_id: 0x6a6d764a
@@ -519704,6 +522538,8 @@ interface {
   symbol_id: 0xca50936b
   symbol_id: 0x431c5bf5
   symbol_id: 0x9f47ed94
+  symbol_id: 0x9004b9db
+  symbol_id: 0x3d81eceb
   symbol_id: 0x96cfd964
   symbol_id: 0xecf16451
   symbol_id: 0x3444cc6c
@@ -519718,6 +522554,7 @@ interface {
   symbol_id: 0xbcd1a27c
   symbol_id: 0x5e9ed424
   symbol_id: 0xb7d9e03a
+  symbol_id: 0x9f9229ec
   symbol_id: 0xd593b3ef
   symbol_id: 0xb5020a7f
   symbol_id: 0x707cf8c6
@@ -519726,6 +522563,8 @@ interface {
   symbol_id: 0xb12728da
   symbol_id: 0x20f34a30
   symbol_id: 0x54bc5972
+  symbol_id: 0x43a88164
+  symbol_id: 0xcc2b8317
   symbol_id: 0x9dbd7b92
   symbol_id: 0x2576f1c7
   symbol_id: 0xdd171ab0
@@ -519754,32 +522593,47 @@ interface {
   symbol_id: 0x092000c7
   symbol_id: 0x150ea575
   symbol_id: 0x6091a763
+  symbol_id: 0xb4752447
   symbol_id: 0x19fc04e0
+  symbol_id: 0xbd855995
+  symbol_id: 0x5f6dd48c
   symbol_id: 0x980c4b2d
   symbol_id: 0x734973d4
   symbol_id: 0xddad3a11
   symbol_id: 0x49c69e22
+  symbol_id: 0x2c39dada
   symbol_id: 0x5893591b
   symbol_id: 0xb7d91f76
   symbol_id: 0x97914e0c
   symbol_id: 0x158bf9d3
+  symbol_id: 0x48ad4ccb
   symbol_id: 0x0e217a5e
   symbol_id: 0x1b65e021
   symbol_id: 0xd44631ef
   symbol_id: 0xf110e9f6
   symbol_id: 0x5f626e29
+  symbol_id: 0x306fa992
   symbol_id: 0xfaa99ddb
   symbol_id: 0x5dd57eff
+  symbol_id: 0xc8a10243
+  symbol_id: 0x3678bbd5
+  symbol_id: 0x37c66367
   symbol_id: 0xef70c295
+  symbol_id: 0xb079e2fd
+  symbol_id: 0xa157ce59
+  symbol_id: 0x18234c18
+  symbol_id: 0xb10c10b1
   symbol_id: 0xe78b407f
   symbol_id: 0xa51a0f0c
   symbol_id: 0x9e91661b
   symbol_id: 0xc189c2a7
   symbol_id: 0xb3cdc04a
   symbol_id: 0xc7eb4ba6
+  symbol_id: 0xc0c16ab7
   symbol_id: 0xcbee3d67
   symbol_id: 0x26a07b7d
   symbol_id: 0x02fa90e7
+  symbol_id: 0xf9541634
   symbol_id: 0x5ecff02f
   symbol_id: 0x2a30afbb
   symbol_id: 0x812c6920
@@ -519795,6 +522649,7 @@ interface {
   symbol_id: 0xf9ce3d98
   symbol_id: 0x39120fb0
   symbol_id: 0x75f2fcfb
+  symbol_id: 0x24bd444b
   symbol_id: 0xdd3e0da4
   symbol_id: 0x56639327
   symbol_id: 0x494c2e7a
@@ -519845,8 +522700,11 @@ interface {
   symbol_id: 0x04e61b81
   symbol_id: 0x82ed433c
   symbol_id: 0x0992491b
+  symbol_id: 0xedae015e
   symbol_id: 0xf56758ea
   symbol_id: 0x95b7ecea
+  symbol_id: 0xc955d513
+  symbol_id: 0xfc3decf6
   symbol_id: 0x66cefe64
   symbol_id: 0x57087e9e
   symbol_id: 0xe19d2bf8
@@ -519860,6 +522718,7 @@ interface {
   symbol_id: 0x78029b6d
   symbol_id: 0x5832511c
   symbol_id: 0x0e1f9e23
+  symbol_id: 0x8399021c
   symbol_id: 0x61ea12b8
   symbol_id: 0xe0099970
   symbol_id: 0xdea07d28
@@ -519899,6 +522758,7 @@ interface {
   symbol_id: 0x29c67d40
   symbol_id: 0x4df97812
   symbol_id: 0x3fe16974
+  symbol_id: 0x7f7c30a9
   symbol_id: 0x945dd126
   symbol_id: 0x6f5c8275
   symbol_id: 0xf182fb15
@@ -519906,7 +522766,12 @@ interface {
   symbol_id: 0xe8aea3fa
   symbol_id: 0x1239ea28
   symbol_id: 0x5ab6c4f4
+  symbol_id: 0x01554a41
+  symbol_id: 0x9b40ad23
   symbol_id: 0xe44dacb1
+  symbol_id: 0xb6126b05
+  symbol_id: 0x6ac4216b
+  symbol_id: 0xabd010ba
   symbol_id: 0x5612c9d1
   symbol_id: 0xa77effd1
   symbol_id: 0x453eac0d
@@ -519927,15 +522792,19 @@ interface {
   symbol_id: 0x724577f8
   symbol_id: 0xac55c769
   symbol_id: 0xacaadcc9
+  symbol_id: 0x7fae80cd
   symbol_id: 0xbf28fbd5
+  symbol_id: 0x7f95d934
   symbol_id: 0xd0065122
   symbol_id: 0xed7b87e3
   symbol_id: 0x3246acbb
   symbol_id: 0xb4d5ffdc
   symbol_id: 0x3c5e668a
   symbol_id: 0x13b0736e
+  symbol_id: 0x12b996bc
   symbol_id: 0xc72f2012
   symbol_id: 0xd14f3adb
+  symbol_id: 0xd6204bb5
   symbol_id: 0xfa839fbe
   symbol_id: 0x8de34d3d
   symbol_id: 0x3a66c060
@@ -519957,9 +522826,13 @@ interface {
   symbol_id: 0x0954df44
   symbol_id: 0x574e7b58
   symbol_id: 0xf2c39651
+  symbol_id: 0x358b7cff
   symbol_id: 0x1adac14e
   symbol_id: 0x354db2e1
   symbol_id: 0x3a545b61
+  symbol_id: 0xaa42bd9c
+  symbol_id: 0xcf2bdce0
+  symbol_id: 0x6fe03e45
   symbol_id: 0xb6218fbe
   symbol_id: 0x7334b2d0
   symbol_id: 0x7d069e91
@@ -519970,7 +522843,11 @@ interface {
   symbol_id: 0xf2957eae
   symbol_id: 0xe064853d
   symbol_id: 0xe2d75052
+  symbol_id: 0x4ac41e54
+  symbol_id: 0xda7f66bc
+  symbol_id: 0x799188c0
   symbol_id: 0xd0707ed1
+  symbol_id: 0xfb6f79f6
   symbol_id: 0xf10ce16f
   symbol_id: 0xdd585356
   symbol_id: 0xa8cef421
@@ -520000,6 +522877,7 @@ interface {
   symbol_id: 0xa1325610
   symbol_id: 0x2540195e
   symbol_id: 0x979b6b9c
+  symbol_id: 0x3b3c5487
   symbol_id: 0xa413d12c
   symbol_id: 0x3a4e20d6
   symbol_id: 0x237634b3
@@ -520015,6 +522893,7 @@ interface {
   symbol_id: 0xbdc03234
   symbol_id: 0x1b1ceda2
   symbol_id: 0xc4e90767
+  symbol_id: 0xf302c041
   symbol_id: 0x537d5581
   symbol_id: 0xa3c925f8
   symbol_id: 0xdb84678c
@@ -520036,6 +522915,8 @@ interface {
   symbol_id: 0xd83423df
   symbol_id: 0x6d9f8b13
   symbol_id: 0x21e28aab
+  symbol_id: 0xc6962dfb
+  symbol_id: 0x1e6acbc8
   symbol_id: 0x6f5e0f48
   symbol_id: 0x709279fd
   symbol_id: 0x08ba7287
@@ -520046,21 +522927,29 @@ interface {
   symbol_id: 0x56a5b453
   symbol_id: 0x215231a8
   symbol_id: 0x9f96ac15
+  symbol_id: 0x5b621135
   symbol_id: 0x8f7ad177
   symbol_id: 0x37177d11
   symbol_id: 0x0562cb47
   symbol_id: 0xcc89dffc
   symbol_id: 0x08f4cbb0
   symbol_id: 0x57cb67b6
+  symbol_id: 0x805e06dd
   symbol_id: 0x7068c1fb
   symbol_id: 0x149a3dd1
   symbol_id: 0xb993d4e0
+  symbol_id: 0xdb713553
+  symbol_id: 0x51c4ce10
+  symbol_id: 0xe15c6398
+  symbol_id: 0xeb557125
   symbol_id: 0x445e3749
   symbol_id: 0x3f14ea30
   symbol_id: 0x64e397a9
   symbol_id: 0x256f9a09
   symbol_id: 0x6786b230
   symbol_id: 0xf5d1380a
+  symbol_id: 0x6dae8aa1
+  symbol_id: 0x41c88b09
   symbol_id: 0x58e7556b
   symbol_id: 0x2ecf85e9
   symbol_id: 0x34a01a22
@@ -520133,8 +523022,10 @@ interface {
   symbol_id: 0xb0bf7fd6
   symbol_id: 0x807c8f9a
   symbol_id: 0x892f6a60
+  symbol_id: 0x49fda23e
   symbol_id: 0x20e7f214
   symbol_id: 0xae5e5469
+  symbol_id: 0xbc1f9cf9
   symbol_id: 0x18619e65
   symbol_id: 0xc4d6f652
   symbol_id: 0x6911084f
@@ -520226,6 +523117,7 @@ interface {
   symbol_id: 0xcac5a7d5
   symbol_id: 0x2dc83a86
   symbol_id: 0x59a320d1
+  symbol_id: 0xf2cd7e13
   symbol_id: 0x35f53d2e
   symbol_id: 0x0dd41e78
   symbol_id: 0x3b50eb54
@@ -520313,10 +523205,12 @@ interface {
   symbol_id: 0x695c4baf
   symbol_id: 0x99d57c12
   symbol_id: 0x77ee65c8
+  symbol_id: 0x30425cb0
   symbol_id: 0xf35a6597
   symbol_id: 0xa667d2d3
   symbol_id: 0x3147c5df
   symbol_id: 0x2252c1f0
+  symbol_id: 0xc50fd35e
   symbol_id: 0x3cb4db49
   symbol_id: 0x62726c6f
   symbol_id: 0x3fd4fa70
@@ -520385,6 +523279,7 @@ interface {
   symbol_id: 0x00b7ed82
   symbol_id: 0x21bd1459
   symbol_id: 0xe8cacf26
+  symbol_id: 0x0f16c786
   symbol_id: 0x95871e95
   symbol_id: 0x1f12a317
   symbol_id: 0x454d16cc
@@ -520392,6 +523287,7 @@ interface {
   symbol_id: 0x8db62b4f
   symbol_id: 0x40e7def6
   symbol_id: 0xe9c87fab
+  symbol_id: 0x2020ec0f
   symbol_id: 0xdf07959f
   symbol_id: 0xafe46ece
   symbol_id: 0x64e2c288
@@ -520474,6 +523370,7 @@ interface {
   symbol_id: 0x2fce8f78
   symbol_id: 0xec7035fd
   symbol_id: 0xa9d55136
+  symbol_id: 0x0b059e5b
   symbol_id: 0xabc729f7
   symbol_id: 0xb13a11da
   symbol_id: 0x75b174bb
@@ -520494,18 +523391,23 @@ interface {
   symbol_id: 0x9620eac1
   symbol_id: 0xb436fd6c
   symbol_id: 0x9e7fa6cd
+  symbol_id: 0xc1125f2e
   symbol_id: 0x2cf5984c
   symbol_id: 0x62b6878e
   symbol_id: 0xc974433c
+  symbol_id: 0x00405915
   symbol_id: 0xe8cdcd02
   symbol_id: 0xbbfbc9db
   symbol_id: 0x36fc8313
   symbol_id: 0x9036cb5a
   symbol_id: 0xfbbf2da1
+  symbol_id: 0x74d9da97
   symbol_id: 0xdb2e754e
   symbol_id: 0x02efcc97
   symbol_id: 0xaf598d05
   symbol_id: 0x62c56ae6
+  symbol_id: 0xb122c55d
+  symbol_id: 0xfaa47418
   symbol_id: 0xd7bdd001
   symbol_id: 0x9d49459f
   symbol_id: 0x74ff0a60
@@ -520523,6 +523425,8 @@ interface {
   symbol_id: 0x750e1421
   symbol_id: 0x66a766d7
   symbol_id: 0xc44d61e6
+  symbol_id: 0xa1b79b01
+  symbol_id: 0xa16eb965
   symbol_id: 0x611b30be
   symbol_id: 0xc2fde553
   symbol_id: 0x66823d32
@@ -520537,6 +523441,7 @@ interface {
   symbol_id: 0x9d32ef5e
   symbol_id: 0x325e746a
   symbol_id: 0x066e59a8
+  symbol_id: 0xfbc457d6
   symbol_id: 0x9fe99d05
   symbol_id: 0xa628b8f1
   symbol_id: 0xb75a1654
@@ -520545,6 +523450,8 @@ interface {
   symbol_id: 0x474d211c
   symbol_id: 0xe66acad6
   symbol_id: 0xeb9f1c78
+  symbol_id: 0x8c4b4146
+  symbol_id: 0xbce15ba5
   symbol_id: 0xe2d7542c
   symbol_id: 0x15374b6d
   symbol_id: 0x0ec5d99e
@@ -520573,32 +523480,47 @@ interface {
   symbol_id: 0x160a4a5d
   symbol_id: 0x2b59c1a7
   symbol_id: 0x0c03d499
+  symbol_id: 0x0bed5ac9
   symbol_id: 0x197d6be2
+  symbol_id: 0xee4c2077
+  symbol_id: 0x1afa87b6
   symbol_id: 0xf045a23f
   symbol_id: 0xdac9a862
   symbol_id: 0x9eaf9eab
   symbol_id: 0x6d970e8c
+  symbol_id: 0x7b27aae8
   symbol_id: 0x85c23431
   symbol_id: 0xb34d9200
   symbol_id: 0xcef3bcd6
   symbol_id: 0xf61927fd
+  symbol_id: 0x25deef51
   symbol_id: 0xa8c30e54
   symbol_id: 0x843cb07b
   symbol_id: 0xb548aa95
   symbol_id: 0xbb05ffe8
   symbol_id: 0x0a50cb7b
+  symbol_id: 0x58b7f538
   symbol_id: 0xc09285c1
   symbol_id: 0x5027d955
+  symbol_id: 0xf56e5915
+  symbol_id: 0xd3e119c7
+  symbol_id: 0x136a16c5
   symbol_id: 0xb2684007
+  symbol_id: 0x616c8f3b
+  symbol_id: 0xfdfb5a53
+  symbol_id: 0xe04fc49a
+  symbol_id: 0xd808cc6f
   symbol_id: 0x63048a89
   symbol_id: 0x4f752d52
   symbol_id: 0x901d0e89
   symbol_id: 0x04a824b5
   symbol_id: 0x46b5c0ec
   symbol_id: 0x73c6d79c
+  symbol_id: 0xead7a7f9
   symbol_id: 0x770fd919
   symbol_id: 0x9afee12f
   symbol_id: 0x55b68bc5
+  symbol_id: 0x6bf7659e
   symbol_id: 0xe6918e09
   symbol_id: 0x241cc151
   symbol_id: 0x4ce6de1a
@@ -520614,6 +523536,7 @@ interface {
   symbol_id: 0x6b0eca0a
   symbol_id: 0x50b14cbe
   symbol_id: 0x91515989
+  symbol_id: 0xa4ee9479
   symbol_id: 0xacb1802a
   symbol_id: 0xf38c7ca5
   symbol_id: 0xef0379f8
@@ -520664,8 +523587,11 @@ interface {
   symbol_id: 0x918a6f4b
   symbol_id: 0x989034d6
   symbol_id: 0x8bd577fd
+  symbol_id: 0x247a5590
   symbol_id: 0xb1ce9338
   symbol_id: 0xeb8159ac
+  symbol_id: 0x911d1d91
+  symbol_id: 0x86a7c204
   symbol_id: 0x39d42312
   symbol_id: 0x94ddd62c
   symbol_id: 0xda2d53f2
@@ -520679,6 +523605,7 @@ interface {
   symbol_id: 0x34f5699b
   symbol_id: 0x7d21b9ee
   symbol_id: 0xc34a5545
+  symbol_id: 0x026c48c6
   symbol_id: 0x00a5fe5e
   symbol_id: 0x2bd3fbd2
   symbol_id: 0x03845c7a
@@ -520718,6 +523645,7 @@ interface {
   symbol_id: 0xddcff44a
   symbol_id: 0x56c6a2a4
   symbol_id: 0x533ca98e
+  symbol_id: 0x046ed8db
   symbol_id: 0xba9e92f8
   symbol_id: 0x0f593caf
   symbol_id: 0x47bcd15f
@@ -520725,7 +523653,12 @@ interface {
   symbol_id: 0x806568cc
   symbol_id: 0x17727af2
   symbol_id: 0x3a8ae6f6
+  symbol_id: 0x32e11a2b
+  symbol_id: 0xab985ad9
   symbol_id: 0xb6da564f
+  symbol_id: 0xa1c3d037
+  symbol_id: 0xb9d48f4d
+  symbol_id: 0x9e78b2f8
   symbol_id: 0x41c8d09b
   symbol_id: 0xe2ad11db
   symbol_id: 0x633b21b3
@@ -520746,15 +523679,19 @@ interface {
   symbol_id: 0xdfe6a3ee
   symbol_id: 0x6bc613d3
   symbol_id: 0x20d2ceb3
+  symbol_id: 0xa202f0f3
   symbol_id: 0x6e9a5b3f
+  symbol_id: 0x62445736
   symbol_id: 0xa5409038
   symbol_id: 0xeeab2985
   symbol_id: 0x4a5e6e41
   symbol_id: 0x352038ba
   symbol_id: 0x2f61d5a4
   symbol_id: 0xa4c454d8
+  symbol_id: 0xffa6607a
   symbol_id: 0x7d42b7c8
   symbol_id: 0x3d63616d
+  symbol_id: 0x4a8ddca7
   symbol_id: 0x13ddef28
   symbol_id: 0x2615542f
   symbol_id: 0x742f14c2
@@ -520776,9 +523713,13 @@ interface {
   symbol_id: 0x8d3808ce
   symbol_id: 0x61f8c8ae
   symbol_id: 0x0e92ee53
+  symbol_id: 0x428834b1
   symbol_id: 0x74120954
   symbol_id: 0x3ac6daa7
   symbol_id: 0x811d5fab
+  symbol_id: 0xf0a69156
+  symbol_id: 0x9cdcdb66
+  symbol_id: 0xa0e3c9e3
   symbol_id: 0x53ff9924
   symbol_id: 0x1a12ee26
   symbol_id: 0x761f292f
@@ -520789,7 +523730,11 @@ interface {
   symbol_id: 0x57c5897c
   symbol_id: 0xf540e9a7
   symbol_id: 0x13b2fb38
+  symbol_id: 0x8a5eba26
+  symbol_id: 0xa6c678f2
+  symbol_id: 0x2732d436
   symbol_id: 0xa8bc195b
+  symbol_id: 0x7ca6fd40
   symbol_id: 0xd6904c6d
   symbol_id: 0x3cdecaec
   symbol_id: 0xcad24ea3
@@ -520819,6 +523764,7 @@ interface {
   symbol_id: 0xb91d18b6
   symbol_id: 0x1ce15a0c
   symbol_id: 0x64cdb186
+  symbol_id: 0xd7fa0501
   symbol_id: 0xbb309826
   symbol_id: 0xb3b18fc4
   symbol_id: 0x40d6a8c5
@@ -520834,6 +523780,7 @@ interface {
   symbol_id: 0xd50e0652
   symbol_id: 0x625ee264
   symbol_id: 0xb5ce3771
+  symbol_id: 0x5f4d0d53
   symbol_id: 0xffae3bcf
   symbol_id: 0x3fb97a6a
   symbol_id: 0x6ccc064e
@@ -520855,6 +523802,8 @@ interface {
   symbol_id: 0xc62d5cd5
   symbol_id: 0x8712dd01
   symbol_id: 0xbd6dfce1
+  symbol_id: 0x090c5819
+  symbol_id: 0x8a3d0382
   symbol_id: 0x1f2d6f1e
   symbol_id: 0x87db1583
   symbol_id: 0xec82f33d
@@ -520865,21 +523814,29 @@ interface {
   symbol_id: 0x4aa5e229
   symbol_id: 0xa5ebe436
   symbol_id: 0x9ff9eb7b
+  symbol_id: 0xdcd5ec43
   symbol_id: 0x3204c8e5
   symbol_id: 0x65c6ad4b
   symbol_id: 0x4a999b29
   symbol_id: 0xab9ebde6
   symbol_id: 0x547e3912
   symbol_id: 0xb11763a0
+  symbol_id: 0x2629138f
   symbol_id: 0x02bb68bd
   symbol_id: 0xc0e19d2f
   symbol_id: 0xd5f8f162
+  symbol_id: 0x125199a1
+  symbol_id: 0x9bdbd8da
+  symbol_id: 0xaf5a6a16
+  symbol_id: 0x6a8c0907
   symbol_id: 0x052557d7
   symbol_id: 0x6fb8113a
   symbol_id: 0xab09fdb7
   symbol_id: 0x6d44d63b
   symbol_id: 0x8be19b5e
   symbol_id: 0xcf9b99d4
+  symbol_id: 0xf9259183
+  symbol_id: 0x0708a437
   symbol_id: 0x39e68fed
   symbol_id: 0xefb9e5a3
   symbol_id: 0x3fe0157c
@@ -520952,8 +523909,10 @@ interface {
   symbol_id: 0x42dbeb24
   symbol_id: 0x0164dfc8
   symbol_id: 0x449c21a2
+  symbol_id: 0x7a5785dc
   symbol_id: 0xf1bbc512
   symbol_id: 0xa13f65ff
+  symbol_id: 0x87ed67f3
   symbol_id: 0x85ad7f9f
   symbol_id: 0x93f06708
   symbol_id: 0xf57e8f65
@@ -521045,6 +524004,7 @@ interface {
   symbol_id: 0xe91cdbb3
   symbol_id: 0x4f1ffabc
   symbol_id: 0x4c9e8f73
+  symbol_id: 0x3482f919
   symbol_id: 0x5dd7d3e4
   symbol_id: 0x4bf305e6
   symbol_id: 0x483c06ba
@@ -521166,6 +524126,7 @@ interface {
   symbol_id: 0xa5eaf571
   symbol_id: 0x97b98e85
   symbol_id: 0x7c570dc6
+  symbol_id: 0xaabe18ee
   symbol_id: 0x993e379e
   symbol_id: 0xf992e669
   symbol_id: 0x86a88093
@@ -521419,6 +524380,8 @@ interface {
   symbol_id: 0x4d722bb5
   symbol_id: 0x2a322266
   symbol_id: 0x8c705d8e
+  symbol_id: 0x3a816bcd
+  symbol_id: 0xb0f09bc0
   symbol_id: 0x35eb35db
   symbol_id: 0x120ecf6c
   symbol_id: 0xabd39b51
@@ -521729,6 +524692,7 @@ interface {
   symbol_id: 0x83dc639c
   symbol_id: 0x5f9864aa
   symbol_id: 0x966a7c42
+  symbol_id: 0x8e3563cc
   symbol_id: 0xab62b21c
   symbol_id: 0x036561b6
   symbol_id: 0xfb23b117
@@ -521864,6 +524828,7 @@ interface {
   symbol_id: 0x9b056e94
   symbol_id: 0x2061f0ca
   symbol_id: 0xd878ab56
+  symbol_id: 0x4c5ac0a5
   symbol_id: 0xd53a5822
   symbol_id: 0xb1469ae6
   symbol_id: 0x3afbe534
@@ -522666,6 +525631,7 @@ interface {
   symbol_id: 0x28bb5738
   symbol_id: 0x718fec30
   symbol_id: 0x037d0335
+  symbol_id: 0x870822b9
   symbol_id: 0x1f647fed
   symbol_id: 0xb832d27e
   symbol_id: 0x22b91009
@@ -523370,6 +526336,7 @@ interface {
   symbol_id: 0x8bbdb127
   symbol_id: 0x2a0ee731
   symbol_id: 0x02b1ce77
+  symbol_id: 0xf5a1bc09
   symbol_id: 0x90d375c5
   symbol_id: 0xdc16d76a
   symbol_id: 0x5b7736f5
@@ -523407,6 +526374,7 @@ interface {
   symbol_id: 0xf83588d6
   symbol_id: 0x19eb81d3
   symbol_id: 0xa1c5bd8d
+  symbol_id: 0x2d014c6c
   symbol_id: 0x159a69a3
   symbol_id: 0xd2e101fd
   symbol_id: 0xcef0ca54
@@ -523841,6 +526809,7 @@ interface {
   symbol_id: 0x306e3b3d
   symbol_id: 0x684435da
   symbol_id: 0x4e8277c6
+  symbol_id: 0x668cde28
   symbol_id: 0x7ec10e18
   symbol_id: 0xe197ec6f
   symbol_id: 0x58069299
@@ -524057,6 +527026,7 @@ interface {
   symbol_id: 0x88fdf87a
   symbol_id: 0xe0c6693f
   symbol_id: 0x4bda4ccf
+  symbol_id: 0xfcd2e6df
   symbol_id: 0x350d9a11
   symbol_id: 0xbf4818d4
   symbol_id: 0xb1548c88
@@ -524134,6 +527104,7 @@ interface {
   symbol_id: 0x215b5641
   symbol_id: 0xbf6470f2
   symbol_id: 0x77f61a26
+  symbol_id: 0xe71273b9
   symbol_id: 0x2669fc5e
   symbol_id: 0x160359c2
   symbol_id: 0x7a805e08
@@ -524307,6 +527278,10 @@ interface {
   symbol_id: 0x5ba96acf
   symbol_id: 0xd15ab841
   symbol_id: 0x915bc321
+  symbol_id: 0xe481ba66
+  symbol_id: 0x6a48ce69
+  symbol_id: 0x6d6a0985
+  symbol_id: 0xa01685ea
   symbol_id: 0xbf9d3356
   symbol_id: 0xd8989bc0
   symbol_id: 0x43c80a09
@@ -524361,6 +527336,7 @@ interface {
   symbol_id: 0xa9c80d6c
   symbol_id: 0xb1d265b1
   symbol_id: 0xe9124d83
+  symbol_id: 0x84d5c32a
   symbol_id: 0x28fabc56
   symbol_id: 0x68e07680
   symbol_id: 0xcd991820
@@ -524422,6 +527398,7 @@ interface {
   symbol_id: 0x132eb5f1
   symbol_id: 0xbccf7511
   symbol_id: 0xc29558ef
+  symbol_id: 0x3c8854b7
   symbol_id: 0x3b31be3d
   symbol_id: 0xd6bc5596
   symbol_id: 0x88704b49
@@ -524810,6 +527787,7 @@ interface {
   symbol_id: 0x8eadb5fd
   symbol_id: 0x53620815
   symbol_id: 0x140f40dd
+  symbol_id: 0xb07b6948
   symbol_id: 0xa9fabdf2
   symbol_id: 0x6da682ae
   symbol_id: 0x7f797603
@@ -525199,6 +528177,7 @@ interface {
   symbol_id: 0x49027247
   symbol_id: 0x85e07b67
   symbol_id: 0x6359420c
+  symbol_id: 0x6e09b6e4
   symbol_id: 0x39787440
   symbol_id: 0x7f258c4e
   symbol_id: 0x754435c8
@@ -525227,6 +528206,7 @@ interface {
   symbol_id: 0x8da2cfcb
   symbol_id: 0xaffe6f89
   symbol_id: 0x005c3998
+  symbol_id: 0x00111bab
   symbol_id: 0x571ba415
   symbol_id: 0x1e629967
   symbol_id: 0xf1401602
@@ -525478,6 +528458,7 @@ interface {
   symbol_id: 0x07e4f5ea
   symbol_id: 0xe48076c0
   symbol_id: 0x1eafdf64
+  symbol_id: 0x51f19d19
   symbol_id: 0x67d6372c
   symbol_id: 0x03140e42
   symbol_id: 0xfe52f374
@@ -525524,7 +528505,9 @@ interface {
   symbol_id: 0x39db373c
   symbol_id: 0x9df0dd4c
   symbol_id: 0xb862467e
+  symbol_id: 0xc47c8c17
   symbol_id: 0xffb38889
+  symbol_id: 0xbf238642
   symbol_id: 0x8a8d0c1a
   symbol_id: 0xb7b28cad
   symbol_id: 0x3852868c
@@ -525893,6 +528876,7 @@ interface {
   symbol_id: 0xaa322a74
   symbol_id: 0x0d9f5d07
   symbol_id: 0x864eb34f
+  symbol_id: 0x3b8354ef
   symbol_id: 0xb7a7a808
   symbol_id: 0x160949a1
   symbol_id: 0xf5e8f5ed
@@ -525998,6 +528982,7 @@ interface {
   symbol_id: 0xd46a0ddb
   symbol_id: 0x0da24a9a
   symbol_id: 0xaeaf7c63
+  symbol_id: 0x4e6d24f1
   symbol_id: 0x98d05c44
   symbol_id: 0x80c0972e
   symbol_id: 0x49317a7a
@@ -526522,6 +529507,7 @@ interface {
   symbol_id: 0xe4f77cb7
   symbol_id: 0x12f98f54
   symbol_id: 0x85d0ffae
+  symbol_id: 0x9b795cee
   symbol_id: 0xe160a711
   symbol_id: 0x4513114c
   symbol_id: 0x3af97828
@@ -526882,6 +529868,7 @@ interface {
   symbol_id: 0xc4c0ed9a
   symbol_id: 0x37d54444
   symbol_id: 0x5516a755
+  symbol_id: 0x34556105
   symbol_id: 0x736f4bcb
   symbol_id: 0x3ffd8828
   symbol_id: 0x38f9f2a7
@@ -526963,6 +529950,7 @@ interface {
   symbol_id: 0xb698b8ae
   symbol_id: 0xba68a39f
   symbol_id: 0x50b069f6
+  symbol_id: 0x66f18d57
   symbol_id: 0x62b259b4
   symbol_id: 0xa511d0ea
   symbol_id: 0xd2c5f178
@@ -528728,6 +531716,7 @@ interface {
   symbol_id: 0xc46f1f1f
   symbol_id: 0xf30af7b3
   symbol_id: 0xc9a9e8ab
+  symbol_id: 0x1bc8d75d
   symbol_id: 0x71f2808e
   symbol_id: 0x246bf5fe
   symbol_id: 0x4ae6dff8

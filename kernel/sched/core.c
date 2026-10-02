@@ -3282,6 +3282,7 @@ static int __set_cpus_allowed_ptr_locked(struct task_struct *p,
 
 	if (!(ctx->flags & SCA_MIGRATE_ENABLE)) {
 		if (cpumask_equal(&p->cpus_mask, ctx->new_mask)) {
+			trace_android_vh_sca_migrate_same(p, ctx);
 			if (ctx->flags & SCA_USER)
 				swap(p->user_cpus_ptr, ctx->user_mask);
 			goto out;
@@ -4733,6 +4734,7 @@ int try_to_wake_up(struct task_struct *p, unsigned int state, int wake_flags)
 
 	wake_flags |= WF_TTWU;
 
+	trace_android_rvh_try_to_wake_up_begin(p, state, &wake_flags);
 	if (p == current) {
 		/*
 		 * We're waking current, this means 'p->on_rq' and 'task_cpu(p)
@@ -7699,12 +7701,18 @@ static void __sched notrace __schedule(int sched_mode)
 	struct rq *rq;
 	bool prev_not_proxied;
 	int cpu;
+	bool skip_schedule = false;
 
 	cpu = smp_processor_id();
 	rq = cpu_rq(cpu);
 	prev = rq->curr;
 
 	schedule_debug(prev, preempt);
+
+	trace_android_vh_lock_delay_schedule(prev, sched_mode, &skip_schedule);
+
+	if (skip_schedule)
+		return;
 
 	if (sched_feat(HRTICK) || sched_feat(HRTICK_DL))
 		hrtick_clear(rq);
@@ -7783,6 +7791,7 @@ pick_again:
 picked:
 	clear_tsk_need_resched(prev);
 	clear_preempt_need_resched();
+	trace_android_vh_clear_curr_lazy(prev);
 keep_resched:
 #ifdef CONFIG_SCHED_DEBUG
 	rq->last_seen_need_resched_ns = 0;
